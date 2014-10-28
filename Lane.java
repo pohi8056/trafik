@@ -14,6 +14,7 @@ public class Lane {
 	theLane = new CarPosition[n];
 	for(int i = 0; i < n; i++){
 	    theLane[i] = new CarPosition(this);
+	    theLane[i].setPosition(i);
 	}
 	for (int i = (n-1); i > 0; i--) {
 	    theLane[i].updateForward(theLane[i-1]);  

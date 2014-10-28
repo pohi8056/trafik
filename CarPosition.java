@@ -2,7 +2,7 @@ import java.util.Random; //imported randomgen
 
 // Holler i en bil och kqnner till sina "grannar". 
 public class CarPosition{
-	
+    private int position;
     private Car currentCar = null; // null om ingen bil finns pq positionen
 	
     private Lane owner;
@@ -81,4 +81,12 @@ public class CarPosition{
 	currentCar = c;
     }
 
+    //added getPos
+    public int getPosition(){
+	return position;
+    }
+    //added setPos
+    public void setPosition(int pos){
+	position = pos;
+    }
 }
