@@ -51,6 +51,10 @@ public class CarPosition{
 
     }
 
+    public void set(Car c){
+	currentCar = c;
+    }
+
     public void setTurn(CarPosition turn) {
 	this.turn = turn;
     }
