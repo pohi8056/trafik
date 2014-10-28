@@ -20,6 +20,7 @@ public class Car {
     public Car(int bornTime, CarPosition destination){
 	this.destination = destination;
 	this.bornTime = borntime;
+	//Changed, bitch.
 }
 
     public CarPosition setPosition(CarPosition currentPosition){
