@@ -12,9 +12,7 @@ public class Car {
     	// Uppdatera bilen ett tidssteg
     }
 
-    // konstruktor och get- oct set-metoder
-    //...
-
+    //lol
 
 
     public Car(int bornTime, CarPosition destination){
