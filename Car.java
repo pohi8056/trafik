@@ -18,7 +18,7 @@ public class Car {
     public Car(int bornTime, CarPosition destination){
 	this.destination = destination;
 	this.bornTime = borntime;
-	//Changed, bitch.
+	//Changed, bitcha.
 }
 
     public CarPosition setPosition(CarPosition currentPosition){
