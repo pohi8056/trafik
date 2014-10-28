@@ -4,21 +4,26 @@ public class Light {
     private int green; // Signalen grön när time<green 
 
     public Light(int period, int green) {
-    	//...
+    	this.period = period;
+	this.green = green;
     	}
 
     public void    step() { 
-       // Stegar fram klocka ett steg
+	this.time++;
     }
 
     public boolean isGreen()   {
-    	return false;
+	if (this.time < this.green) {
+	    return true;
+	}
+	else{
+	    return false;
     	// Returnerar true om time<green, annars false
+	}
     }
 
     public String  toString()  {
-    	return null;
-    	//...
+    	return "Light(period=" + this.period + " time:" + this.time + "green:"+ this.green + ")";
     	}
 	
 }
