@@ -34,23 +34,24 @@ public class Lane {
     	int i = 0;
         
     	while(i < sideLane.getLength() && i < theLane.length)
-    	{
-    		theLane[i].setTurn(sideLane.theLane[i]);
-    		i++;
+	    {
+	    theLane[i].setTurn(sideLane.theLane[i]);
+	    i++;
     	}
     }
 
     public void step() {
 	// Stega fram alla fordon (utom det pa plats 0) ett steg 
-        // (om det gar). (Fordonet pa plats 0 tas bort utifran 
+	// (om det gar). (Fordonet pa plats 0 tas bort utifran 
 	// mm h a metoden nedan.)
-	theLane[i].getFirst();
+
+// TODO: SAVE CAR!!!!
+	//theLane[0].getFirst();
 	int len = getLength();
 	for (int i = 1; i < len; i++) {
-	    if (theLane[i].isThereACar()) {
-		
-	    }
+	    theLane[i-1] = theLane[i];	    
 	}
+    }
 
     public Car getFirst() {
 
