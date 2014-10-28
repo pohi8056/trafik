@@ -21,7 +21,7 @@ public class Car {
 	this.bornTime = bornTime;
 }
 
-    public CarPosition setPosition(CarPosition currentPosition){
+    public void setPosition(CarPosition currentPosition){
 	this.currentPosition = currentPosition;
 }
 
@@ -29,7 +29,7 @@ public class Car {
 	return currentPosition;
 }
 
-    public CarPosition setDestination(CarPosition destination){
+    public void setDestination(CarPosition destination){
 	this.destination = destination;
 }
 
