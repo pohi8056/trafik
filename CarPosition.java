@@ -1,6 +1,6 @@
 
 
-
+//
 // Håller i en bil och känner till sina "grannar". 
 public class CarPosition{
 	
