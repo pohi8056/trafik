@@ -19,11 +19,18 @@ public class Car {
 	this.destination = destination;
 	this.bornTime = borntime;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	//Changed this, bitch.
 =======
 	//Not Changed, bitcha.
 	//Changed, bitchy.
 >>>>>>> d0efd748c7ddff30848b0162ad652a74893b97b1
+=======
+	//Changed, bitchy.
+=======
+	//Changed, bitcha.
+>>>>>>> 025c00b07620ac7c828e8d75477a5271e56bd2a4
+>>>>>>> 6a586fc2dfd5556d2a6c71b9c74b9690cc751401
 }
 
     public CarPosition setPosition(CarPosition currentPosition){
