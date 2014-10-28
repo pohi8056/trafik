@@ -1,10 +1,10 @@
 
 
 //
-// HÂller i en bil och k‰nner till sina "grannar". 
+// H√•ller i en bil och k√§nner till sina "grannar". 
 public class CarPosition{
 	
-	private Car currentCar = null; // null om ingen bil finns pÂ positionen
+	private Car currentCar = null; // null om ingen bil finns p√• positionen
 	
 	private Lane owner;
 	
