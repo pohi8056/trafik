@@ -4,42 +4,48 @@
 // Håller i en bil och känner till sina "grannar". 
 public class CarPosition{
 	
-	private Car currentCar = null; // null om ingen bil finns på positionen
+    private Car currentCar = null; // null om ingen bil finns på positionen
 	
-	private Lane owner;
+    private Lane owner;
 	
-	private CarPosition forward;
-	private CarPosition turn;
+    private CarPosition forward;
+    private CarPosition turn;
 	
-	public CarPosition(Lane a_Owner)
-	{
-		owner = a_Owner;
-	}
+    public CarPosition(Lane a_Owner)
+    {
+	owner = a_Owner;
+    }
 	
-	public boolean isEnd(CarPosition target)
-	{
-		return owner.matchEnd(target);
-	}
+    public boolean isEnd(CarPosition target)
+    {
+	return owner.matchEnd(target);
+    }
 	
-	public boolean moveForward()
-	{
-		return false;
-		// Flytta bilen fram till forward
-	}
+    public boolean moveForward()
+    {
+	return false;
+	// Flytta bilen fram till forward
+    }
 	
-	public boolean turn()
-	{
-		return false;
-		// Flytta bilen till turn
-	}
+    public boolean turn()
+    {
+	return false;
+	// Flytta bilen till turn
+    }
 
-	public void setTurn(CarPosition turn) {
-		this.turn = turn;
-	}
+    public void setTurn(CarPosition turn) {
+	this.turn = turn;
+    }
 
-	public CarPosition getTurn() {
-		return turn;
-	}
-	
-	
+    public CarPosition getTurn() {
+	return turn;
+    }
+    //Added getForward
+    public CarPosition getForward() {
+	return forward;
+    }
+
+    public void updateForward(CarPosition newForward) {
+	this.forward = newForward;
+    }	
 }

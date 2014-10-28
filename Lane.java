@@ -10,6 +10,10 @@ public class Lane {
     public Lane(int n) {
 	// Konstruerar ett Lane-objekt med plats för n fordon
     // Samt länker ihop varje CarPosition med forward för den framför
+	theLane = new CarPosition[n];
+	for (int i = 0; i < n ; i++) {
+	    theLane[i].updateForward(theLane[i+1]);  
+	}
     }
     
     public boolean matchEnd(CarPosition target)
