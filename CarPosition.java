@@ -1,9 +1,9 @@
 
 
-// Håller i en bil och känner till sina "grannar". 
+// Hqller i en bil och kqnner till sina "grannar". 
 public class CarPosition{
 	
-    private Car currentCar = null; // null om ingen bil finns på positionen
+    private Car currentCar = null; // null om ingen bil finns pq positionen
 	
     private Lane owner;
 	
@@ -30,6 +30,12 @@ public class CarPosition{
     {
 	return false;
 	// Flytta bilen till turn
+    }
+
+    public Car get(){
+	return currentCar;
+	//GET CAR
+
     }
 
     public void setTurn(CarPosition turn) {

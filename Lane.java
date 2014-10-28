@@ -47,30 +47,30 @@ public class Lane {
     }
 
     public Car getFirst() {
-	private int i = 0;
-	private int j = 0;
-	while(i < theLane.getLength()){
+	int i = 0;
+	int j = 0;
+	while(i < getLength()){
 	    if(theLane[i] != null){
 		theLane[i] = null;
 		j = i;
 	    }
 	    i++;
 	}
-    	return theLane[j];
+    	return theLane[j].get();
 	// Returnera och tag bort bilen som står först
     }
     
     public Car firstCar() {
-	private int i = 0;
-	private int j = 0;
-	while(i < theLane.getLength()){
+	int i = 0;
+	int j = 0;
+	while(i < getLength()){
 	    if(theLane[i] != null){
 		j = i;
 	    }
 	    i++;
 	}
 	
-    	return theLane[j];
+    	return theLane[j].get();
 	// Returnera bilen som står först utan att ta bort den
     }
     
