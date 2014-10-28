@@ -76,5 +76,8 @@ public class CarPosition{
 	}
     }
     
-}
+    public void set(Car c){
+	currentCar = c;
+    }
 
+}

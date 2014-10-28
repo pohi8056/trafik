@@ -53,30 +53,16 @@ public class Lane {
 	}
 
     public Car getFirst() {
-	int i = 0;
-	int j = 0;
-	while(i < getLength()){
-	    if(theLane[i] != null){
-		theLane[i] = null;
-		j = i;
-	    }
-	    i++;
+
+	if(theLane[0] != null){
+	    theLane[0] = null;
 	}
-    	return theLane[j].get();
+    	return theLane[0].get();
 	// Returnera och tag bort bilen som står först
     }
     
     public Car firstCar() {
-	int i = 0;
-	int j = 0;
-	while(i < getLength()){
-	    if(theLane[i] != null){
-		j = i;
-	    }
-	    i++;
-	}
-	
-    	return theLane[j].get();
+    	return theLane[0].get();
 	// Returnera bilen som står först utan att ta bort den
     }
     
@@ -93,17 +79,15 @@ public class Lane {
 
     public void putLast(Car c) throws OverflowException {
 	if(lastFree() == true){
-	    //Car newCar = new Car(0, )
-	    //theLane[getLength() - 1] = 
+	    theLane[getLength() - 1].set(c);
 	}
-
 
 	// Stall en bil pa sista platsen pa vagen
 	// (om det gar).
     }
 
     public String toString() {
-    	return "";
+    	return "Lane(" + this.theLane + ")";
     	//...
     	}
 
