@@ -1,30 +1,30 @@
  /*
-  Modell för trafiksimulering
+  Modell fÃ¶r trafiksimulering
   ===========================
 
-  Följande klasser skall användas: 
+  FÃ¶ljande klasser skall anvÃ¤ndas: 
 
      Car representerar fordon
-         ankomsttid och destination som sätts när objektet skapas
+         ankomsttid och destination som sÃ¤tts nÃ¤r objektet skapas
 
      Light representerar ljussignaler
          Se nedan
   
-     Lane representerar ett vägavsnitt
-         En väg representeras av en array där varje element
-	 antingen är tomt eller innehåller en referens till 
+     Lane representerar ett vÃ¤gavsnitt
+         En vÃ¤g representeras av en array dÃ¤r varje element
+	 antingen Ã¤r tomt eller innehÃ¥ller en referens till 
          ett bil-objekt.
-         OBS: Klassen Lane påminner om kömekanismen i föregående
-         uppgift men den skiljer sig också i flera avseende.
-         I denna klass ställs nya bilar i ena änden av ARRAYEN
-         och inte närmast efter den som finns där. I kömekanismen        
+         OBS: Klassen Lane pÃ¥minner om kÃ¶mekanismen i fÃ¶regÃ¥ende
+         uppgift men den skiljer sig ocksÃ¥ i flera avseende.
+         I denna klass stÃ¤lls nya bilar i ena Ã¤nden av ARRAYEN
+         och inte nÃ¤rmast efter den som finns dÃ¤r. I kÃ¶mekanismen        
          var alltid elementen (kunderna) samlade medan bilarna
-         i denna klass kan vara utspridda över hela arrayen.
+         i denna klass kan vara utspridda Ã¶ver hela arrayen.
          
  
      TrafficSystem
-         Definierar de komponeneter dvs de vägar och signaler
-	 som ingår i systemet. Se vidare nedan
+         Definierar de komponeneter dvs de vÃ¤gar och signaler
+	 som ingÃ¥r i systemet. Se vidare nedan
 
      Simulation
          main-metod som driver simuleringen
@@ -39,20 +39,20 @@
        s2<----r2-----< 
 
 
-  En fil (vägsträcka) r0 delar sig vid B i två filer r1 och r2.
+  En fil (vÃ¤gstrÃ¤cka) r0 delar sig vid B i tvÃ¥ filer r1 och r2.
   Signal s1 kontrollerar fil r1 och och signal s2 fil r2.
  
-  Bilar uppstår vid A. Sannolikheten att en bil skall komma till A
+  Bilar uppstÃ¥r vid A. Sannolikheten att en bil skall komma till A
   vid ett visst tidsteg kallas ankomstintensiteten.
 
-  Vid ett tidssteg rör sig bilarna ett steg framåt (om platsen framför
-  är ledig). Vid C tas bilarna ut från filerna om repektive
-  signal är grön. Vid B tas bilar ut från r0 och läggs in på r1 eller r2
-  beroende på destination (och om platsen är ledig).
+  Vid ett tidssteg rÃ¶r sig bilarna ett steg framÃ¥t (om platsen framfÃ¶r
+  Ã¤r ledig). Vid C tas bilarna ut frÃ¥n filerna om repektive
+  signal Ã¤r grÃ¶n. Vid B tas bilar ut frÃ¥n r0 och lÃ¤ggs in pÃ¥ r1 eller r2
+  beroende pÃ¥ destination (och om platsen Ã¤r ledig).
 
-  Anm: Man skulle kunna representera systemet med två Lane-objekt
-  men då måste man ha något sätt att representera en "avtappning"
-  (där svängfilen börjar). Med den här valda representationen
+  Anm: Man skulle kunna representera systemet med tvÃ¥ Lane-objekt
+  men dÃ¥ mÃ¥ste man ha nÃ¥got sÃ¤tt att representera en "avtappning"
+  (dÃ¤r svÃ¤ngfilen bÃ¶rjar). Med den hÃ¤r valda representationen
   blir Lane-klassen enklare.  
     
 */
@@ -65,7 +65,14 @@ public class Simulation {
 
     public static void main(String [] args) {
 	// Skapar ett TrafficSystem
-	// Utför stegningen, anropar utskriftsmetoder
+	// UtfÃ¶r stegningen, anropar utskriftsmetoder
+	
+	//TESTING
+	Lane newLane = new Lane(10);
+
+
+
+
 
 	//...
 
