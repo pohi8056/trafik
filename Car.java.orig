@@ -1,0 +1,49 @@
+
+
+public class Car {
+
+    private int bornTime;
+    private CarPosition destination; 
+
+    private CarPosition currentPosition;
+    
+    public void step()
+    {
+    	// Uppdatera bilen ett tidssteg
+    }
+
+    //lol
+
+
+    public Car(int bornTime, CarPosition destination){
+	this.destination = destination;
+	this.bornTime = borntime;
+<<<<<<< HEAD
+	//Changed, bitchy.
+=======
+	//Changed, bitcha.
+>>>>>>> 025c00b07620ac7c828e8d75477a5271e56bd2a4
+}
+
+    public CarPosition setPosition(CarPosition currentPosition){
+	this.currentPosition = currentPosition;
+}
+
+    public CarPosition getPosition(){
+	return currentPosition;
+}
+
+    public CarPosition setDestination(CarPosition destination){
+	this.destination = destination;
+}
+
+    public CarPosition getDestination(){
+	return destination;
+}
+
+
+    public String toString() {
+    	return "";
+    	}
+	
+}
