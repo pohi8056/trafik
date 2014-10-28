@@ -15,6 +15,30 @@ public class Car {
     // konstruktor och get- oct set-metoder
     //...
 
+
+
+    public Car(int bornTime, CarPosition destination){
+	this.destination = destination;
+	this.bornTime = borntime;
+}
+
+    public CarPosition setPosition(CarPosition currentPosition){
+	this.currentPosition = currentPosition;
+}
+
+    public CarPosition getPosition(){
+	return currentPosition;
+}
+
+    public CarPosition setDestination(CarPosition destination){
+	this.destination = destination;
+}
+
+    public CarPosition getDestination(){
+	return destination;
+}
+
+
     public String toString() {
     	return "";
     	}
