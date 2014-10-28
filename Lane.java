@@ -76,11 +76,22 @@ public class Lane {
     
 
     public boolean lastFree() {
+	if(theLane[getLength() - 1] != null){
+	    return true;
+	}
     	return false;
 	// Returnera true om sista platsen ledig, annars false
     }
 
+
+
     public void putLast(Car c) throws OverflowException {
+	if(lastFree() == true){
+	    //Car newCar = new Car(0, )
+	    //theLane[getLength() - 1] = 
+	}
+
+
 	// Stall en bil pa sista platsen pa vagen
 	// (om det gar).
     }

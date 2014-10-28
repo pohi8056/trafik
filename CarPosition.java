@@ -1,4 +1,4 @@
-
+import java.util.Random; //imported randomgen
 
 // Hqller i en bil och kqnner till sina "grannar". 
 public class CarPosition{
@@ -13,6 +13,19 @@ public class CarPosition{
     public CarPosition(Lane a_Owner)
     {
 	owner = a_Owner;
+    }
+
+
+    public boolean randomDestination(){
+	Random random = new Random();
+	int randomNumber = random.nextInt(2 - 1) + 1;
+	
+	if(randomNumber == 1){
+	    return true;
+	}else{
+	    return false;
+	}
+	//randomdest
     }
 	
     public boolean isEnd(CarPosition target)
