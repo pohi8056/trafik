@@ -9,10 +9,11 @@ public class Car {
     
     public void step()
     {
+	bornTime += 1;
     	// Uppdatera bilen ett tidssteg
     }
 
-    //lol
+    
 
 
     public Car(int bornTime, CarPosition destination){
@@ -38,7 +39,7 @@ public class Car {
 
 
     public String toString() {
-    	return "";
+    	return "Car(bornTime =" + this.bornTime +", destination =" + this.destination + ", currentPosition =" + this.currentPosition + ")";
     	}
 	
 }
