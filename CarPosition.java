@@ -1,6 +1,6 @@
 import java.util.Random; //imported randomgen
 
-// Hqller i en bil och kqnner till sina "grannar". 
+// Holler i en bil och kqnner till sina "grannar". 
 public class CarPosition{
 	
     private Car currentCar = null; // null om ingen bil finns pq positionen
@@ -66,5 +66,15 @@ public class CarPosition{
     public void updateForward(CarPosition newForward) {
 	this.forward = newForward;
     }	
+
+    public boolean isThereACar(){
+	if(this.get() == null){
+	    return false;
+	}
+	else{
+	    return true;
+	}
+    }
+    
 }
 

@@ -12,17 +12,17 @@ public class Lane {
 	// Konstruerar ett Lane-objekt med plats for n fordon
     // Samt lanker ihop varje CarPosition med forward for den framfor
 	theLane = new CarPosition[n];
-	for (int i = 0; i < n ; i++) {
-	    theLane[i].updateForward(theLane[i+1]);  
+	for (int i = n; i > 0; i--) {
+	    theLane[i].updateForward(theLane[i-1]);  
 	}
     }
     
     public boolean matchEnd(CarPosition target)
     {
     	if(theLane[0] == target)
-    		return true;
+	    return true;
     	else
-    		return false;
+	    return false;
     }
     
     public int getLength(){
@@ -44,7 +44,13 @@ public class Lane {
 	// Stega fram alla fordon (utom det pa plats 0) ett steg 
         // (om det gar). (Fordonet pa plats 0 tas bort utifran 
 	// mm h a metoden nedan.)
-    }
+	theLane[i].getFirst();
+	int len = getLength();
+	for (int i = 1; i < len; i++) {
+	    if (theLane[i].isThereACar()) {
+		
+	    }
+	}
 
     public Car getFirst() {
 	int i = 0;
