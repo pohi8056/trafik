@@ -12,7 +12,10 @@ public class Lane {
 	// Konstruerar ett Lane-objekt med plats for n fordon
     // Samt lanker ihop varje CarPosition med forward for den framfor
 	theLane = new CarPosition[n];
-	for (int i = n; i > 0; i--) {
+	for(int i = 0; i < n; i++){
+	    theLane[i] = new CarPosition(this);
+	}
+	for (int i = (n-1); i > 0; i--) {
 	    theLane[i].updateForward(theLane[i-1]);  
 	}
     }

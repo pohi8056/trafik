@@ -12,6 +12,7 @@ public class CarPosition{
 	
     public CarPosition(Lane a_Owner)
     {
+
 	owner = a_Owner;
     }
 
