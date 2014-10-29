@@ -9,9 +9,6 @@ public class Car {
     
     public void step()
     {
-	//	if(currentPosition.isEnd(currentPosition) != true){
-	    int pos = currentPosition.getPosition();
-	    currentPosition.setPosition(pos - 1);
 	    bornTime += 1;
 	    //}
 
