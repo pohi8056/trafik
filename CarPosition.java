@@ -26,13 +26,18 @@ public class CarPosition{
 	
     public boolean moveForward()
     {
-	
+	if(currentCar.getDestination() == forward && owner.matchEnd(this) == true){
+	    return true;
+	}
 	return false;
 	// Flytta bilen fram till forward
     }
 	
     public boolean turn()
     {
+	if(currentCar.getDestination() == turn && owner.matchEnd(this) == true){
+	    return true;
+	}
 	return false;
 	// Flytta bilen till turn
     }
