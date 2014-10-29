@@ -9,7 +9,12 @@ public class Car {
     
     public void step()
     {
-	bornTime += 1;
+	if(isEnd != true){
+	    int pos = currentPosition.getPosition();
+	    currentPosition.setPosition(pos - 1);
+	    bornTime += 1;
+	}
+
     	// Uppdatera bilen ett tidssteg
 
 	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
