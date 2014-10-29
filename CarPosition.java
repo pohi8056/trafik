@@ -1,4 +1,3 @@
-import java.util.Random; //imported randomgen
 
 // Holler i en bil och kqnner till sina "grannar". 
 public class CarPosition{
@@ -18,17 +17,7 @@ public class CarPosition{
     }
 
 
-    public boolean randomDestination(){
-	Random random = new Random();
-	int randomNumber = random.nextInt(2 - 1) + 1;
-	
-	if(randomNumber == 1){
-	    return true;
-	}else{
-	    return false;
-	}
-	//randomdest
-    }
+
 	
     public boolean isEnd(CarPosition target)
     {
@@ -37,12 +26,18 @@ public class CarPosition{
 	
     public boolean moveForward()
     {
+	if(currentCar.getDestination() == forward && owner.matchEnd(this) == true){
+	    return true;
+	}
 	return false;
 	// Flytta bilen fram till forward
     }
 	
     public boolean turn()
     {
+	if(currentCar.getDestination() == turn && owner.matchEnd(this) == true){
+	    return true;
+	}
 	return false;
 	// Flytta bilen till turn
     }
@@ -82,10 +77,19 @@ public class CarPosition{
 	currentCar = c;
     }
 
+    /*
+
+      Do we really need these two?
+
+     */
+
+
     //added getPos
     public int getPosition(){
 	return position;
     }
+
+
     //added setPos
     public void setPosition(int pos){
 	position = pos;
