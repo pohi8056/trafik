@@ -2,6 +2,7 @@ import java.util.Random; //imported randomgen
 
 // Holler i en bil och kqnner till sina "grannar". 
 public class CarPosition{
+    //Added Position
     private int position;
     private Car currentCar = null; // null om ingen bil finns pq positionen
 	

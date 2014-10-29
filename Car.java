@@ -1,7 +1,7 @@
 
 
 public class Car {
-
+    private int carNr;
     private int bornTime;
     private CarPosition destination; 
 
@@ -11,14 +11,25 @@ public class Car {
     {
 	bornTime += 1;
     	// Uppdatera bilen ett tidssteg
+
+	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	//
+	//Skall inte bornTime vara constant?
+	//Eftersom den anger time of birth
+	//Men varför finns då step method?
+	//Its probably right, just curious.
+	//Not update currentPos?
     }
 
     
 
 
-    public Car(int bornTime, CarPosition destination){
+    public Car(int bornTime, CarPosition destination, int carNr){
 	this.destination = destination;
 	this.bornTime = bornTime;
+
+	//added carNR
+	this.carNr = carNr;
 }
 
     public void setPosition(CarPosition currentPosition){
@@ -39,7 +50,7 @@ public class Car {
 
 
     public String toString() {
-    	return "Car(bornTime =" + this.bornTime +", destination =" + this.destination + ", currentPosition =" + this.currentPosition + ")";
+    	return "Car(bornTime =" + this.bornTime +", destination =" + this.destination + ", currentPosition =" + this.currentPosition + ", carNr:" + this.carNr + ")";
     	}
 	
 }
