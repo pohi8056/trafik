@@ -72,10 +72,19 @@ public class CarPosition{
 	currentCar = c;
     }
 
+    /*
+
+      Do we really need these two?
+
+     */
+
+
     //added getPos
     public int getPosition(){
 	return position;
     }
+
+
     //added setPos
     public void setPosition(int pos){
 	position = pos;
