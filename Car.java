@@ -1,3 +1,4 @@
+import java.util.Random; //imported randomgen
 
 
 public class Car {
@@ -41,6 +42,19 @@ public class Car {
     public CarPosition getPosition(){
 	return currentPosition;
 }
+
+
+    public boolean randomDestination(){
+	Random random = new Random();
+	int randomNumber = random.nextInt(2 - 1) + 1;
+	
+	if(randomNumber == 1){
+	    return true;
+	}else{
+	    return false;
+	}
+	//randomdest
+    }
 
     public void setDestination(CarPosition destination){
 	this.destination = destination;
