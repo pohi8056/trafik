@@ -3,14 +3,14 @@ import java.util.Random; //imported randomgen
 
 public class Car {
     private int carNr;
-    private int bornTime;
+    private int lifetime;
     private CarPosition destination; 
     private int position;
     private CarPosition currentPosition;
     
     public void step()
     {
-	    bornTime += 1;
+	    lifetime += 1;
 	    //}
 
     	// Uppdatera bilen ett tidssteg
@@ -27,9 +27,9 @@ public class Car {
     
 
 
-    public Car(int bornTime, /*CarPosition destination,*/ int carNr){
+    public Car(int lifetime, CarPosition destination, int carNr){
 	//this.destination = destination;
-	this.bornTime = bornTime;
+	this.lifetime = lifetime;
 
 	//added carNR
 	this.carNr = carNr;
@@ -43,6 +43,9 @@ public class Car {
 	return currentPosition;
 }
 
+    public int getCarNr(){
+	return this.carNr;
+}
 
     public boolean randomDestination(){
 	Random random = new Random();
@@ -66,7 +69,7 @@ public class Car {
 
 
     public String toString() {
-    	return "Car(bornTime =" + this.bornTime +", destination =" + this.destination + ", currentPosition =" + this.currentPosition + ", carNr:" + this.carNr + ")";
+    	return "Car(bornTime =" + this.lifetime +", destination =" + this.destination + ", currentPosition =" + this.currentPosition + ", carNr:" + this.carNr + ")";
     	}
 	
 }
