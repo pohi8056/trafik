@@ -53,7 +53,8 @@ public class Lane {
 	//theLane[0].getFirst();
 	int len = getLength();
 	for (int i = 1; i < len; i++) {
-	    theLane[i-1] = theLane[i];	    
+	    
+	    //	    theLane[i-1] = theLane[i];	    
 	}
     }
 
@@ -91,10 +92,12 @@ public class Lane {
 	// (om det gar).
     }
 
-    public String toString() {
-    	return "Lane(" + this.theLane + ")";
+    public void toString1() {
+	//for(int i = 0; i < getLength(); i++){
+	//System.out.println("Lane(" + theLane[1].get().getCarNr() + ")");
     	//...
-    	}
+	//}
+    }
 
 }
 
