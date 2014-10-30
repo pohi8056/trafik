@@ -62,13 +62,34 @@
 
 
 public class Simulation {
+    
+    public static void test(){
+	Lane newLane = new Lane(10);
+	
+
+	Car newCar = new Car(0, 1);
+	newLane.step();
+	//	System.out.println(newCar.getPosition());
+	
+	//for(int i = 0; i < 10; i++){
+
+
+	// newCar.step();
+	    //System.out.println(newCar.toString());	    
+	    //}
+	
+	//Lane newLane = new Lane(10);
+	
+
+
+}
+
 
     public static void main(String [] args) {
+	test();
 	// Skapar ett TrafficSystem
 	// Utför stegningen, anropar utskriftsmetoder
 	
-	//TESTING
-	Lane newLane = new Lane(10);
 
 
 
