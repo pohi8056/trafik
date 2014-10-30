@@ -92,7 +92,7 @@ public class Lane {
     }
 
     public String toString() {
-    	return "Lane(" + this.theLane + ")";
+    	return "Lane(" + theLane + ")";
     	//...
     	}
 

@@ -5,7 +5,7 @@ public class Car {
     private int carNr;
     private int bornTime;
     private CarPosition destination; 
-
+    private int position;
     private CarPosition currentPosition;
     
     public void step()
