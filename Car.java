@@ -27,8 +27,8 @@ public class Car {
     
 
 
-    public Car(int bornTime, CarPosition destination, int carNr){
-	this.destination = destination;
+    public Car(int bornTime, /*CarPosition destination,*/ int carNr){
+	//this.destination = destination;
 	this.bornTime = bornTime;
 
 	//added carNR
