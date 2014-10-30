@@ -14,7 +14,7 @@ public class Lane {
 	theLane = new CarPosition[n];
 	for(int i = 0; i < n; i++){
 	    theLane[i] = new CarPosition(this);
-	    theLane[i].setPosition(i);
+	    //theLane[i].setPosition(i); //Temp commented, made it harder to think.
 	}
 	for (int i = (n-1); i > 0; i--) {
 	    theLane[i].updateForward(theLane[i-1]);  
@@ -53,7 +53,15 @@ public class Lane {
 	//theLane[0].getFirst();
 	int len = getLength();
 	for (int i = 1; i < len; i++) {
-	    
+	    //System.out.println("IM HERE");
+	    if(theLane[i - 1].isThereACar() != true){
+		//System.out.println("IM HERE");
+		if(theLane[i].isThereACar()){   
+		    theLane[i].get().setPosition(theLane[i - 1]);
+		    theLane[i - 1].set(theLane[i].get());
+		    theLane[i].setNull();
+		}
+	    }
 	    //	    theLane[i-1] = theLane[i];	    
 	}
     }
@@ -86,6 +94,7 @@ public class Lane {
     public void putLast(Car c) throws OverflowException {
 	if(lastFree() == true){
 	    theLane[getLength() - 1].set(c);
+	    c.setPosition(theLane[getLength() - 1]);
 	}
 
 	// Stall en bil pa sista platsen pa vagen
