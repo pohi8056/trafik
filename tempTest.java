@@ -27,7 +27,7 @@ public class tempTest{
 
 
 	//Ett garage med 10 bilar, för det bör man ha.
-       	Car[] garage = new Car[10];
+       	Car[] garage = new Car[15];
 
 	/*
 	Car testCar = new Car(0, destS1, 1);
@@ -55,18 +55,22 @@ public class tempTest{
 	for (int i = 0; i < 10; i++) {
 	    garage[i] = new Car(1000 + i,destS1,i);
 	}
-	
-	//Nu rullar vi!!
+
+		
+      	//Nu rullar vi!!
 	for (int i = 0; i < 10; i++) {
-	    road0.putLast(garage[i]);
-	    for(int j = 0; j < 10; j++){
+      	    road0.putLast(garage[i]);
 	    road0.step();
-	    System.out.println("Car: " + garage[j].getCarNr() + "\t Pos: " + garage[j].getPosition() + "");	    
-	    // road0.toString1();
-	    //System.out.print(road0.toString() + "\n");
-	    }
-	}
-	
+				
+      	    for(int j = 0; j < 10; j++){
+      		System.out.println("Car: " + garage[j].getCarNr() + "\t Pos: " + garage[j].getPosition() + "\t intPos: " + garage[j].getIntPosition());
+      		//road0.step();
+      		//System.out.println("Car: " + garage[j].getCarNr() + "\t Pos: " + garage[j].getPosition() + "\t intPos: " + garage[j].getIntPosition());	    
+		// road0.toString1();
+      		//System.out.print(road0.toString() + "\n");
+      	    }
+    	}
+
 	
 
 	/*Car ferrari = new Car(3,destS1,1337);

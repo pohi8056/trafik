@@ -5,7 +5,7 @@ public class Car {
     private int carNr;
     private int lifetime;
     private CarPosition destination; 
-    private int position;
+    private int intPosition;
     private CarPosition currentPosition;
     
     public void step()
@@ -66,6 +66,18 @@ public class Car {
     public CarPosition getDestination(){
 	return destination;
 }
+    
+    //*******tempForTest********
+    //
+    public void setIntPosition(int i){
+	this.intPosition = i;
+    }
+    public int getIntPosition(){
+	return intPosition;
+    }
+    //
+    //*******tempForTest********
+
 
 
     public String toString() {

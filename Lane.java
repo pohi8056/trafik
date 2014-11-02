@@ -8,6 +8,10 @@ public class Lane {
 
     protected CarPosition[] theLane;
 
+    //TEMP
+    protected Car temporaryParkingSpot;
+    //TEMP
+
     public Lane(int n) {
 	// Konstruerar ett Lane-objekt med plats for n fordon
     // Samt lanker ihop varje CarPosition med forward for den framfor
@@ -50,9 +54,11 @@ public class Lane {
 	// mm h a metoden nedan.)
 
 // TODO: SAVE CAR!!!!
-	//theLane[0].getFirst();
 	int len = getLength();
 	for (int i = 1; i < len; i++) {
+	    temporaryParkingSpot = theLane[0].get();
+	    theLane[0].setNull();
+	    
 	    //System.out.println("IM HERE");
 	    if(theLane[i - 1].isThereACar() != true){
 		//System.out.println("IM HERE");
@@ -60,6 +66,10 @@ public class Lane {
 		    theLane[i].get().setPosition(theLane[i - 1]);
 		    theLane[i - 1].set(theLane[i].get());
 		    theLane[i].setNull();
+		    //
+		    //added for test
+		    //
+		    theLane[i-1].get().setIntPosition(i-1);
 		}
 	    }
 	    //	    theLane[i-1] = theLane[i];	    
@@ -95,7 +105,13 @@ public class Lane {
 	if(lastFree() == true){
 	    theLane[getLength() - 1].set(c);
 	    c.setPosition(theLane[getLength() - 1]);
+
+	    //*******************TEST************************
+	    theLane[getLength() - 1].get().setIntPosition(getLength() - 1);
+	    //*******************TEST************************
+
 	}
+
 
 	// Stall en bil pa sista platsen pa vagen
 	// (om det gar).
