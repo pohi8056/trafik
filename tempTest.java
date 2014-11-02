@@ -27,7 +27,29 @@ public class tempTest{
 
 
 	//Ett garage med 10 bilar, för det bör man ha.
-	Car[] garage = new Car[10];
+       	Car[] garage = new Car[10];
+
+	/*
+	Car testCar = new Car(0, destS1, 1);
+	System.out.println(testCar.getPosition());
+	
+	road0.putLast(testCar);
+	System.out.println(testCar.getPosition());
+	road0.step();
+	System.out.println(testCar.getPosition());
+	road0.step();
+	System.out.println(testCar.getPosition());
+	road0.step();
+	System.out.println(testCar.getPosition());
+	road0.step();
+	System.out.println(testCar.getPosition());
+	road0.step();
+
+	*/
+
+	
+
+	
 
 	//Lägger in alla bilar i garaget, då de inte är redo för vägen ännu.
 	for (int i = 0; i < 10; i++) {
@@ -37,9 +59,12 @@ public class tempTest{
 	//Nu rullar vi!!
 	for (int i = 0; i < 10; i++) {
 	    road0.putLast(garage[i]);
+	    for(int j = 0; j < 10; j++){
 	    road0.step();
-	    System.out.print(road0.toString() + "\n");
-
+	    System.out.println("Car: " + garage[j].getCarNr() + "\t Pos: " + garage[j].getPosition() + "");	    
+	    // road0.toString1();
+	    //System.out.print(road0.toString() + "\n");
+	    }
 	}
 	
 	

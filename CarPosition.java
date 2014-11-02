@@ -77,6 +77,10 @@ public class CarPosition{
 	currentCar = c;
     }
 
+    public void setNull(){
+	this.currentCar = null;
+}
+
     /*
 
       Do we really need these two?
