@@ -92,7 +92,9 @@ public class Lane {
 	// (om det gar).
     }
 
-    public void toString1() {
+    public void toStringLane() {
+	
+	
 	//for(int i = 0; i < getLength(); i++){
 	//System.out.println("Lane(" + theLane[1].get().getCarNr() + ")");
     	//...
