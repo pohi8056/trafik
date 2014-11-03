@@ -29,28 +29,6 @@ public class tempTest{
 	//Ett garage med 10 bilar, för det bör man ha.
        	Car[] garage = new Car[15];
 
-	/*
-	Car testCar = new Car(0, destS1, 1);
-	System.out.println(testCar.getPosition());
-	
-	road0.putLast(testCar);
-	System.out.println(testCar.getPosition());
-	road0.step();
-	System.out.println(testCar.getPosition());
-	road0.step();
-	System.out.println(testCar.getPosition());
-	road0.step();
-	System.out.println(testCar.getPosition());
-	road0.step();
-	System.out.println(testCar.getPosition());
-	road0.step();
-
-	*/
-
-	
-
-	
-
 	//Lägger in alla bilar i garaget, då de inte är redo för vägen ännu.
 	for (int i = 0; i < 10; i++) {
 	    garage[i] = new Car(1000 + i,destS1,i);
@@ -62,17 +40,20 @@ public class tempTest{
       	    road0.putLast(garage[i]);
 	    road0.toStringLane();
 	    road0.step();
-				
-	    //      	    for(int j = 0; j < 10; j++){
-		//      		System.out.println("Car: " + garage[j].getCarNr() + "\t Pos: " + garage[j].getPosition() + "\t intPos: " + garage[j].getIntPosition());
+	    if(road0.firstCar() != null){
+		road1.putLast(road0.getFirst());
+		road1.step();
+	 }
 
+	    
+      	    for(int j = 0; j < 10; j++){
+      		System.out.println("Car: " + garage[j].getCarNr() + "\t Pos: " + garage[j].getPosition() + "\t intPos: " + garage[j].getIntPosition());
       		//road0.step();
       		//System.out.println("Car: " + garage[j].getCarNr() + "\t Pos: " + garage[j].getPosition() + "\t intPos: " + garage[j].getIntPosition());	    
 		// road0.toString1();
       		//System.out.print(road0.toString() + "\n");
-		//road0.toStringLane();
-		//System.out.println(road0.toStringLane());
-		//      	    }
+      	    }
+	    
     	}
 
        
@@ -89,26 +70,8 @@ public class tempTest{
 	*/
 
 
-    Car bil1 = new Car(1,destS1,1);
-    Car bil2 = new Car(1,destS1,1);
-    Car bil3 = new Car(2,destS1,1);
 
-    boolean one = bil1.isEqual(bil1);
-    boolean two = bil1.isEqual(bil2);
-
-    boolean three = bil1.isEqualRef(bil1);
-    boolean four = bil1.isEqualRef(bil2);
-
-    //REF
-        System.out.println(one);
-	
-        System.out.println(two);
-    	
-        //EQUAL
-        System.out.println(three);
-    
-	System.out.println(four);
-	      
+		  
     }
 	
  

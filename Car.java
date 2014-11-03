@@ -35,6 +35,11 @@ public class Car {
 	this.carNr = carNr;
 }
 
+
+    public Car(){
+	this.lifetime = 0;
+    }
+
     public void setPosition(CarPosition currentPosition){
 	this.currentPosition = currentPosition;
 }
