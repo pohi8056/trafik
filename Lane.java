@@ -58,7 +58,8 @@ public class Lane {
 	for (int i = 1; i < len; i++) {
 	    temporaryParkingSpot = theLane[0].get();
 	    theLane[0].setNull();
-	    
+	    //theLane[i].getFirst();
+
 	    //System.out.println("IM HERE");
 	    if(theLane[i - 1].isThereACar() != true){
 		//System.out.println("IM HERE");
@@ -77,11 +78,13 @@ public class Lane {
     }
 
     public Car getFirst() {
-
+	Car temp = theLane[0].get();
 	if(theLane[0] != null){
 	    theLane[0] = null;
 	}
-    	return theLane[0].get();
+	System.out.println(temp);
+	return temp;
+
 	// Returnera och tag bort bilen som står först
     }
     

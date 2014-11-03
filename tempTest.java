@@ -18,6 +18,7 @@ public class tempTest{
 	Lane road0 = new Lane(10);
 	Lane road1 = new Lane(5);
 	Lane road2 = new Lane(5);
+
 	
 	CarPosition start = new CarPosition(road0);
 	CarPosition destS1 = new CarPosition(road1);
@@ -28,28 +29,7 @@ public class tempTest{
 
 	//Ett garage med 10 bilar, för det bör man ha.
        	Car[] garage = new Car[15];
-
-	/*
-	Car testCar = new Car(0, destS1, 1);
-	System.out.println(testCar.getPosition());
-	
-	road0.putLast(testCar);
-	System.out.println(testCar.getPosition());
-	road0.step();
-	System.out.println(testCar.getPosition());
-	road0.step();
-	System.out.println(testCar.getPosition());
-	road0.step();
-	System.out.println(testCar.getPosition());
-	road0.step();
-	System.out.println(testCar.getPosition());
-	road0.step();
-
-	*/
-
-	
-
-	
+	Car switchLane;
 
 	//Lägger in alla bilar i garaget, då de inte är redo för vägen ännu.
 	for (int i = 0; i < 10; i++) {
@@ -61,7 +41,12 @@ public class tempTest{
 	for (int i = 0; i < 10; i++) {
       	    road0.putLast(garage[i]);
 	    road0.step();
-				
+	    if(road0.firstCar() != null){
+		road1.putLast(road0.getFirst());
+		road1.step();
+	 }
+
+	    
       	    for(int j = 0; j < 10; j++){
       		System.out.println("Car: " + garage[j].getCarNr() + "\t Pos: " + garage[j].getPosition() + "\t intPos: " + garage[j].getIntPosition());
       		//road0.step();
@@ -69,6 +54,7 @@ public class tempTest{
 		// road0.toString1();
       		//System.out.print(road0.toString() + "\n");
       	    }
+	    
     	}
 
 	
