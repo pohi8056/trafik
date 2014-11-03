@@ -80,8 +80,41 @@ public class Car {
 
 
 
-    public String toString() {
-    	return "Car(bornTime =" + this.lifetime +", destination =" + this.destination + ", currentPosition =" + this.currentPosition + ", carNr:" + this.carNr + ")";
+    public String toStringCar() {
+    	return "Car(bornTime =" + this.lifetime +", destination =" + this.destination + ", currentPosition =" + this.currentPosition + ", carNr:" + this.carNr + ", IntPos: " + getIntPosition() +")";
     	}
 	
+
+
+    public boolean isEqual(Car c){
+	if(this.equals(c)){
+	    return true;
+	}
+	else{
+	    return false;
+	}
+    }
+
+
+    public boolean isEqualRef(Car c){
+	if(this == c){
+	    return true;
+	}
+	else{
+	    return false;
+	}
+    }
+
+
+    public boolean isEqualComp(Car c){
+	if(compare(c,this)){
+	    return true;
+	}
+	else{
+	    return false;
+	}
+    }
+
+
+
 }

@@ -14,7 +14,7 @@ public class Lane {
 
     public Lane(int n) {
 	// Konstruerar ett Lane-objekt med plats for n fordon
-    // Samt lanker ihop varje CarPosition med forward for den framfor
+	// Samt lanker ihop varje CarPosition med forward for den framfor
 	theLane = new CarPosition[n];
 	for(int i = 0; i < n; i++){
 	    theLane[i] = new CarPosition(this);
@@ -45,7 +45,7 @@ public class Lane {
 	    {
 	    theLane[i].setTurn(sideLane.theLane[i]);
 	    i++;
-    	}
+	    }
     }
 
     public void step() {
@@ -109,23 +109,23 @@ public class Lane {
 	    //*******************TEST************************
 	    theLane[getLength() - 1].get().setIntPosition(getLength() - 1);
 	    //*******************TEST************************
-
 	}
-
-
 	// Stall en bil pa sista platsen pa vagen
 	// (om det gar).
     }
 
     public void toStringLane() {
-	
-	
-	//for(int i = 0; i < getLength(); i++){
-	//System.out.println("Lane(" + theLane[1].get().getCarNr() + ")");
-    	//...
-	//}
+	for(int i = 0; i < getLength(); i++){
+	    if(theLane[i].get() != null){
+	    System.out.println("Lane " + i + ": \t" + theLane[i].get().toStringCar());
+	    }
+	    else{
+		System.out.println("Lane " + i + ": \t null");
+	    }
+	}
     }
 
+
+
+
 }
-
-

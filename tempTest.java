@@ -60,30 +60,55 @@ public class tempTest{
       	//Nu rullar vi!!
 	for (int i = 0; i < 10; i++) {
       	    road0.putLast(garage[i]);
+	    road0.toStringLane();
 	    road0.step();
 				
-      	    for(int j = 0; j < 10; j++){
-      		System.out.println("Car: " + garage[j].getCarNr() + "\t Pos: " + garage[j].getPosition() + "\t intPos: " + garage[j].getIntPosition());
+	    //      	    for(int j = 0; j < 10; j++){
+		//      		System.out.println("Car: " + garage[j].getCarNr() + "\t Pos: " + garage[j].getPosition() + "\t intPos: " + garage[j].getIntPosition());
+
       		//road0.step();
       		//System.out.println("Car: " + garage[j].getCarNr() + "\t Pos: " + garage[j].getPosition() + "\t intPos: " + garage[j].getIntPosition());	    
 		// road0.toString1();
       		//System.out.print(road0.toString() + "\n");
-      	    }
+		//road0.toStringLane();
+		//System.out.println(road0.toStringLane());
+		//      	    }
     	}
 
-	
-
+       
 	/*Car ferrari = new Car(3,destS1,1337);
 	
 	car1.set(ferrari);
         System.out.print(ferrari.toString() + "\n");
         System.out.print(road0.toString() + "\n");
         //System.out.print(.toString());
+
+
+
+
 	*/
 
 
+    Car bil1 = new Car(1,destS1,1);
+    Car bil2 = new Car(1,destS1,1);
+    Car bil3 = new Car(2,destS1,1);
 
-		  
+    boolean one = bil1.isEqual(bil1);
+    boolean two = bil1.isEqual(bil2);
+
+    boolean three = bil1.isEqualRef(bil1);
+    boolean four = bil1.isEqualRef(bil2);
+
+    //REF
+        System.out.println(one);
+	
+        System.out.println(two);
+    	
+        //EQUAL
+        System.out.println(three);
+    
+	System.out.println(four);
+	      
     }
 	
  
