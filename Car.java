@@ -28,17 +28,13 @@ public class Car {
 
 
     public Car(int lifetime, CarPosition destination, int carNr){
-	//this.destination = destination;
+	this.destination = destination;
 	this.lifetime = lifetime;
 
 	//added carNR
 	this.carNr = carNr;
 }
 
-
-    public Car(){
-	this.lifetime = 0;
-    }
 
     public void setPosition(CarPosition currentPosition){
 	this.currentPosition = currentPosition;
@@ -90,35 +86,6 @@ public class Car {
     	}
 	
 
-
-    public boolean isEqual(Car c){
-	if(this.equals(c)){
-	    return true;
-	}
-	else{
-	    return false;
-	}
-    }
-
-
-    public boolean isEqualRef(Car c){
-	if(this == c){
-	    return true;
-	}
-	else{
-	    return false;
-	}
-    }
-
-
-    public boolean isEqualComp(Car c){
-	if(compare(c,this)){
-	    return true;
-	}
-	else{
-	    return false;
-	}
-    }
 
 
 

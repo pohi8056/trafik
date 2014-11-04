@@ -28,26 +28,66 @@ public class tempTest{
 
 	//Ett garage med 10 bilar, för det bör man ha.
        	Car[] garage = new Car[15];
+	Car switcher;
 
 	//Lägger in alla bilar i garaget, då de inte är redo för vägen ännu.
-	for (int i = 0; i < 10; i++) {
-	    garage[i] = new Car(1000 + i,destS1,i);
+	for (int i = 0; i < 15; i++) {
+	    garage[i] = new Car(1000 + i,destS1,i); //Default destination doesn't work
 	}
+
+	//USE RANDOM GEN LATER
+	    garage[2].setDestination(destS2);
+	    garage[3].setDestination(destS2);
+	    garage[5].setDestination(destS2);
+	    garage[9].setDestination(destS2);
+	    garage[10].setDestination(destS2);
+	    garage[14].setDestination(destS2);
 
 		
       	//Nu rullar vi!!
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 15; i++) {
       	    road0.putLast(garage[i]);
+	    System.out.println("Main road: ");
 	    road0.toStringLane();
-	    road0.step();
-	    if(road0.firstCar() != null){
-		road1.putLast(road0.getFirst());
-		road1.step();
+	    System.out.println("");
+	    switcher = road0.getFirst();
+	    if(switcher != null){
+		if(switcher.getDestination() == destS1){
+		    road1.putLast(switcher);
+		}else{
+		    road2.putLast(switcher);
+		}
 	    }
-
-	}
 	    
-    	
+	    System.out.println("Forward: ");
+	    road1.toStringLane();
+	    System.out.println("");
+	    System.out.println("Turn: ");
+	    road2.toStringLane();
+	    System.out.println("");
+	    road1.getFirst();  //PUT IN STATISTIC GARAGE LATER FOR EVALUATION
+	    road2.getFirst();  //PUT IN STATISTIC GARAGE LATER FOR EVALUATION
+
+	    road0.step();
+	    road1.step();
+	    road2.step();	    	    	    
+    	}
+
+       
+	/*Car ferrari = new Car(3,destS1,1337);
+	
+	car1.set(ferrari);
+        System.out.print(ferrari.toString() + "\n");
+        System.out.print(road0.toString() + "\n");
+        //System.out.print(.toString());
+
+
+
+
+	*/
+
+
+
 		  
     }
 	

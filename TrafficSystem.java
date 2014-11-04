@@ -18,8 +18,14 @@ public class TrafficSystem {
     
     private int time = 0;
 
-    public TrafficSystem() {
+    public TrafficSystem(int roadlen, int period, int green) {
     	//...
+	r0 = new Lane(n);
+	r1 = new Lane(n);
+	r2 = new Lane(n);
+	
+	s1 = new Light(period, green);
+	s2 = new Light(period, green);
     	}
 
     public void readParameters() {
@@ -34,6 +40,11 @@ public class TrafficSystem {
     public void step() {
 	// Stega systemet ett tidssteg m h a komponenternas step-metoder
 	// Skapa bilar, lägg in och ta ur på de olika Lane-kompenenterna
+	s1.step();
+	s2.step();
+	r0.step();
+	r1.step();
+	r2.step();
     }
 
     public void printStatistics() {
