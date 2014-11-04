@@ -43,34 +43,11 @@ public class tempTest{
 	    if(road0.firstCar() != null){
 		road1.putLast(road0.getFirst());
 		road1.step();
-	 }
+	    }
 
+	}
 	    
-      	    for(int j = 0; j < 10; j++){
-      		System.out.println("Car: " + garage[j].getCarNr() + "\t Pos: " + garage[j].getPosition() + "\t intPos: " + garage[j].getIntPosition());
-      		//road0.step();
-      		//System.out.println("Car: " + garage[j].getCarNr() + "\t Pos: " + garage[j].getPosition() + "\t intPos: " + garage[j].getIntPosition());	    
-		// road0.toString1();
-      		//System.out.print(road0.toString() + "\n");
-      	    }
-	    
-    	}
-
-       
-	/*Car ferrari = new Car(3,destS1,1337);
-	
-	car1.set(ferrari);
-        System.out.print(ferrari.toString() + "\n");
-        System.out.print(road0.toString() + "\n");
-        //System.out.print(.toString());
-
-
-
-
-	*/
-
-
-
+    	
 		  
     }
 	
