@@ -57,12 +57,12 @@ public class Lane {
 	int len = getLength();
 	for (int i = 1; i < len; i++) {
 	    temporaryParkingSpot = theLane[0].get();
-	    theLane[0].setNull();
+	    //theLane[0].setNull();         /* WARNING */
 	    //theLane[i].getFirst();
 
 	    //System.out.println("IM HERE");
 	    if(theLane[i - 1].isThereACar() != true){
-		//System.out.println("IM HERE");
+		//System.out.println("Number: " + i +"Lane: "+ theLane[i-1].isThereACar());
 		if(theLane[i].isThereACar()){   
 		    theLane[i].get().setPosition(theLane[i - 1]);
 		    theLane[i - 1].set(theLane[i].get());
@@ -78,18 +78,16 @@ public class Lane {
     }
 
     public Car getFirst() {
-	Car temp = theLane[0].get();
 	if(theLane[0] != null){
-	    theLane[0] = null;
+	    theLane[0].setNull();
 	}
-	System.out.println(temp);
-	return temp;
+	return temporaryParkingSpot;
 
 	// Returnera och tag bort bilen som står först
     }
     
     public Car firstCar() {
-    	return theLane[0].get();
+    	return temporaryParkingSpot;
 	// Returnera bilen som står först utan att ta bort den
     }
     
