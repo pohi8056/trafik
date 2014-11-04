@@ -24,7 +24,17 @@ public class Car {
 	//Not update currentPos?
     }
 
-    
+    public void randomDestination(CarPosition s1, CarPosition s2){
+	Random random = new Random();
+	int randomNumber = random.nextInt(1 - 0 + 1) + 1;
+	
+	if(randomNumber == 1){
+	    this.setDestination(s1);
+	}else{
+	    this.setDestination(s2);
+	}
+	//randomdest
+    }
 
 
     public Car(int lifetime, CarPosition destination, int carNr){
@@ -47,7 +57,7 @@ public class Car {
     public int getCarNr(){
 	return this.carNr;
 }
-
+    /*
     public boolean randomDestination(){
 	Random random = new Random();
 	int randomNumber = random.nextInt(2 - 1) + 1;
@@ -59,7 +69,7 @@ public class Car {
 	}
 	//randomdest
     }
-
+    */
     public void setDestination(CarPosition destination){
 	this.destination = destination;
 }
