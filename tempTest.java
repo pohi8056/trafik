@@ -34,16 +34,25 @@ public class tempTest{
 	for (int i = 0; i < 15; i++) {
 	    garage[i] = new Car(1000 + i,destS1,i); //Default destination doesn't work
 	}
+	CarPosition r = new CarPosition(road1);
 
 	//USE RANDOM GEN LATER
-	    garage[2].setDestination(destS2);
-	    garage[3].setDestination(destS2);
-	    garage[5].setDestination(destS2);
-	    garage[9].setDestination(destS2);
-	    garage[10].setDestination(destS2);
-	    garage[14].setDestination(destS2);
+	garage[0].randomDestination(destS1, destS2);
+	garage[1].randomDestination(destS1, destS2);
+	garage[2].randomDestination(destS1, destS2);
+	garage[3].randomDestination(destS1, destS2);
+	garage[4].randomDestination(destS1, destS2);
+	garage[5].randomDestination(destS1, destS2);
+	garage[6].randomDestination(destS1, destS2);
+	garage[7].randomDestination(destS1, destS2);
+	garage[8].randomDestination(destS1, destS2);
+	garage[9].randomDestination(destS1, destS2);
+	garage[10].randomDestination(destS1, destS2);
+	garage[11].randomDestination(destS1, destS2);
+	garage[12].randomDestination(destS1, destS2);
+	garage[13].randomDestination(destS1, destS2);
+	garage[14].randomDestination(destS1, destS2);
 
-		
       	//Nu rullar vi!!
 	for (int i = 0; i < 15; i++) {
       	    road0.putLast(garage[i]);
@@ -70,7 +79,7 @@ public class tempTest{
 
 	    road0.step();
 	    road1.step();
-	    road2.step();	    	    	    
+	    road2.step();
     	}
 
        
