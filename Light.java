@@ -28,7 +28,7 @@ public class Light {
     }
 
     public String  toString()  {
-    	return "Light(period=" + this.period + " time:" + this.time + "green:"+ this.green + ")";
+    	return "Light( period: " + this.period + " time: " + this.time + " green: "+ this.green + ")";
     	}
 	
 }

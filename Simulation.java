@@ -68,8 +68,9 @@ public class Simulation {
 
 	TrafficSystem system = new TrafficSystem(10, 5, 5, 3);
 	system.initCars(15);
-	
+
 	system.step();
+
 	while(system.checkLanesNull() != true){
 	    system.print();
 	    system.step();

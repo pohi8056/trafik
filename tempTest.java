@@ -1,5 +1,5 @@
 //file used temporarlly for testing methods
-
+/*
 public class tempTest{
 
     
@@ -92,13 +92,14 @@ public class tempTest{
 
 
 
-	*/
+	
 
 
-
+	garage[1].printSum();
 		  
     }
 	
  
-
+    
 }
+*/

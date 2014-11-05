@@ -10,14 +10,14 @@ public class TrafficSystem {
     private Light s1;
     private Light s2;
     private Car[] garage;
-    Car switcher;
+    private Car switcher;
     private Car[] statisticsGarage;
 
     // Diverse attribut for simuleringsparametrar (ankomstintensiteter,
     // destinationer...)
 
-    private CarPosition dest1;
-    private CarPosition dest2;
+    private CarPosition dest1 = new CarPosition(r1);
+    private CarPosition dest2 = new CarPosition(r2); 
 
     // Diverse attribut for statistiksamling
     //....    
@@ -77,12 +77,14 @@ public class TrafficSystem {
 	// Skapa bilar, lagg in och ta ur pa de olika Lane-kompenenterna
 	if(carIndex < carAmount){  //OK, not great
 	    r0.putLast(garage[carIndex]); //needs adjustments
+	    
 	    switcher = r0.getFirst();
-	    //
-	    if(r1.firstCar() != null){
+	    
+	    
+	    if(r1.firstCar() != null && s1.isGreen()){
 		statisticsGarage[carStatInt++] = r1.getFirst();
 	    }
-	    if(r2.firstCar() != null){
+	    if(r2.firstCar() != null && s2.isGreen()){
 		statisticsGarage[carStatInt++] = r2.getFirst();
 	    }
 	    //
@@ -106,10 +108,14 @@ public class TrafficSystem {
 	else{
 	    switcher = r0.getFirst();
 	    //
-	    if(r1.firstCar() != null){
+	    
+	    switcher = r0.getFirst();
+	    
+	    //
+	    if(r1.firstCar() != null && s1.isGreen()){
 		statisticsGarage[carStatInt++] = r1.getFirst();
 	    }
-	    if(r2.firstCar() != null){
+	    if(r2.firstCar() != null && s2.isGreen()){
 		statisticsGarage[carStatInt++] = r2.getFirst();
 	    }
 	    //
@@ -138,9 +144,13 @@ public class TrafficSystem {
 	System.out.println("Main road: ");
 	r0.toStringLane();
 	System.out.println("");
+	System.out.println("S1: " + s1.toString());
+	System.out.println("Is forward green?: " + s1.isGreen());
 	System.out.println("Forward: ");
 	r1.toStringLane();
 	System.out.println("");
+	System.out.println("S2: " + s2.toString());
+	System.out.println("Is Turn green?: " + s2.isGreen());
 	System.out.println("Turn: ");
 	r2.toStringLane();
 	System.out.println("");

@@ -15,7 +15,7 @@ public class Car {
 
     	// Uppdatera bilen ett tidssteg
 
-	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!ct
 	//
 	//Skall inte bornTime vara constant?
 	//Eftersom den anger time of birth
@@ -23,7 +23,7 @@ public class Car {
 	//Its probably right, just curious.
 	//Not update currentPos?
     }
-
+    
     public void randomDestination(CarPosition s1, CarPosition s2){
 	Random random = new Random();
 	int randomNumber = random.nextInt(1 - 0 + 1) + 1;
@@ -35,6 +35,7 @@ public class Car {
 	}
 	//randomdest
     }
+    
 
 
     public Car(int lifetime, CarPosition destination, int carNr){
@@ -81,7 +82,7 @@ public class Car {
 }
 
     public CarPosition getDestination(){
-	return destination;
+	return this.destination;
 }
     
     //*******tempForTest********
