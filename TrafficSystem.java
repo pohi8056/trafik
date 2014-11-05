@@ -91,7 +91,7 @@ public class TrafficSystem {
 		
 	    }
 	    //
-	    if(r1.firstCar() != null){
+	    if(r1.firstCar() != null && s1.isGreen()){
 		statisticsGarage[carStatInt++] = r1.getFirst();
 	    }
 	    if(r2.firstCar() != null && s2.isGreen()){
