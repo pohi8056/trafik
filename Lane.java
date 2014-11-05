@@ -11,7 +11,7 @@ public class Lane {
     //TEMP
     protected Car temporaryParkingSpot;
     //TEMP
-
+    
     public Lane(int n) {
 	// Konstruerar ett Lane-objekt med plats for n fordon
 	// Samt lanker ihop varje CarPosition med forward for den framfor
@@ -23,6 +23,19 @@ public class Lane {
 	for (int i = (n-1); i > 0; i--) {
 	    theLane[i].updateForward(theLane[i-1]);  
 	}
+    }
+
+
+    public boolean isEmpty(){
+	boolean trueFalse = true;
+	for(int i = 0; i < getLength(); i++){
+	    if(theLane[i].get() != null){
+		trueFalse = false;
+		break;
+	    }
+	}
+	return trueFalse;
+
     }
     
     public boolean matchEnd(CarPosition target)
@@ -53,11 +66,16 @@ public class Lane {
 	// (om det gar). (Fordonet pa plats 0 tas bort utifran 
 	// mm h a metoden nedan.)
 
+// TODO: SAVE CAR!!!!
 	int len = getLength();
 	for (int i = 1; i < len; i++) {
 	    temporaryParkingSpot = theLane[0].get();
+	    //theLane[0].setNull();         /* WARNING */
+	    //theLane[i].getFirst();
 
+	    //System.out.println("IM HERE");
 	    if(theLane[i - 1].isThereACar() != true){
+		//System.out.println("Number: " + i +"Lane: "+ theLane[i-1].isThereACar());
 		if(theLane[i].isThereACar()){   
 		    theLane[i].get().setPosition(theLane[i - 1]);
 		    theLane[i - 1].set(theLane[i].get());

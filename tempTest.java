@@ -34,7 +34,6 @@ public class tempTest{
 	for (int i = 0; i < 15; i++) {
 	    garage[i] = new Car(1000 + i,destS1,i); //Default destination doesn't work
 	}
-	CarPosition r = new CarPosition(road1);
 
 	//USE RANDOM GEN LATER
 	garage[0].randomDestination(destS1, destS2);
@@ -76,7 +75,7 @@ public class tempTest{
 	    System.out.println("");
 	    road1.getFirst();  //PUT IN STATISTIC GARAGE LATER FOR EVALUATION
 	    road2.getFirst();  //PUT IN STATISTIC GARAGE LATER FOR EVALUATION
-
+	    
 	    road0.step();
 	    road1.step();
 	    road2.step();
