@@ -23,6 +23,25 @@ public class Car {
 	//Its probably right, just curious.
 	//Not update currentPos?
     }
+    
+
+    
+
+    public Car(int lifetime, CarPosition destination, int carNr){
+	this.destination = destination;
+	this.lifetime = lifetime;
+
+	//added carNR
+	this.carNr = carNr;
+    }
+
+
+    public Car(int lifetime, int carNr){
+	this.lifetime = lifetime;
+	this.carNr = carNr;
+	
+    }
+
 
     public void randomDestination(CarPosition s1, CarPosition s2){
 	Random random = new Random();
@@ -35,22 +54,6 @@ public class Car {
 	}
 	//randomdest
     }
-
-
-    public Car(int lifetime, CarPosition destination, int carNr){
-	this.destination = destination;
-	this.lifetime = lifetime;
-
-	//added carNR
-	this.carNr = carNr;
-    }
-
-    public Car(int lifetime, int carNr){
-	this.lifetime = lifetime;
-	this.carNr = carNr;
-	
-    }
-
 
     public void setPosition(CarPosition currentPosition){
 	this.currentPosition = currentPosition;

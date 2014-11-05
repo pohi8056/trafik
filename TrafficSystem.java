@@ -16,8 +16,8 @@ public class TrafficSystem {
     // Diverse attribut for simuleringsparametrar (ankomstintensiteter,
     // destinationer...)
 
-    private CarPosition dest1;
-    private CarPosition dest2;
+    private CarPosition dest1 = new CarPosition(r1);
+    private CarPosition dest2 = new CarPosition(r2);
 
     // Diverse attribut for statistiksamling
     //....    
@@ -55,11 +55,13 @@ public class TrafficSystem {
 	garage = new Car[carAmount];
 	//
 	statisticsGarage = new Car[carAmount];
+
 	//
 	for(int i = 0; i < carAmount; i++){
 	    garage[i] = new Car(time, 1000 + i);
 	    garage[i].randomDestination(dest1, dest2);
 	}
+	r0.putLast(garage[0]);
     }
     
 
@@ -76,8 +78,18 @@ public class TrafficSystem {
 	// Stega systemet ett tidssteg m h a komponenternas step-metoder
 	// Skapa bilar, lagg in och ta ur pa de olika Lane-kompenenterna
 	if(carIndex < carAmount){  //OK, not great
-	    r0.putLast(garage[carIndex]); //needs adjustments
-	    switcher = r0.getFirst();
+	   
+	    r0.step();
+	    r1.step();
+	    r2.step();
+
+	    if(carIndex == 0){
+		r0.putLast(garage[carIndex + 1]); //needs adjustments
+		switcher = r0.getFirst();
+	    }else{
+		r0.putLast(garage[carIndex]); //needs adjustments
+		
+	    }
 	    //
 	    if(r1.firstCar() != null){
 		statisticsGarage[carStatInt++] = r1.getFirst();
@@ -89,8 +101,11 @@ public class TrafficSystem {
 	    if(switcher != null){
 		if(switcher.getDestination() == dest1){
 		    r1.putLast(switcher);
+
 		}else{
 		    r2.putLast(switcher);
+		    //System.out.println(switcher.getDestination());
+
 		}
 	    }
 	    
@@ -98,12 +113,12 @@ public class TrafficSystem {
 	    
 	    s1.step();
 	    s2.step();
-	    r0.step();
-	    r1.step();
-	    r2.step();
+
 	    carIndex++;
 	}
 	else{
+	   
+
 	    switcher = r0.getFirst();
 	    //
 	    if(r1.firstCar() != null){
@@ -128,11 +143,11 @@ public class TrafficSystem {
 	    
 	}
     }
-
+    
     public void printStatistics() {
 	// Skriv statistiken samlad sa har langt
     }
-
+    
     public void print() {
 
 	System.out.println("Main road: ");
