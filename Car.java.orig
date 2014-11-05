@@ -1,39 +1,77 @@
+import java.util.Random; //imported randomgen
 
 
 public class Car {
-
-    private int bornTime;
+    private int carNr;
+    private int lifetime;
     private CarPosition destination; 
-
+    private int intPosition;
     private CarPosition currentPosition;
     
     public void step()
     {
+	    lifetime += 1;
+	    //}
+
     	// Uppdatera bilen ett tidssteg
+
+	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!ct
+	//
+	//Skall inte bornTime vara constant?
+	//Eftersom den anger time of birth
+	//Men varför finns då step method?
+	//Its probably right, just curious.
+	//Not update currentPos?
+    }
+    
+<<<<<<< HEAD
+    public void randomDestination(CarPosition s1, CarPosition s2){
+	Random random = new Random();
+	int randomNumber = random.nextInt(1 - 0 + 1) + 1;
+	
+	if(randomNumber == 1){
+	    this.setDestination(s1);
+	}else{
+	    this.setDestination(s2);
+	}
+	//randomdest
+    }
+    
+
+=======
+
+    
+>>>>>>> 7e7e784aa0e1e5243bf10633ee490f5f3d22da5d
+
+    public Car(int lifetime, CarPosition destination, int carNr){
+	this.destination = destination;
+	this.lifetime = lifetime;
+
+	//added carNR
+	this.carNr = carNr;
     }
 
-    //lol
+
+    public Car(int lifetime, int carNr){
+	this.lifetime = lifetime;
+	this.carNr = carNr;
+	
+    }
 
 
-    public Car(int bornTime, CarPosition destination){
-	this.destination = destination;
-	this.bornTime = borntime;
-<<<<<<< HEAD
-<<<<<<< HEAD
-	//Changed this, bitch.
-=======
-	//Not Changed, bitcha.
-	//Changed, bitchy.
->>>>>>> d0efd748c7ddff30848b0162ad652a74893b97b1
-=======
-	//Changed, bitchy.
-=======
-	//Changed, bitcha.
->>>>>>> 025c00b07620ac7c828e8d75477a5271e56bd2a4
->>>>>>> 6a586fc2dfd5556d2a6c71b9c74b9690cc751401
-}
+    public void randomDestination(CarPosition s1, CarPosition s2){
+	Random random = new Random();
+	int randomNumber = random.nextInt(1 - 0 + 1) + 1;
+	
+	if(randomNumber == 1){
+	    this.setDestination(s1);
+	}else{
+	    this.setDestination(s2);
+	}
+	//randomdest
+    }
 
-    public CarPosition setPosition(CarPosition currentPosition){
+    public void setPosition(CarPosition currentPosition){
 	this.currentPosition = currentPosition;
 }
 
@@ -41,17 +79,49 @@ public class Car {
 	return currentPosition;
 }
 
-    public CarPosition setDestination(CarPosition destination){
+    public int getCarNr(){
+	return this.carNr;
+}
+    /*
+    public boolean randomDestination(){
+	Random random = new Random();
+	int randomNumber = random.nextInt(2 - 1) + 1;
+	
+	if(randomNumber == 1){
+	    return true;
+	}else{
+	    return false;
+	}
+	//randomdest
+    }
+    */
+    public void setDestination(CarPosition destination){
 	this.destination = destination;
 }
 
     public CarPosition getDestination(){
-	return destination;
+	return this.destination;
 }
+    
+    //*******tempForTest********
+    //
+    public void setIntPosition(int i){
+	this.intPosition = i;
+    }
+    public int getIntPosition(){
+	return intPosition;
+    }
+    //
+    //*******tempForTest********
 
 
-    public String toString() {
-    	return "";
+
+    public String toStringCar() {
+    	return "Car(bornTime =" + this.lifetime +", destination =" + this.destination + ", currentPosition =" + this.currentPosition + ", carNr:" + this.carNr + ", IntPos: " + getIntPosition() +")";
     	}
 	
+
+
+
+
 }
