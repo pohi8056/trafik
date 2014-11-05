@@ -43,7 +43,13 @@ public class Car {
 
 	//added carNR
 	this.carNr = carNr;
-}
+    }
+
+    public Car(int lifetime, int carNr){
+	this.lifetime = lifetime;
+	this.carNr = carNr;
+	
+    }
 
 
     public void setPosition(CarPosition currentPosition){
