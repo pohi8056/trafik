@@ -8,8 +8,13 @@ public class Light {
 	this.green = green;
     	}
 
-    public void    step() { 
-	this.time++;
+    public void    step() {
+	if(time == period - 1){
+	    time = 0;
+	}
+	else{
+	    this.time++;
+	}
     }
 
     public boolean isGreen()   {

@@ -15,17 +15,6 @@ public class TrafficSystem {
 
 
     
-    public CarPosition randomDestination(){
-	Random random = new Random();
-	int randomNumber = random.nextInt(2 - 1) + 1;
-	
-	if(randomNumber == 1){
-	    return true;
-	}else{
-	    return false;
-	}
-	//randomdest
-    }
 
 
     // Diverse attribut för statistiksamling
