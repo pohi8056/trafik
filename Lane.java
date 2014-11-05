@@ -131,10 +131,10 @@ public class Lane {
     public void toStringLane() {
 	for(int i = 0; i < getLength(); i++){
 	    if(theLane[i].get() != null){
-	    System.out.println("Lane " + i + ": \t" + theLane[i].get().toStringCar());
+	    System.out.println("Position " + i + ": \t" + theLane[i].get().toStringCar());
 	    }
 	    else{
-		System.out.println("Lane " + i + ": \t null");
+		System.out.println("Position " + i + ": \t <EMPTY>");
 	    }
 	}
     }

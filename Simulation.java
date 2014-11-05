@@ -74,8 +74,8 @@ public class Simulation {
 	    system.print();
 	    system.step();
 	}
-
-
+	system.print();
+	
 	// Skapar ett TrafficSystem
 	// Utfor stegningen, anropar utskriftsmetoder
 	
