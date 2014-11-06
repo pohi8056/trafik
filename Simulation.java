@@ -65,9 +65,10 @@ public class Simulation {
 
 
     public static void main(String [] args) {
+	//TrafficSystem system = new TrafficSystem(10, 5, 5, 3);
 
-	TrafficSystem system = new TrafficSystem(10, 5, 5, 3);
-	system.initCars(15);
+	TrafficSystem system = new TrafficSystem(3, 5, 5, 1);
+	system.initCars(100);
 		    
 	while(system.checkLanesNull() != true){
 	    system.print();

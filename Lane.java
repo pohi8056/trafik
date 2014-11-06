@@ -2,9 +2,14 @@
 public class Lane {
 
     public static class OverflowException extends RuntimeException {
+
+	public OverflowException(String s){
+	    super(s);
+	}
         // Undantag som kastas nar det inte gick att lagga 
         // in en ny bil pa vagen
     }
+
 
     protected CarPosition[] theLane;
 
@@ -116,16 +121,20 @@ public class Lane {
 
 
     public void putLast(Car c) throws OverflowException {
-	if(lastFree()){
-	    theLane[getLength() - 1].set(c);
-	    c.setPosition(theLane[getLength() - 1]);
-
-	    //*******************TEST************************
-	    theLane[getLength() - 1].get().setIntPosition(getLength() - 1);
-	    //*******************TEST************************
+	try {
+	    if (lastFree()){
+		theLane[getLength() - 1].set(c);
+		c.setPosition(theLane[getLength() - 1]);
+		theLane[getLength() - 1].get().setIntPosition(getLength() - 1);
+	    }
+	    else{
+		throw new OverflowException("Unable to insert new car!");
+	    }
 	}
-	// Stall en bil pa sista platsen pa vagen
-	// (om det gar).
+	catch (OverflowException e) {
+	    System.out.println("Error: " + e.getMessage());
+	    e.printStackTrace();
+	}
     }
 
     public void toStringLane() {
