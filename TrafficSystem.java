@@ -78,18 +78,26 @@ public class TrafficSystem {
 	// Stega systemet ett tidssteg m h a komponenternas step-metoder
 	// Skapa bilar, lagg in och ta ur pa de olika Lane-kompenenterna
 	if(carIndex < carAmount){  //OK, not great
-	   
+	    switcher = r0.getFirst();
+
 	    r0.step();
 	    r1.step();
 	    r2.step();
+	    s1.step();
+	    s2.step();
 
 	    if(carIndex == 0){
 		r0.putLast(garage[carIndex + 1]); //needs adjustments
-		switcher = r0.getFirst();
+
 	    }else{
 		r0.putLast(garage[carIndex]); //needs adjustments
-		
+		//switcher = r0.getFirst();
+
 	    }
+
+
+
+
 	    //
 	    if(r1.firstCar() != null && s1.isGreen()){
 		statisticsGarage[carStatInt++] = r1.getFirst();
@@ -109,8 +117,7 @@ public class TrafficSystem {
 	    
 	    
 	    
-	    s1.step();
-	    s2.step();
+
 
 	    carIndex++;
 	}
@@ -120,7 +127,6 @@ public class TrafficSystem {
 	    switcher = r0.getFirst();
 	    //
 	    
-	    switcher = r0.getFirst();
 	    
 	    //
 	    if(r1.firstCar() != null && s1.isGreen()){
