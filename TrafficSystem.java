@@ -121,11 +121,13 @@ public class TrafficSystem {
 	    r2.step();
 	    //toLastIfFree(r0, garage[carIndex]);
 
-	    r0.step();
+	    //  r0.step();
 	    
 	    switcher = r0.firstCar();
 
-	    switchLanes(switcher,r1,r2,dest1,dest2); 
+	    switchLanes(switcher,r1,r2,dest1,dest2);
+	    r0.step();
+
 	    //	    r0.toStringLane();
 	    toLastIfFree(r0, garage[carIndex]);
 	    //	    r0.toStringLane();
@@ -139,11 +141,13 @@ public class TrafficSystem {
 
 	    r1.step();
 	    r2.step();
-	    r0.step();
+	    //	    r0.step();
 
 	    switcher = r0.getFirst();
-    
+
 	    switchLanes(switcher, r1, r2, dest1, dest2);
+	    r0.step();
+
 
 	    s1.step();
 	    s2.step();
