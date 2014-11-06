@@ -91,7 +91,7 @@ public class Lane {
     }
 
     public Car getFirst() {
-	if(theLane[0] != null){
+	if(theLane[0].get() != null){
 	    theLane[0].setNull();
 	}
 	return temporaryParkingSpot;
@@ -106,7 +106,7 @@ public class Lane {
     
 
     public boolean lastFree() {
-	if(theLane[getLength() - 1] != null){
+	if(theLane[getLength() - 1].get() == null){
 	    return true;
 	}
     	return false;
@@ -116,7 +116,7 @@ public class Lane {
 
 
     public void putLast(Car c) throws OverflowException {
-	if(lastFree() == true){
+	if(lastFree()){
 	    theLane[getLength() - 1].set(c);
 	    c.setPosition(theLane[getLength() - 1]);
 

@@ -49,24 +49,32 @@ public class TrafficSystem {
         // Standardklassen Properties ar anvandbar for detta. 
     }
 
+    // TODO; IMPLEMENT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    public void addCarsToStatGarage(Lane road, Light s){
+	if(carStatInt < carAmount){
+	    if(road.firstCar() != null && s.isGreen()){
+		statisticsGarage[carStatInt] = road.getFirst();
+	    }
+	}
+    }
 
     public void initCars(int carAmount){
 	this.carAmount = carAmount;
 	garage = new Car[carAmount];
-	//
 	statisticsGarage = new Car[carAmount];
-
-	//
 	for(int i = 0; i < carAmount; i++){
 	    garage[i] = new Car(time, 1000 + i);
 	    garage[i].randomDestination(dest1, dest2);
 	}
-	r0.putLast(garage[0]);
+	//r0.toStringLane();
+	//garage[carAmount-1].toStringCar();
+	r0.putLast(garage[carIndex++]);
+	//r0.toStringLane();
+	//System.out.println("YEY");
     }
     
 
     public boolean checkLanesNull(){
-
 	if(r0.isEmpty() && r1.isEmpty() && r2.isEmpty()){
 	    return true;
 	}else {
@@ -74,81 +82,78 @@ public class TrafficSystem {
 	}
     }
 
+
+
+    public void toLastIfFree( Lane road , Car newCar){
+	if(road.lastFree()){
+	    //System.out.println(road.lastFree());
+	    road.putLast(newCar);
+	    //road.toStringLane();
+	    ++carIndex;
+	}
+    }
+    
+    public void switchLanes(Car switcherCar, Lane l1 , Lane l2, CarPosition d1, CarPosition d2){
+	if(switcherCar != null){
+	    if(switcherCar.getDestination() == dest1 && l1.lastFree()){
+		l1.putLast(r0.getFirst());
+	    }
+	    else{
+		if(l2.lastFree()){
+		    l2.putLast(r0.getFirst());
+		}
+	    }
+	}
+    }
+
     public void step() {
 	// Stega systemet ett tidssteg m h a komponenternas step-metoder
 	// Skapa bilar, lagg in och ta ur pa de olika Lane-kompenenterna
 	if(carIndex < carAmount){  //OK, not great
-	   
-	    r0.step();
+	    //for testing
+	    System.out.println("CarIndex: " + carIndex + " carAmount: " + carAmount);
+	    //for testing
+	    addCarsToStatGarage(r1, s1);
+	    addCarsToStatGarage(r2, s2);
+	    
+	    
 	    r1.step();
 	    r2.step();
+	    //toLastIfFree(r0, garage[carIndex]);
 
-	    if(carIndex == 0){
-		r0.putLast(garage[carIndex + 1]); //needs adjustments
-		switcher = r0.getFirst();
-	    }else{
-		r0.putLast(garage[carIndex]); //needs adjustments
-		
-	    }
-	    //
-	    if(r1.firstCar() != null && s1.isGreen()){
-		statisticsGarage[carStatInt++] = r1.getFirst();
-	    }
-	    if(r2.firstCar() != null && s2.isGreen()){
-		statisticsGarage[carStatInt++] = r2.getFirst();
-	    }
-	    //
-	    if(switcher != null){
-		if(switcher.getDestination() == dest1){
-		    r1.putLast(switcher);
+	    r0.step();
+	    
+	    switcher = r0.firstCar();
 
-		}else{
-		    r2.putLast(switcher);
-		}
-	    }
-	    
-	    
-	    
+	    switchLanes(switcher,r1,r2,dest1,dest2); 
+	    //	    r0.toStringLane();
+	    toLastIfFree(r0, garage[carIndex]);
+	    //	    r0.toStringLane();
+	    //System.out.println(garage[carIndex].toStringCar());
 	    s1.step();
 	    s2.step();
-
-	    carIndex++;
 	}
 	else{
-	   
+	    addCarsToStatGarage(r1, s1);
+	    addCarsToStatGarage(r2, s2);
 
-	    switcher = r0.getFirst();
-	    //
-	    
-	    switcher = r0.getFirst();
-	    
-	    //
-	    if(r1.firstCar() != null && s1.isGreen()){
-		statisticsGarage[carStatInt++] = r1.getFirst();
-	    }
-	    if(r2.firstCar() != null && s2.isGreen()){
-		statisticsGarage[carStatInt++] = r2.getFirst();
-	    }
-	    //
-	    if(switcher != null){
-		if(switcher.getDestination() == dest1){
-		    r1.putLast(switcher);
-		}else{
-		    r2.putLast(switcher);
-		}
-	    }
-	    s1.step();
-	    s2.step();
-	    r0.step();
 	    r1.step();
 	    r2.step();
-	    
+	    r0.step();
+
+	    switcher = r0.getFirst();
+    
+	    switchLanes(switcher, r1, r2, dest1, dest2);
+
+	    s1.step();
+	    s2.step();
 	}
     }
     
     public void printStatistics() {
 	// Skriv statistiken samlad sa har langt
     }
+
     
     public void print() {
 
