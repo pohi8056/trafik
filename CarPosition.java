@@ -4,16 +4,19 @@ public class CarPosition{
     //Added Position
     private int position;
     private Car currentCar = null; // null om ingen bil finns pq positionen
-	
-    private Lane owner;
-	
+		
     private CarPosition forward;
     private CarPosition turn;
+
+
+    private final Lane owner;
 	
-    public CarPosition(Lane a_Owner)
+    public CarPosition(Lane owner)
     {
 
-	owner = a_Owner;
+	this.owner = owner;
+	this.owner = owner;
+
     }
 
 
