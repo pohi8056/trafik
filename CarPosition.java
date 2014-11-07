@@ -9,12 +9,11 @@ public class CarPosition{
     private CarPosition turn;
 
 
-    private final Lane owner;
+    private Lane owner;
 	
     public CarPosition(Lane owner)
     {
 
-	this.owner = owner;
 	this.owner = owner;
 
     }
