@@ -13,10 +13,7 @@ public class CarPosition{
 	
     public CarPosition(Lane owner)
     {
-
 	this.owner = owner;
-	this.owner = owner;
-
     }
 
 

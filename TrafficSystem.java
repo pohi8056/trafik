@@ -28,6 +28,7 @@ public class TrafficSystem {
     private int carAmount = 0;
     private int carStatInt = 0;
     
+    
 
 
     public TrafficSystem(int roadlen1, int roadlen2, int period, int green) {
@@ -49,7 +50,6 @@ public class TrafficSystem {
         // Standardklassen Properties ar anvandbar for detta. 
     }
 
-    // TODO; IMPLEMENT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     public void addCarsToStatGarage(Lane road, Light s){
 	if(carStatInt < carAmount){
 	    if(road.firstCar() != null && s.isGreen()){
@@ -66,11 +66,9 @@ public class TrafficSystem {
 	    garage[i] = new Car(time, 1000 + i);
 	    garage[i].randomDestination(dest1, dest2);
 	}
-	//r0.toStringLane();
-	//garage[carAmount-1].toStringCar();
+
 	r0.putLast(garage[carIndex++]);
-	//r0.toStringLane();
-	//System.out.println("YEY");
+
     }
     
 
@@ -85,12 +83,19 @@ public class TrafficSystem {
 
 
     public void toLastIfFree( Lane road , Car newCar){
-	if(road.lastFree()){
-	    //System.out.println(road.lastFree());
+	try {
 	    road.putLast(newCar);
-	    //road.toStringLane();
 	    ++carIndex;
 	}
+	catch (OverflowException e) {
+	    System.out.println("Error " + e.getMessage());
+	    e.printStackTrace();
+	}
+	    //*****************************************************************************************
+	    //*****************************************************************************************
+	    // TODO: GIVES COUNT ERROR AFTER EXCEPTION INSERTION
+	    //*****************************************************************************************
+	    //*****************************************************************************************
     }
     
     public void switchLanes(Car switcherCar, Lane l1 , Lane l2, CarPosition d1, CarPosition d2){
@@ -112,42 +117,36 @@ public class TrafficSystem {
 	if(carIndex < carAmount){  //OK, not great
 	    //for testing
 	    System.out.println("CarIndex: " + carIndex + " carAmount: " + carAmount);
-	    //for testing
+	    //For testing
 	    addCarsToStatGarage(r1, s1);
 	    addCarsToStatGarage(r2, s2);
 	    
-	    
 	    r1.step();
 	    r2.step();
-	    //toLastIfFree(r0, garage[carIndex]);
-
-	    //  r0.step();
 	    
 	    switcher = r0.firstCar();
-
 	    switchLanes(switcher,r1,r2,dest1,dest2);
+
 	    r0.step();
 
-	    //	    r0.toStringLane();
 	    toLastIfFree(r0, garage[carIndex]);
-	    //	    r0.toStringLane();
-	    //System.out.println(garage[carIndex].toStringCar());
+
 	    s1.step();
 	    s2.step();
 	}
 	else{
+	    System.out.println("CarIndex: " + carIndex + " carAmount: " + carAmount);
+
 	    addCarsToStatGarage(r1, s1);
 	    addCarsToStatGarage(r2, s2);
 
 	    r1.step();
 	    r2.step();
-	    //	    r0.step();
 
 	    switcher = r0.getFirst();
-
 	    switchLanes(switcher, r1, r2, dest1, dest2);
-	    r0.step();
 
+	    r0.step();
 
 	    s1.step();
 	    s2.step();

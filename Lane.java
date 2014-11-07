@@ -1,7 +1,7 @@
 
 public class Lane {
 
-    public static class OverflowException extends RuntimeException {
+    /*  public static class OverflowException extends RuntimeException {
 
 	public OverflowException(String s){
 	    super(s);
@@ -9,15 +9,14 @@ public class Lane {
         // Undantag som kastas nar det inte gick att lagga 
         // in en ny bil pa vagen
     }
-
+    */
 
     protected CarPosition[] theLane;
 
-    //TEMP
     protected Car temporaryParkingSpot;
-    //TEMP
     
     public Lane(int n) {
+	assert (n > 0) : "Cannot create Lane with negative length.";
 	// Konstruerar ett Lane-objekt med plats for n fordon
 	// Samt lanker ihop varje CarPosition med forward for den framfor
 	theLane = new CarPosition[n];
@@ -121,6 +120,17 @@ public class Lane {
 
 
     public void putLast(Car c) throws OverflowException {
+	    if (lastFree()){
+		theLane[getLength() - 1].set(c);
+		c.setPosition(theLane[getLength() - 1]);
+		theLane[getLength() - 1].get().setIntPosition(getLength() - 1);
+	    }	    
+	    else{
+		throw new OverflowException("Unable to insert new car!");
+	    }
+    }
+
+    /*   public void putLast(Car c) throws OverflowException {
 	try {
 	    if (lastFree()){
 		theLane[getLength() - 1].set(c);
@@ -136,6 +146,7 @@ public class Lane {
 	    e.printStackTrace();
 	}
     }
+    */
 
     public void toStringLane() {
 	for(int i = 0; i < getLength(); i++){
