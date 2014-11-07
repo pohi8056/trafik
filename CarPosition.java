@@ -11,7 +11,7 @@ public class CarPosition{
 
     private Lane owner;
 	
-    public CarPosition(Lane owner)
+    public CarPosition(final Lane owner)
     {
 
 	this.owner = owner;
