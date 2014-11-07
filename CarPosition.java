@@ -19,9 +19,6 @@ public class CarPosition{
     }
 
 
-
-
-	
     public boolean isEnd(CarPosition target)
     {
 	return owner.matchEnd(target);

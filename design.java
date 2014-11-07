@@ -56,11 +56,13 @@
   blir Lane-klassen enklare.  
     
 */
-
 
 
 // Skiss av klasser. Angivna klasser och metoder skall finnas.
 // Det är tillåtet att tillfoga fler attribut och metoder
+
+
+/*
 
 public class Car {
 
@@ -68,9 +70,9 @@ public class Car {
     private int dest; // 1 för rakt fram, 2 för vänstersväng
 
     // konstruktor och get-metoder
-    ...
+    
 
-    public String toString() {...}
+    public String toString() {}
 	
 }
 
@@ -81,7 +83,7 @@ public class Light {
     private int time;  // Intern klocka: 0, 1, ... period-1, 0, 1 ...
     private int green; // Signalen grön när time<green 
 
-    public Light(int period, int green) {...}
+    public Light(int period, int green) {}
 
     public void    step() { 
        // Stegar fram klocka ett steg
@@ -91,7 +93,7 @@ public class Light {
 	// Returnerar true om time<green, annars false
     }
 
-    public String  toString()  {... }
+    public String  toString()  {}
 	
 }
 
@@ -134,11 +136,10 @@ public class Lane {
 	// (om det går).
     }
 
-    public String toString() {...}
+    public String toString() {}
 
 }
 
-
 
 public class TrafficSystem {
     // Definierar de vägar och signaler som ingår i det 
@@ -156,20 +157,20 @@ public class TrafficSystem {
     // destinationer...)
 
     // Diverse attribut för statistiksamling
-    ....    
+       
     
     private int time = 0;
 
-    public TrafficSystem() {...}
+       public TrafficSystem() {}
 
-    public readParameters() {
+        public readParameters() {
 	// Läser in parametrar för simuleringen
 	// Metoden kan läsa från terminalfönster, dialogrutor
 	// eller från en parameterfil. Det sista alternativet
 	// är att föredra vid uttestning av programmet eftersom
 	// man inte då behöver mata in värdena vid varje körning.
         // Standardklassen Properties är användbar för detta. 
-    }
+        }
 
     public void step() {
 	// Stega systemet ett tidssteg m h a komponenternas step-metoder
@@ -195,7 +196,10 @@ public class Simulation {
 	// Skapar ett TrafficSystem
 	// Utför stegningen, anropar utskriftsmetoder
 
-	...
+	
 
     }
 }
+
+
+*/
