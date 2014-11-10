@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 
 
 /*
+=======
+ /*
+>>>>>>> 1354090ee0eea35bc7cae941de30d53ed6ee295e
   Modell för trafiksimulering
   ===========================
 
@@ -70,7 +74,7 @@ public class Simulation {
 	//TrafficSystem system = new TrafficSystem(10, 5, 5, 3);
 
 	TrafficSystem system = new TrafficSystem(3, 5, 5, 1);
-	system.initCars(100);
+	system.initCars(20);
 		    
 	while(system.checkLanesNull() != true){
 	    system.print();
@@ -78,6 +82,7 @@ public class Simulation {
 
 	}
 	system.print();
+<<<<<<< HEAD
 
 
 
@@ -87,6 +92,10 @@ public class Simulation {
 
 
 
+=======
+	system.printStatistics();
+	
+>>>>>>> 1354090ee0eea35bc7cae941de30d53ed6ee295e
 	// Skapar ett TrafficSystem
 	// Utfor stegningen, anropar utskriftsmetoder
 	

@@ -53,7 +53,7 @@ public class TrafficSystem {
     public void addCarsToStatGarage(Lane road, Light s){
 	if(carStatInt < carAmount){
 	    if(road.firstCar() != null && s.isGreen()){
-		statisticsGarage[carStatInt] = road.getFirst();
+		statisticsGarage[carStatInt++] = road.getFirst();
 	    }
 	}
     }
@@ -83,30 +83,30 @@ public class TrafficSystem {
 
 
     public void toLastIfFree( Lane road , Car newCar){
-	try {
-	    road.putLast(newCar);
-	    ++carIndex;
-	}
-	catch (OverflowException e) {
-	    System.out.println("Error " + e.getMessage());
-	    e.printStackTrace();
-	}
-
+	    try {
+		road.putLast(newCar);
+		++carIndex;
+	    }
+	    catch (OverflowException e) {
+		System.out.println("Error " + e.getMessage());
+		e.printStackTrace();
+	    }
+    }
 		    
 	//*****************************************************************************************
 	//*****************************************************************************************
 	// TODO: GIVES COUNT ERROR AFTER EXCEPTION INSERTION
 	//*****************************************************************************************
 	//*****************************************************************************************
-    }
+    
     
     public void switchLanes(Car switcherCar, Lane l1 , Lane l2, CarPosition d1, CarPosition d2){
 	if(switcherCar != null){
-	    if(switcherCar.getDestination() == dest1 && l1.lastFree()){
+	    if(switcherCar.getDestination() == d1 && l1.lastFree()){
 		l1.putLast(r0.getFirst());
 	    }
 	    else{
-		if(l2.lastFree()){
+		if(l2.lastFree() && switcherCar.getDestination() == d2){
 		    l2.putLast(r0.getFirst());
 		}
 	    }
@@ -128,6 +128,9 @@ public class TrafficSystem {
 	    r2.step();
 	    
 	    switcher = r0.firstCar();
+	    if(switcher != null){
+		System.out.println("****SWITCHER****\n\n   " + switcher.toStringCar() + "   \n\n****        ****");
+	    }
 
 	    switchLanes(switcher,r1,r2,dest1,dest2);
 	    r0.step();
@@ -146,7 +149,7 @@ public class TrafficSystem {
 	    r1.step();
 	    r2.step();
 
-	    switcher = r0.getFirst();
+	    switcher = r0.firstCar();
 
 	    switchLanes(switcher, r1, r2, dest1, dest2);
 	    r0.step();
@@ -159,14 +162,19 @@ public class TrafficSystem {
     
     public void printStatistics() {
 	// Skriv statistiken samlad sa har langt
+	for (int i = 0; i < statisticsGarage.length; i++) {
+	    if (statisticsGarage[i] != null){
+		System.out.println(statisticsGarage[i].toStringCar());
+	    }
+	    else{
+		System.out.println("Car is null");
+	    }
+	}
     }
 
     
     public void print() {
 
-	System.out.println("Main road: ");
-	r0.toStringLane();
-	System.out.println("");
 	System.out.println("S1: " + s1.toString());
 	System.out.println("Is forward green?: " + s1.isGreen());
 	System.out.println("Forward: ");
@@ -177,6 +185,12 @@ public class TrafficSystem {
 	System.out.println("Turn: ");
 	r2.toStringLane();
 	System.out.println("");
+
+	System.out.println("Main road: ");
+	r0.toStringLane();
+	System.out.println("");
+	System.out.println("*******************************************");
+
 	// Skriv ut en grafisk representation av kosituationen
 	// med hjalp av klassernas toString-metoder
     }
