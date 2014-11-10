@@ -12,6 +12,10 @@ public class TrafficSystem {
     private Car[] garage;
     private Car switcher;
     private Car[] statisticsGarage;
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RED = "\u001B[31m";
+
 
     // Diverse attribut for simuleringsparametrar (ankomstintensiteter,
     // destinationer...)
@@ -172,16 +176,27 @@ public class TrafficSystem {
 	}
     }
 
+
+
     
     public void print() {
 
 	System.out.println("S1: " + s1.toString());
-	System.out.println("Is forward green?: " + s1.isGreen());
+	if(s1.isGreen()){
+	    System.out.println("Is forward green?: " + ANSI_GREEN + s1.isGreen() + ANSI_RESET);
+	}else{
+	    System.out.println("Is forward green?: " + ANSI_RED + s1.isGreen() + ANSI_RESET);
+
+	}
 	System.out.println("Forward: ");
 	r1.toStringLane();
 	System.out.println("");
 	System.out.println("S2: " + s2.toString());
-	System.out.println("Is Turn green?: " + s2.isGreen());
+	if(s2.isGreen()){
+	System.out.println("Is Turn green?: " + ANSI_GREEN+ s2.isGreen() + ANSI_RESET);
+	}else{
+	    System.out.println("Is Turn green?: " + ANSI_RED+ s2.isGreen() + ANSI_RESET);
+	}
 	System.out.println("Turn: ");
 	r2.toStringLane();
 	System.out.println("");

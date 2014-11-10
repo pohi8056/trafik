@@ -78,7 +78,13 @@ public class Simulation {
 	while(system.checkLanesNull() != true){
 	    system.print();
 	    system.step();
-
+	    try {
+		Thread.sleep(2000); 
+		System.out.print("\033[H\033[2J");
+		System.out.flush();
+	    } catch(InterruptedException ex) {
+		Thread.currentThread().interrupt();
+	    }    
 	}
 	system.print();
 
@@ -86,7 +92,7 @@ public class Simulation {
 	
 	// Skapar ett TrafficSystem
 	// Utfor stegningen, anropar utskriftsmetoder
-	
+
 
 
 
