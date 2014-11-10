@@ -68,7 +68,7 @@ public class Simulation {
 	//TrafficSystem system = new TrafficSystem(10, 5, 5, 3);
 
 	TrafficSystem system = new TrafficSystem(3, 5, 5, 1);
-	system.initCars(100);
+	system.initCars(20);
 		    
 	while(system.checkLanesNull() != true){
 	    system.print();
@@ -76,7 +76,7 @@ public class Simulation {
 
 	}
 	system.print();
-
+	system.printStatistics();
 	
 	// Skapar ett TrafficSystem
 	// Utfor stegningen, anropar utskriftsmetoder
