@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 
 /*
@@ -82,20 +81,9 @@ public class Simulation {
 
 	}
 	system.print();
-<<<<<<< HEAD
 
-
-
-
-
-
-
-
-
-=======
 	system.printStatistics();
 	
->>>>>>> 1354090ee0eea35bc7cae941de30d53ed6ee295e
 	// Skapar ett TrafficSystem
 	// Utfor stegningen, anropar utskriftsmetoder
 	
