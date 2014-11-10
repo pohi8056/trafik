@@ -8,16 +8,12 @@ public class CarPosition{
     private CarPosition forward;
     private CarPosition turn;
 
-
     private Lane owner;
 	
     public CarPosition(final Lane owner)
     {
-
 	this.owner = owner;
-
     }
-
 
     public boolean isEnd(CarPosition target)
     {
@@ -79,7 +75,7 @@ public class CarPosition{
 
     public void setNull(){
 	this.currentCar = null;
-}
+    }
 
     /*
 
@@ -87,12 +83,10 @@ public class CarPosition{
 
      */
 
-
     //added getPos
     public int getPosition(){
 	return position;
     }
-
 
     //added setPos
     public void setPosition(int pos){

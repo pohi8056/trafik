@@ -12,7 +12,6 @@ public class Lane {
     */
 
     protected CarPosition[] theLane;
-
     protected Car temporaryParkingSpot;
     
     public Lane(int n) {
@@ -158,8 +157,4 @@ public class Lane {
 	    }
 	}
     }
-
-
-
-
 }
