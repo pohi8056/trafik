@@ -1,4 +1,5 @@
- /*
+import java.io.*; 
+/*
   Modell för trafiksimulering
   ===========================
 
@@ -77,7 +78,19 @@ public class Simulation {
 	}
 	system.print();
 
-	
+
+
+	final String cmd = "ls";
+
+
+	try {
+    // Run ls command
+	    Process process = Runtime.getRuntime().exec("ls");
+	} catch (Exception e) {
+	    e.printStackTrace(System.err);
+	}
+
+
 	// Skapar ett TrafficSystem
 	// Utfor stegningen, anropar utskriftsmetoder
 	
