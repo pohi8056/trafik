@@ -1,5 +1,9 @@
 public class OverflowException extends RuntimeException {
     
+    public OverflowException(){
+	super();
+    }
+
     public OverflowException(String s){
 	super(s);
     }

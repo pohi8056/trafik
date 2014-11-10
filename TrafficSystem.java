@@ -30,7 +30,6 @@ public class TrafficSystem {
     
     
 
-
     public TrafficSystem(int roadlen1, int roadlen2, int period, int green) {
 	
 	r0 = new Lane(roadlen1);
@@ -50,6 +49,7 @@ public class TrafficSystem {
         // Standardklassen Properties ar anvandbar for detta. 
     }
 
+    // TODO; IMPLEMENT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     public void addCarsToStatGarage(Lane road, Light s){
 	if(carStatInt < carAmount){
 	    if(road.firstCar() != null && s.isGreen()){
@@ -119,16 +119,17 @@ public class TrafficSystem {
 	if(carIndex < carAmount){  //OK, not great
 	    //for testing
 	    System.out.println("CarIndex: " + carIndex + " carAmount: " + carAmount);
-	    //For testing
+	    //for testing
 	    addCarsToStatGarage(r1, s1);
 	    addCarsToStatGarage(r2, s2);
+	    
 	    
 	    r1.step();
 	    r2.step();
 	    
 	    switcher = r0.firstCar();
-	    switchLanes(switcher,r1,r2,dest1,dest2);
 
+	    switchLanes(switcher,r1,r2,dest1,dest2);
 	    r0.step();
 
 	    toLastIfFree(r0, garage[carIndex]);
@@ -146,9 +147,10 @@ public class TrafficSystem {
 	    r2.step();
 
 	    switcher = r0.getFirst();
-	    switchLanes(switcher, r1, r2, dest1, dest2);
 
+	    switchLanes(switcher, r1, r2, dest1, dest2);
 	    r0.step();
+
 
 	    s1.step();
 	    s2.step();

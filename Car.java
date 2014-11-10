@@ -57,15 +57,15 @@ public class Car {
 
     public void setPosition(CarPosition currentPosition){
 	this.currentPosition = currentPosition;
-}
+    }
 
     public CarPosition getPosition(){
 	return currentPosition;
-}
+    }
 
     public int getCarNr(){
 	return this.carNr;
-}
+    }
     /*
     public boolean randomDestination(){
 	Random random = new Random();
@@ -81,8 +81,8 @@ public class Car {
     */
     public void setDestination(CarPosition destination){
 	this.destination = destination;
-}
-
+    }
+    
     public CarPosition getDestination(){
 	return this.destination;
 }
