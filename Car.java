@@ -8,21 +8,13 @@ public class Car {
     private int intPosition;
     private CarPosition currentPosition;
     private int waitingTime = 0;
+    private boolean routeFinished = false;
     
     public void step()
     {
 	    lifetime += 1;
 	    //}
 
-    	// Uppdatera bilen ett tidssteg
-
-	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!ct
-	//
-	//Skall inte bornTime vara constant?
-	//Eftersom den anger time of birth
-	//Men varför finns då step method?
-	//Its probably right, just curious.
-	//Not update currentPos?
     }
     
     public void stepWaitingTime()
@@ -31,7 +23,8 @@ public class Car {
     }
     
 
-    
+
+   
 
     public Car(int lifetime, CarPosition destination, int carNr){
 	this.destination = destination;
@@ -48,6 +41,16 @@ public class Car {
 	
     }
 
+
+    public void setFinished(){
+	this.routeFinished = true;
+    }
+
+
+
+    public boolean isFinished(){
+	return routeFinished;
+    }
 
     public void randomDestination(CarPosition s1, CarPosition s2){
 	Random random = new Random();
@@ -72,19 +75,7 @@ public class Car {
     public int getCarNr(){
 	return this.carNr;
     }
-    /*
-    public boolean randomDestination(){
-	Random random = new Random();
-	int randomNumber = random.nextInt(2 - 1) + 1;
-	
-	if(randomNumber == 1){
-	    return true;
-	}else{
-	    return false;
-	}
-	//randomdest
-    }
-    */
+
     public void setDestination(CarPosition destination){
 	this.destination = destination;
     }
