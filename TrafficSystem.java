@@ -41,7 +41,7 @@ public class TrafficSystem {
 	r2 = new Lane(roadlen2);
 	
 	s1 = new Light(period, green);
-	s2 = new Light(period, green);
+	s2 = new Light(period+2, green+2);
     	}
 
     public void readParameters() {
@@ -122,7 +122,7 @@ public class TrafficSystem {
 	// Skapa bilar, lagg in och ta ur pa de olika Lane-kompenenterna
 	if(carIndex < carAmount){  //OK, not great
 	    //for testing
-	    System.out.println("CarIndex: " + carIndex + " carAmount: " + carAmount);
+	    System.out.println("\nCarIndex: " + carIndex + " carAmount: " + carAmount);
 	    //for testing
 	    addCarsToStatGarage(r1, s1);
 	    addCarsToStatGarage(r2, s2);
@@ -133,7 +133,7 @@ public class TrafficSystem {
 	    
 	    switcher = r0.firstCar();
 	    if(switcher != null){
-		System.out.println("****SWITCHER****\n\n   " + switcher.toStringCar() + "   \n\n****        ****");
+		System.out.println("\n-------------\nSWITCHER CAR: " + switcher.toStringCar() + "\n-------------");
 	    }
 
 	    switchLanes(switcher,r1,r2,dest1,dest2);
@@ -145,7 +145,7 @@ public class TrafficSystem {
 	    s2.step();
 	}
 	else{
-	    System.out.println("CarIndex: " + carIndex + " carAmount: " + carAmount);
+	    System.out.println("\nCarIndex: " + carIndex + " carAmount: " + carAmount);
 
 	    addCarsToStatGarage(r1, s1);
 	    addCarsToStatGarage(r2, s2);
@@ -180,8 +180,9 @@ public class TrafficSystem {
 
     
     public void print() {
+	System.out.println("*******************************************\n");
 
-	System.out.println("S1: " + s1.toString());
+	System.out.println("Forward Light: " + s1.toString());
 	if(s1.isGreen()){
 	    System.out.println("Is forward green?: " + ANSI_GREEN + s1.isGreen() + ANSI_RESET);
 	}else{
@@ -191,7 +192,7 @@ public class TrafficSystem {
 	System.out.println("Forward: ");
 	r1.toStringLane();
 	System.out.println("");
-	System.out.println("S2: " + s2.toString());
+	System.out.println("Turn light: " + s2.toString());
 	if(s2.isGreen()){
 	System.out.println("Is Turn green?: " + ANSI_GREEN+ s2.isGreen() + ANSI_RESET);
 	}else{

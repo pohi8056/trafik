@@ -76,15 +76,16 @@ public class Simulation {
 	system.initCars(20);
 		    
 	while(system.checkLanesNull() != true){
-	    system.print();
-	    system.step();
 	    try {
 		Thread.sleep(2000); 
 		System.out.print("\033[H\033[2J");
 		System.out.flush();
 	    } catch(InterruptedException ex) {
 		Thread.currentThread().interrupt();
-	    }    
+	    }   
+	    system.print();
+	    system.step();
+
 	}
 	system.print();
 
