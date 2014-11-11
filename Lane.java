@@ -89,6 +89,9 @@ public class Lane {
 		    theLane[i-1].get().setIntPosition(i-1);
 		}
 	    }
+	    else if(theLane[i].isThereACar()){
+		theLane[i].get().stepWaitingTime();
+	    }
 	    //	    theLane[i-1] = theLane[i];	    
 	}
     }
