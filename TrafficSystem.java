@@ -15,6 +15,8 @@ public class TrafficSystem {
     public static final String ANSI_GREEN = "\u001B[32m";
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
+    private static final String ANSI_PLAIN = "\033[0;0m";
+    private static final String ANSI_BOLD = "\033[0;1m";
 
 
     // Diverse attribut for simuleringsparametrar (ankomstintensiteter,
@@ -57,7 +59,9 @@ public class TrafficSystem {
     public void addCarsToStatGarage(Lane road, Light s){
 	if(carStatInt < carAmount){
 	    if(road.firstCar() != null && s.isGreen()){
+		road.firstCar().setFinished();
 		statisticsGarage[carStatInt++] = road.getFirst();
+		
 	    }
 	}
     }
@@ -120,6 +124,16 @@ public class TrafficSystem {
     public void step() {
 	// Stega systemet ett tidssteg m h a komponenternas step-metoder
 	// Skapa bilar, lagg in och ta ur pa de olika Lane-kompenenterna
+
+	//Steps lifetime
+	for(int i = 0; i < carIndex; i++){		
+	    if(garage[i].isFinished() != true){
+		garage[i].step();
+	    }
+	}
+	
+
+
 	if(carIndex < carAmount){  //OK, not great
 	    //for testing
 	    System.out.println("CarIndex: " + carIndex + " carAmount: " + carAmount);
@@ -127,10 +141,9 @@ public class TrafficSystem {
 	    addCarsToStatGarage(r1, s1);
 	    addCarsToStatGarage(r2, s2);
 	    
-	    
+	   
 	    r1.step();
 	    r2.step();
-	    
 	    switcher = r0.firstCar();
 	    if(switcher != null){
 		System.out.println("****SWITCHER****\n\n   " + switcher.toStringCar() + "   \n\n****        ****");
@@ -154,14 +167,16 @@ public class TrafficSystem {
 	    r2.step();
 
 	    switcher = r0.firstCar();
-
+	    if(switcher != null){
+		System.out.println("****SWITCHER****\n\n   " + switcher.toStringCar() + "   \n\n****        ****");
+	    }
 	    switchLanes(switcher, r1, r2, dest1, dest2);
 	    r0.step();
-
 
 	    s1.step();
 	    s2.step();
 	}
+
     }
     
     public void printStatistics() {
