@@ -77,7 +77,7 @@ public class Simulation {
 		    
 	while(system.checkLanesNull() != true){
 	    try {
-		Thread.sleep(2000); 
+		Thread.sleep(500); 
 		System.out.print("\033[H\033[2J");
 		System.out.flush();
 	    } catch(InterruptedException ex) {
@@ -91,6 +91,8 @@ public class Simulation {
 
 	system.printStatistics();
 	
+	system.printHighestWaitingTimes();
+	
 	// Skapar ett TrafficSystem
 	// Utfor stegningen, anropar utskriftsmetoder
 
@@ -99,7 +101,7 @@ public class Simulation {
 
 
 
-	//...
+	//... 
 
     }
 }

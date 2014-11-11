@@ -7,6 +7,7 @@ public class Car {
     private CarPosition destination; 
     private int intPosition;
     private CarPosition currentPosition;
+    private int waitingTime = 0;
     
     public void step()
     {
@@ -22,6 +23,11 @@ public class Car {
 	//Men varför finns då step method?
 	//Its probably right, just curious.
 	//Not update currentPos?
+    }
+    
+    public void stepWaitingTime()
+    {
+	    waitingTime += 1; 
     }
     
 
@@ -97,11 +103,13 @@ public class Car {
     }
     //
     //*******tempForTest********
-
+    public int getWaitingTime(){
+	return waitingTime;
+    }
 
 
     public String toStringCar() {
-    	return "Car(bornTime =" + this.lifetime +", destination =" + this.destination + ", currentPosition =" + this.currentPosition + ", carNr:" + this.carNr + ", IntPos: " + getIntPosition() +")";
+    	return "Car(lifeTime =" + this.lifetime +", destination =" + this.destination + ", currentPosition =" + this.currentPosition + ", carNr:" + this.carNr + ", IntPos: " + getIntPosition() +", Waiting time: " + this.waitingTime + ")";
     	}
 	
 

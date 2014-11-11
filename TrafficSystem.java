@@ -59,6 +59,9 @@ public class TrafficSystem {
 	    if(road.firstCar() != null && s.isGreen()){
 		statisticsGarage[carStatInt++] = road.getFirst();
 	    }
+	    else if(road.firstCar() != null){
+		    road.firstCar().stepWaitingTime();
+		}
 	}
     }
 
@@ -154,7 +157,9 @@ public class TrafficSystem {
 	    r2.step();
 
 	    switcher = r0.firstCar();
-
+	    if(switcher != null){
+		System.out.println("\n-------------\nSWITCHER CAR: " + switcher.toStringCar() + "\n-------------");
+	    }
 	    switchLanes(switcher, r1, r2, dest1, dest2);
 	    r0.step();
 
@@ -166,14 +171,39 @@ public class TrafficSystem {
     
     public void printStatistics() {
 	// Skriv statistiken samlad sa har langt
+	System.out.println("\nSTATISTICS-GARAGE:\n------------------");
+
 	for (int i = 0; i < statisticsGarage.length; i++) {
 	    if (statisticsGarage[i] != null){
 		System.out.println(statisticsGarage[i].toStringCar());
 	    }
 	    else{
-		System.out.println("Car is null");
+		System.out.println("<EMPTY>");
 	    }
 	}
+	System.out.println("\n------------------");
+    }
+ 
+
+    public void printHighestWaitingTimes() {
+	Car[] carsToReturn = new Car[statisticsGarage.length];
+	int highestInt = 0;
+	int totalWait = 0;
+	for (int i = 0; i < statisticsGarage.length; i++) {
+	    totalWait += statisticsGarage[i].getWaitingTime();
+	    if (statisticsGarage[i].getWaitingTime() >= highestInt) {
+		highestInt =statisticsGarage[i].getWaitingTime();
+		carsToReturn[i] = statisticsGarage[i];
+	    }
+	}
+	System.out.println("\nCars with highest waiting times:\n---------------------------------");
+	for (int i = 0; i < carsToReturn.length; i++) {
+	    if (carsToReturn[i] != null && carsToReturn[i].getWaitingTime() == highestInt) {
+		System.out.println("* " + carsToReturn[i].toStringCar());
+	    }
+	}
+	System.out.print("\nAverage waiting time: ");
+	System.out.println(totalWait/statisticsGarage.length + "\n");	
     }
 
 
@@ -207,7 +237,7 @@ public class TrafficSystem {
 	System.out.println("");
 	System.out.println("*******************************************");
 
-	// Skriv ut en grafisk representation av kosituationen
+	// Skriv ut en grafisk representation av kosituationen 
 	// med hjalp av klassernas toString-metoder
     }
 

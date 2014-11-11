@@ -125,6 +125,7 @@ public class Lane {
 		theLane[getLength() - 1].get().setIntPosition(getLength() - 1);
 	    }	    
 	    else{
+		c.stepWaitingTime();
 		throw new OverflowException("Unable to insert new car!");
 	    }
     }
