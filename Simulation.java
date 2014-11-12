@@ -1,9 +1,8 @@
-
+import java.util.Scanner;
 
 /*
 =======
  /*
->>>>>>> 1354090ee0eea35bc7cae941de30d53ed6ee295e
   Modell för trafiksimulering
   ===========================
 
@@ -66,12 +65,86 @@
 
 
 public class Simulation {
+
+    public static int[] menu(){
+	Scanner scan = new Scanner(System.in);
+	System.out.println("Welcome to Kerbal Traffic Program.");
+	System.out.println("");
+	
+
+	    System.out.println("Maximum amount of cars that fits on the main road: ");
+	    int mainLength = scan.nextInt();
+	    System.out.println("Maximum amount of cars that fits on the turning lane: ");
+	    int turnLength = scan.nextInt();
+	    if(mainLength > turnLength){
+		mainLength = mainLength - turnLength;
+		
+	    }else{
+		while(mainLength < turnLength){
+		    System.out.println("Turn lane can't be longer than the main road.");
+		    System.out.println("Maximum amount of cars that fits on the turning lane: ");
+		    turnLength = scan.nextInt();
+		}
+	    }
+	    System.out.println("Red light period for cars crossing the intersection.");
+	    int forwardRed = scan.nextInt();
+	    System.out.println("Green light period for cars crossing the intersection.");
+	    int forwardGreen = scan.nextInt();
+	    System.out.println("Red light period for cars turning in the intersection.");
+	    
+	    int forwardPeriod = forwardRed + forwardGreen;
+
+	    int turnRed = scan.nextInt();
+	    System.out.println("Green light period for cars turning in the intersection");
+	    int turnGreen = scan.nextInt();
+
+	    int turnPeriod = forwardRed + forwardGreen;
+
+	    //  System.out.println("Car intensity. [1 = Night time, 2 = Normal, 3 = Rush hour.]");
+	    //int intensity = scan.nextInt();
+	    System.out.println("Amount of cars to be simulated: ");
+	    int carAmount = scan.nextInt();
+	    
+	    int[] inputData = new int[]{mainLength, turnLength, forwardPeriod, forwardGreen, turnPeriod, turnGreen, carAmount};
+	    
+	    return inputData;
+
+    }
     
-
-
+    
     public static void main(String [] args) {
-	TrafficSystem system = new TrafficSystem(10, 5, 5, 1);
-	system.initCars(20);
+	try {
+	    System.out.print("\033[H\033[2J");
+	    System.out.flush();
+	} catch (Exception e) {
+	    Thread.currentThread().interrupt();
+	}
+	int[] data = menu();
+
+
+	TrafficSystem system = new TrafficSystem(data[0], data[1], data[2], data[3], data[4], data[5]); //INTENSITY NOT ADDED
+	system.initCars(data[6]);
+	
+	//TrafficSystem system = new TrafficSystem(10, 5, 5, 1);
+	
+	
+	try{
+	    System.out.print("\033[H\033[2J");
+	    System.out.flush();
+	    System.out.println("[Settings] \nMain road length: " + data[0] + "\nTurn lane length: " + data[1] + "\nForward light period: " + data[2] + "\nForward green time: " + data[3] + "\nTurning light period: " + data[4] + "\nTurning green time: " + data[5] + "\nAmount of cars: " + data[6]);
+	    System.out.println("");
+	    System.out.println("Simulation starts in: ");
+	    Thread.sleep(1500);
+	    System.out.println("3...");
+	    Thread.sleep(1500);
+	    System.out.println("2...");
+	    Thread.sleep(1500);
+	    System.out.println("1...");
+	    Thread.sleep(1500);
+	} catch(InterruptedException ex){
+	    Thread.currentThread().interrupt();
+	}
+	//	system.initCars(20);
 		    
 	while(system.checkLanesNull() != true){
 	    try {
