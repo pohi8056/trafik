@@ -9,7 +9,8 @@ public class Car {
     private CarPosition currentPosition;
     private int waitingTime = 0;
     private boolean routeFinished = false;
-    
+    private String stringDestination;
+
     public void step()
     {
 	    lifetime += 1;
@@ -58,11 +59,15 @@ public class Car {
 	
 	if(randomNumber == 1){
 	    this.setDestination(s1);
+	    this.stringDestination = "Forward";
 	}else{
 	    this.setDestination(s2);
+	    this.stringDestination = "Turn";
 	}
 	//randomdest
     }
+
+
 
     public void setPosition(CarPosition currentPosition){
 	this.currentPosition = currentPosition;
@@ -100,7 +105,7 @@ public class Car {
 
 
     public String toStringCar() {
-    	return "Car(lifeTime =" + this.lifetime +", destination =" + this.destination + ", currentPosition =" + this.currentPosition + ", carNr:" + this.carNr + ", IntPos: " + getIntPosition() +", Waiting time: " + this.waitingTime + ")";
+    	return "Car(lifeTime =" + this.lifetime + ", destination = " + this.stringDestination + ", currentPosition =" + this.currentPosition + ", carNr:" + this.carNr + ", IntPos: " + getIntPosition() +", Waiting time: " + this.waitingTime + ")";
     	}
 	
 
