@@ -1,51 +1,93 @@
+/** Description of TrafficSystem 
+ *
+ * @author Pontus Hilding
+ * @author Lukas Hamberg
+ * @version 1.0
+ * @since   2014-10-31 
+ */
 public class TrafficSystem {
     // Definierar de vagar och signaler som ingar i det 
     // system som skall studeras.
     // Samlar statistik
     
     // Attribut som beskriver bestandsdelarna i systemet
+    /** Description of r0 */
     private Lane  r0;
+    /** Description of r1 */
     private Lane  r1;
+    /** Description of r2 */
     private Lane  r2;
+    /** Description of s1 */
     private Light s1;
+    /** Description of s2 */
     private Light s2;
+    /** Description of garage */
     private Car[] garage;
+    /** Description of switcher */
     private Car switcher;
+    /** Description of statisticsGarage */
     private Car[] statisticsGarage;
+    /** Description of ANSI_GREEN */
     public static final String ANSI_GREEN = "\u001B[32m";
+    /** Description of ANSI_RESET */
     public static final String ANSI_RESET = "\u001B[0m";
+    /** Description of ANSI_RED */
     public static final String ANSI_RED = "\u001B[31m";
+    /** Description of ANSI_PLAIN */
     private static final String ANSI_PLAIN = "\033[0;0m";
+    /** Description of ANSI_BOLD */
     private static final String ANSI_BOLD = "\033[0;1m";
 
 
     // Diverse attribut for simuleringsparametrar (ankomstintensiteter,
     // destinationer...)
-
+    /** Description of dest1 */
     private CarPosition dest1 = new CarPosition(r1);
+    /** Description of dest2 */
     private CarPosition dest2 = new CarPosition(r2);
 
     // Diverse attribut for statistiksamling
     //....    
-    
-    private int time = 0;
+    /** Description of lifeTime */
+    private int lifeTime = 0;
+    /** Description of carNr */
     private int carNr = 0;
+    /** Description of carIndex */
     private int carIndex = 0;
+    /** Description of carAmount */
     private int carAmount = 0;
+    /** Description of carStatInt */
     private int carStatInt = 0;
     
     
 
+
+    /** Description of TrafficSystem() 
+     * 
+     *@param roadlen1
+     *Integer deciding length of the array r0 and r1 of type Lane.
+     *@param roadlen2
+     *Integer deciding length of the array r2 of type Lane.
+     *@param period
+     *Sets period for Light s1 and Light s2
+     *@param green
+     *Sets green for Light s1 and Light s2
+     */
     public TrafficSystem(int roadlen1, int roadlen2, int period, int green) {
 	
 	r0 = new Lane(roadlen1);
 	r1 = new Lane(roadlen2);
 	r2 = new Lane(roadlen2);
-	
+		
 	s1 = new Light(period, green);
 	s2 = new Light(period+2, green+2);
     	}
 
+
+
+	/** Description of readParameters()
+	 * 
+	 */
     public void readParameters() {
 	// Laser in parametrar for simuleringen
 	// Metoden kan lasa fran terminalfonster, dialogrutor
@@ -55,7 +97,17 @@ public class TrafficSystem {
         // Standardklassen Properties ar anvandbar for detta. 
     }
 
-    // TODO; IMPLEMENT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    /** Description of addCarsToStatGarage(Lane road, Light s)
+     *This method is used to remove objects of type Car from road
+     *and add to statisticsGarage[], if s.isGreen()==true.
+     *
+     *
+     *
+     *
+     * @param road		Description of road
+     * @param s		        Description of s
+     */
     public void addCarsToStatGarage(Lane road, Light s){
 	if(carStatInt < carAmount){
 	    if(road.firstCar() != null && s.isGreen()){
@@ -69,12 +121,18 @@ public class TrafficSystem {
 	}
     }
 
+
+
+    /** Description of initCars(int a, String b)
+     * 
+     * @param carAmount			Description of carAmount
+     */
     public void initCars(int carAmount){
 	this.carAmount = carAmount;
 	garage = new Car[carAmount];
 	statisticsGarage = new Car[carAmount];
 	for(int i = 0; i < carAmount; i++){
-	    garage[i] = new Car(time, 1000 + i);
+	    garage[i] = new Car(lifeTime, 1000 + i);
 	    garage[i].randomDestination(dest1, dest2);
 	}
 
@@ -83,6 +141,10 @@ public class TrafficSystem {
     }
     
 
+   /**Description of checkLanesNull()
+   * 
+   * @return Boolean
+   */
     public boolean checkLanesNull(){
 	if(r0.isEmpty() && r1.isEmpty() && r2.isEmpty()){
 	    return true;
@@ -103,13 +165,7 @@ public class TrafficSystem {
 		e.printStackTrace();
 	    }
     }
-		    
-	//*****************************************************************************************
-	//*****************************************************************************************
-	// TODO: GIVES COUNT ERROR AFTER EXCEPTION INSERTION
-	//*****************************************************************************************
-	//*****************************************************************************************
-    
+		        
     
     public void switchLanes(Car switcherCar, Lane l1 , Lane l2, CarPosition d1, CarPosition d2){
 	if(switcherCar != null){
@@ -125,10 +181,6 @@ public class TrafficSystem {
     }
 
     public void step() {
-	// Stega systemet ett tidssteg m h a komponenternas step-metoder
-	// Skapa bilar, lagg in och ta ur pa de olika Lane-kompenenterna
-
-	//Steps lifetime
 	for(int i = 0; i < carIndex; i++){		
 	    if(garage[i].isFinished() != true){
 		garage[i].step();
@@ -137,10 +189,9 @@ public class TrafficSystem {
 	
 
 
-	if(carIndex < carAmount){  //OK, not great
-	    //for testing
+	if(carIndex < carAmount){
 	    System.out.println("\nCarIndex: " + carIndex + " carAmount: " + carAmount);
-	    //for testing
+	    
 	    addCarsToStatGarage(r1, s1);
 	    addCarsToStatGarage(r2, s2);
 	    
