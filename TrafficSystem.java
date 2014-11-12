@@ -71,14 +71,14 @@ public class TrafficSystem {
      *@param period          sets period for Light s1 and Light s2
      *@param green           sets green for Light s1 and Light s2
      */
-    public TrafficSystem(int roadlen1, int roadlen2, int period, int green) {
+    public TrafficSystem(int roadlen1, int roadlen2, int forwardPeriod, int forwardGreen, int turnPeriod, int turnGreen) {
 	
 	r0 = new Lane(roadlen1);
 	r1 = new Lane(roadlen2);
 	r2 = new Lane(roadlen2);
 		
-	s1 = new Light(period, green);
-	s2 = new Light(period+2, green+2);
+	s1 = new Light(forwardPeriod, forwardGreen);
+	s2 = new Light(turnPeriod, turnGreen);
     	}
 
 
