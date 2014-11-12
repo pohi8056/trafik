@@ -70,14 +70,12 @@ public class Simulation {
 
 
     public static void main(String [] args) {
-	//TrafficSystem system = new TrafficSystem(10, 5, 5, 3);
-
-	TrafficSystem system = new TrafficSystem(3, 5, 5, 1);
+	TrafficSystem system = new TrafficSystem(10, 5, 5, 1);
 	system.initCars(20);
 		    
 	while(system.checkLanesNull() != true){
 	    try {
-		Thread.sleep(500); 
+		Thread.sleep(1500); 
 		System.out.print("\033[H\033[2J");
 		System.out.flush();
 	    } catch(InterruptedException ex) {
@@ -92,16 +90,5 @@ public class Simulation {
 	system.printStatistics();
 	
 	system.printHighestWaitingTimes();
-	
-	// Skapar ett TrafficSystem
-	// Utfor stegningen, anropar utskriftsmetoder
-
-
-
-
-
-
-	//... 
-
     }
 }

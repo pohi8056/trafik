@@ -6,7 +6,7 @@ public class CarPosition{
     private Car currentCar = null; // null om ingen bil finns pq positionen
 		
     private CarPosition forward;
-    private CarPosition turn;
+    private  CarPosition turn;
 
     private Lane owner;
 	
@@ -19,7 +19,7 @@ public class CarPosition{
     {
 	return owner.matchEnd(target);
     }
-	
+    
     public boolean moveForward()
     {
 	if(currentCar.getDestination() == forward && owner.matchEnd(this) == true){
@@ -28,6 +28,8 @@ public class CarPosition{
 	return false;
 	// Flytta bilen fram till forward
     }
+
+
 	
     public boolean turn()
     {
