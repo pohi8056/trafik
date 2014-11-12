@@ -62,16 +62,14 @@ public class TrafficSystem {
     
 
 
-    /** Description of TrafficSystem() 
+    /** Description of TrafficSystem()
+     *
+     * Constructs a Lane objects r0,r2,r3 and Light objects s1 and s2.
      * 
-     *@param roadlen1
-     *Integer deciding length of the array r0 and r1 of type Lane.
-     *@param roadlen2
-     *Integer deciding length of the array r2 of type Lane.
-     *@param period
-     *Sets period for Light s1 and Light s2
-     *@param green
-     *Sets green for Light s1 and Light s2
+     *@param roadlen1        integer deciding length of the array r0 and r1 of type Lane
+     *@param roadlen2        integer deciding length of the array r2 of type Lane
+     *@param period          sets period for Light s1 and Light s2
+     *@param green           sets green for Light s1 and Light s2
      */
     public TrafficSystem(int roadlen1, int roadlen2, int period, int green) {
 	
@@ -99,33 +97,39 @@ public class TrafficSystem {
 
 
     /** Description of addCarsToStatGarage(Lane road, Light s)
-     *This method is used to remove objects of type Car from road
-     *and add to statisticsGarage[], if s.isGreen()==true.
+     *
+     * Set Car object in road[0] to null
+     * and add Car object to statisticsGarage[carStatInt] and 
+     * increment carStatInt, if s.isGreen() == true.
+     * Else increment the waitingTime counter for the Car object in rood[0] by 1.
      *
      *
      *
-     *
-     * @param road		Description of road
-     * @param s		        Description of s
+     * @param road	        the Lane object to remove Car objects from
+     * @param s		        the Light object to check if Car removal is allowed
+     * @return Nothing
      */
     public void addCarsToStatGarage(Lane road, Light s){
 	if(carStatInt < carAmount){
 	    if(road.firstCar() != null && s.isGreen()){
-		road.firstCar().setFinished();
+		road.firstCar().setFinished();                  //
 		statisticsGarage[carStatInt++] = road.getFirst();
 		
 	    }
-	    else if(road.firstCar() != null){
-		    road.firstCar().stepWaitingTime();
-		}
+	    else if(road.firstCar() != null){               //Check for null car
+		road.firstCar().stepWaitingTime();         //Increment waitingTime
+	    }
 	}
     }
 
 
 
-    /** Description of initCars(int a, String b)
-     * 
-     * @param carAmount			Description of carAmount
+    /** Description of initCars(int carAmount)
+     * Constructs Car array garage and Car array statisticsGarage of size carAmount;
+     * inserts Car(lifeTime, 1000 + i) for i=0 to carAmount-1 into garage array.
+     *
+     * @param carAmount			number of Car objects to be created and inserted in garage array and statisticsGarage array
+     * @return Nothing
      */
     public void initCars(int carAmount){
 	this.carAmount = carAmount;
@@ -143,7 +147,9 @@ public class TrafficSystem {
 
    /**Description of checkLanesNull()
    * 
-   * @return Boolean
+   * Checks if all Car objects in r0, r1, r2 are null.
+   *
+   * @return true if all Car objects in r0, r1, r2 are set to null. Else false.
    */
     public boolean checkLanesNull(){
 	if(r0.isEmpty() && r1.isEmpty() && r2.isEmpty()){
@@ -155,6 +161,12 @@ public class TrafficSystem {
 
 
 
+   /**Description of checkLanesNull()
+   * 
+   * @throws 
+   *
+   * @return
+   */
     public void toLastIfFree( Lane road , Car newCar){
 	    try {
 		road.putLast(newCar);
