@@ -161,22 +161,23 @@ public class TrafficSystem {
 
 
 
-   /**Description of checkLanesNull()
+   /**Description of toLastIfFree()
    * 
    * @throws 
    *
    * @return
    */
     public void toLastIfFree( Lane road , Car newCar){
-	    try {
-		road.putLast(newCar);
-		++carIndex;
-	    }
-	    catch (OverflowException e) {
-		System.out.println("Error " + e.getMessage());
-		e.printStackTrace();
-	    }
+	try {
+	    road.putLast(newCar);
+	    ++carIndex;
+	}
+	catch (OverflowException e) {
+	    System.out.println("Error " + e.getMessage());
+	    e.printStackTrace();
+	}	
     }
+    
 		        
     
     public void switchLanes(Car switcherCar, Lane l1 , Lane l2, CarPosition d1, CarPosition d2){
