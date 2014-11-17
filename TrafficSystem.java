@@ -139,14 +139,15 @@ public class TrafficSystem {
 	for(int i = 0; i < carAmount; i++){
 	    if(i == 3){
 		garage[i] = new Taxi(lifeTime,1000 + 1,0);
+		garage[i].randomDestination(dest1, dest2);
 	    }
 	    else{
 		garage[i] = new Car(lifeTime, 1000 + i);
-		garage[i].randomDestination(dest1, dest2);}
+		garage[i].randomDestination(dest1, dest2);
+	    }
 	}
-
+	
 	r0.putLast(garage[carIndex++]);
-
     }
     
 

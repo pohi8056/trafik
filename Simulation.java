@@ -132,7 +132,7 @@ public class Simulation {
 	System.out.println("Taxi car: " + taxi.toStringCar());
 	failedCopy = aCar.clone2();
 	System.out.println("Failed copy: " + failedCopy);
-	/*
+	
 	try {
 	    System.out.print("\033[H\033[2J");
 	    System.out.flush();
@@ -185,7 +185,7 @@ public class Simulation {
 	system.printStatistics();
 	
 	system.printHighestWaitingTimes();
-	*/
+	
     }
 
 	
