@@ -34,7 +34,7 @@ public class Taxi extends Car{
 
     @Override
     public String toStringCar() {
-    	return "Car(lifeTime =" + this.lifetime + ", destination = " + this.stringDestination + ", currentPosition =" + this.currentPosition + ", carNr:" + this.carNr + ", IntPos: " + getIntPosition() +", Waiting time: " + this.waitingTime + " Taximeter: $" + this.taxiMeter + ")";
+    	return "Taxi(lifeTime =" + this.lifetime + ", destination = " + this.stringDestination + ", currentPosition =" + this.currentPosition + ", carNr:" + this.carNr + ", IntPos: " + getIntPosition() +", Waiting time: " + this.waitingTime + " Taximeter: $" + this.taxiMeter + ")";
     	}
 	
 }

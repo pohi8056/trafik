@@ -10,6 +10,7 @@ CLASSES = \
 	Light.java \
 	Lane.java \
 	TrafficSystem.java \
+	Taxi.java \
 	Simulation.java
 default: classes
 
