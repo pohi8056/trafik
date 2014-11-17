@@ -1,15 +1,15 @@
 import java.util.Random; //imported randomgen
  
 
-public class Car {
-    private int carNr;
-    private int lifetime;
-    private CarPosition destination; 
-    private int intPosition;
-    private CarPosition currentPosition;
-    private int waitingTime = 0;
-    private boolean routeFinished = false;
-    private String stringDestination;
+public class Car implements java.lang.Cloneable{
+    protected int carNr;
+    protected int lifetime;
+    protected CarPosition destination; 
+    protected int intPosition;
+    protected CarPosition currentPosition;
+    protected int waitingTime = 0;
+    protected boolean routeFinished = false;
+    protected String stringDestination;
 
     public void step()
     {
@@ -23,10 +23,6 @@ public class Car {
 	    waitingTime += 1; 
     }
     
-
-
-   
-
     public Car(int lifetime, CarPosition destination, int carNr){
 	this.destination = destination;
 	this.lifetime = lifetime;
@@ -42,6 +38,18 @@ public class Car {
 	
     }
 
+    
+    @Override
+    public Car clone() throws CloneNotSupportedException{
+	return (Car) super.clone();
+
+    }
+
+    public Car clone2(){
+	Car newCar = this;
+	return newCar;
+    }
+    
 
     public void setFinished(){
 	this.routeFinished = true;

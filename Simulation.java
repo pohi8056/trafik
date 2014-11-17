@@ -113,6 +113,26 @@ public class Simulation {
     
     
     public static void main(String [] args) {
+	
+	Car aCar = new Car(2, 3);
+	Car copy;
+	Car failedCopy = null;
+	Taxi taxi = new Taxi(0, 10, 40);
+
+	try {
+	    copy = aCar.clone();
+	    System.out.println("Copied " + copy + ".");
+	    System.out.println("Originial car: " + aCar + ".");
+
+	} catch (CloneNotSupportedException e) {
+	    System.out.println("Car not cloned.");
+
+	}
+	
+	System.out.println("Taxi car: " + taxi.toStringCar());
+	failedCopy = aCar.clone2();
+	System.out.println("Failed copy: " + failedCopy);
+	/*
 	try {
 	    System.out.print("\033[H\033[2J");
 	    System.out.flush();
@@ -120,6 +140,8 @@ public class Simulation {
 	    Thread.currentThread().interrupt();
 	}
 	int[] data = menu();
+	
+	
 
 
 	TrafficSystem system = new TrafficSystem(data[0], data[1], data[2], data[3], data[4], data[5]); //INTENSITY NOT ADDED
@@ -145,7 +167,7 @@ public class Simulation {
 	    Thread.currentThread().interrupt();
 	}
 	//	system.initCars(20);
-		    
+	
 	while(system.checkLanesNull() != true){
 	    try {
 		Thread.sleep(1500); 
@@ -163,6 +185,8 @@ public class Simulation {
 	system.printStatistics();
 	
 	system.printHighestWaitingTimes();
+	*/
     }
-}
 
+	
+}

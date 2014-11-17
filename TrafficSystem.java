@@ -68,8 +68,11 @@ public class TrafficSystem {
      * 
      *@param roadlen1        integer deciding length of the array r0 and r1 of type Lane
      *@param roadlen2        integer deciding length of the array r2 of type Lane
-     *@param period          sets period for Light s1 and Light s2
-     *@param green           sets green for Light s1 and Light s2
+     *@param forwardPeriod          sets period for Light s1 and Light s2
+     *@param forwardGreen           sets green for Light s1 and Light s2
+     *@param turnPeriod     sets turn period for Light s2
+     *@param turnGreen      sets turn green time for Light s2
+     *
      */
     public TrafficSystem(int roadlen1, int roadlen2, int forwardPeriod, int forwardGreen, int turnPeriod, int turnGreen) {
 	
@@ -107,7 +110,6 @@ public class TrafficSystem {
      *
      * @param road	        the Lane object to remove Car objects from
      * @param s		        the Light object to check if Car removal is allowed
-     * @return Nothing
      */
     public void addCarsToStatGarage(Lane road, Light s){
 	if(carStatInt < carAmount){
@@ -129,7 +131,6 @@ public class TrafficSystem {
      * inserts Car(lifeTime, 1000 + i) for i=0 to carAmount-1 into garage array.
      *
      * @param carAmount			number of Car objects to be created and inserted in garage array and statisticsGarage array
-     * @return Nothing
      */
     public void initCars(int carAmount){
 	this.carAmount = carAmount;
@@ -148,7 +149,7 @@ public class TrafficSystem {
    /**Description of checkLanesNull()
    * 
    * Checks if all Car objects in r0, r1, r2 are null.
-   *
+   *@see step()
    * @return true if all Car objects in r0, r1, r2 are set to null. Else false.
    */
     public boolean checkLanesNull(){
@@ -163,9 +164,8 @@ public class TrafficSystem {
 
    /**Description of toLastIfFree()
    * 
-   * @throws 
-   *
-   * @return
+   *@param road Road to put cars in
+   *@param newCar Creates a new car on the road
    */
     public void toLastIfFree( Lane road , Car newCar){
 	try {
