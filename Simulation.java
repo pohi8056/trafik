@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 /*
 =======
@@ -104,8 +104,11 @@ public class Simulation {
 	    //int intensity = scan.nextInt();
 	    System.out.println("Amount of cars to be simulated: ");
 	    int carAmount = scan.nextInt();
+
+	    System.out.println("Simulation speed: [1-10] ");
+	    int speed = scan.nextInt();
 	    
-	    int[] inputData = new int[]{mainLength, turnLength, forwardPeriod, forwardGreen, turnPeriod, turnGreen, carAmount};
+	    int[] inputData = new int[]{mainLength, turnLength, forwardPeriod, forwardGreen, turnPeriod, turnGreen, carAmount, speed};
 	    
 	    return inputData;
 
@@ -114,24 +117,8 @@ public class Simulation {
     
     public static void main(String [] args) {
 	
-	Car aCar = new Car(2, 3);
-	Car copy;
-	Car failedCopy = null;
-	Taxi taxi = new Taxi(0, 10, 40);
 
-	try {
-	    copy = aCar.clone();
-	    System.out.println("Copied " + copy + ".");
-	    System.out.println("Originial car: " + aCar + ".");
 
-	} catch (CloneNotSupportedException e) {
-	    System.out.println("Car not cloned.");
-
-	}
-	
-	System.out.println("Taxi car: " + taxi.toStringCar());
-	failedCopy = aCar.clone2();
-	System.out.println("Failed copy: " + failedCopy);
 	
 	try {
 	    System.out.print("\033[H\033[2J");
@@ -139,16 +126,14 @@ public class Simulation {
 	} catch (Exception e) {
 	    Thread.currentThread().interrupt();
 	}
+	
+	
 	int[] data = menu();
-	
-	
-
+;
 
 	TrafficSystem system = new TrafficSystem(data[0], data[1], data[2], data[3], data[4], data[5]); //INTENSITY NOT ADDED
 	system.initCars(data[6]);
-	
-	//TrafficSystem system = new TrafficSystem(10, 5, 5, 1);
-	
+		
 	
 	try{
 	    System.out.print("\033[H\033[2J");
@@ -170,7 +155,7 @@ public class Simulation {
 	
 	while(system.checkLanesNull() != true){
 	    try {
-		Thread.sleep(1500); 
+		Thread.sleep(1500 - (data[7]*120)); 
 		System.out.print("\033[H\033[2J");
 		System.out.flush();
 	    } catch(InterruptedException ex) {
@@ -182,9 +167,19 @@ public class Simulation {
 	}
 	system.print();
 
-	system.printStatistics();
+	try {
+	    System.out.flush();
+	    system.printStatistics();
 	
-	system.printHighestWaitingTimes();
+	    system.printHighestWaitingTimes();
+	    
+	} catch (Exception ex) {
+		Thread.currentThread().interrupt();
+
+	}
+
+	
+
 	
     }
 

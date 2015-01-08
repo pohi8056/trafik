@@ -17,9 +17,14 @@ public class Taxi extends Car{
     }
     
 
-    public void setTaxiMeter(int taxiMeter){
-	this.taxiMeter = taxiMeter;
+    public void setTaxiMeter(){
+	this.taxiMeter = 0;
     }
+
+    public void setTaxiMeter(int startValue){
+	this.taxiMeter = startValue;
+    }
+
 
     public int getTaxiMeter(){
 	return taxiMeter;
@@ -30,6 +35,8 @@ public class Taxi extends Car{
 	this.lifetime += lifetime;
 	this.taxiMeter +=  taxiMeter;
     }
+
+
     //
 
     @Override
