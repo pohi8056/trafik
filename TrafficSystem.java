@@ -1,3 +1,5 @@
+import java.util.*;
+
 /** Description of TrafficSystem 
  *
  * @author Pontus Hilding
@@ -133,7 +135,7 @@ public class TrafficSystem {
     public void addCarsToStatGarage(Lane road, Light s){
 	if(carStatInt < carAmount){
 	    if(road.firstCar() != null && s.isGreen()){
-		road.firstCar().setFinished();                  //
+		road.firstCar().setFinished();                  
 		statisticsGarage[carStatInt++] = road.getFirst();
 		
 	    }
@@ -277,7 +279,16 @@ public class TrafficSystem {
 
 	for (int i = 0; i < statisticsGarage.length; i++) {
 	    if (statisticsGarage[i] != null){
-		System.out.println(statisticsGarage[i].toStringCar());
+		try {
+		    System.out.flush();
+
+		    Thread.sleep(120);
+		    System.out.println(statisticsGarage[i].toStringCar());
+		    
+		} catch (Exception ex) {
+		    Thread.currentThread().interrupt();
+
+		}
 	    }
 	    else{
 		System.out.println("<EMPTY>");
