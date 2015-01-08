@@ -11,52 +11,69 @@ public class TrafficSystem {
     // Samlar statistik
     
     // Attribut som beskriver bestandsdelarna i systemet
-    /** Description of r0 */
+    /** First part of main road */
     private Lane  r0;
-    /** Description of r1 */
+
+    /** Continutation of main road */
     private Lane  r1;
-    /** Description of r2 */
+
+    /** turn lane */
     private Lane  r2;
-    /** Description of s1 */
+
+    /** Trafficlights belonging to continuation of main road */
     private Light s1;
-    /** Description of s2 */
+
+    /** Trafficlights belonging to turn lane */
     private Light s2;
-    /** Description of garage */
+
+    /** List of cars to be inserted on main road */
     private Car[] garage;
-    /** Description of switcher */
+
+    /** Car waiting to be inserted on continuation of main road or turn lane */
     private Car switcher;
-    /** Description of statisticsGarage */
+
+    /** List of cars that have finished stepping through the roads*/
     private Car[] statisticsGarage;
-    /** Description of ANSI_GREEN */
+
+    /** Used for green terminal text */
     public static final String ANSI_GREEN = "\u001B[32m";
-    /** Description of ANSI_RESET */
+
+    /** Used for resetting terminal text */
     public static final String ANSI_RESET = "\u001B[0m";
-    /** Description of ANSI_RED */
+
+    /** Used for red terminal text */
     public static final String ANSI_RED = "\u001B[31m";
-    /** Description of ANSI_PLAIN */
+
+    /** Used for plain terminal text */
     private static final String ANSI_PLAIN = "\033[0;0m";
-    /** Description of ANSI_BOLD */
+
+    /** Used for bold terminal text */
     private static final String ANSI_BOLD = "\033[0;1m";
 
 
     // Diverse attribut for simuleringsparametrar (ankomstintensiteter,
     // destinationer...)
-    /** Description of dest1 */
+    /** The destination belonging to cars continuing along the main road */
     private CarPosition dest1 = new CarPosition(r1);
-    /** Description of dest2 */
+
+    /** The destination belonging to cars going to the turn lane  */
     private CarPosition dest2 = new CarPosition(r2);
 
     // Diverse attribut for statistiksamling
     //....    
-    /** Description of lifeTime */
+    /** The initial lifeTime value a car is created with*/
     private int lifeTime = 0;
-    /** Description of carNr */
+
+    /** For each car i created, car recieves carNr  1000 + i*/
     private int carNr = 0;
-    /** Description of carIndex */
+
+    /** The current number of cars that have been placed on the road */
     private int carIndex = 0;
-    /** Description of carAmount */
+
+    /** The total nr of cars that will be placed on the road */
     private int carAmount = 0;
-    /** Description of carStatInt */
+
+    /** The total number of cars that  have fininshed */
     private int carStatInt = 0;
     
     
@@ -64,29 +81,33 @@ public class TrafficSystem {
 
     /** Description of TrafficSystem()
      *
-     * Constructs a Lane objects r0,r2,r3 and Light objects s1 and s2.
+     * Constructs a three roads r0,r2,r3, and two trafficlights s1 and s2.
      * 
-     *@param roadlen1        integer deciding length of the array r0 and r1 of type Lane
-     *@param roadlen2        integer deciding length of the array r2 of type Lane
-     *@param forwardPeriod          sets period for Light s1 and Light s2
-     *@param forwardGreen           sets green for Light s1 and Light s2
-     *@param turnPeriod     sets turn period for Light s2
-     *@param turnGreen      sets turn green time for Light s2
+     *@param roadlen1               integer deciding length of the roads r0 and r1
+     *@param roadlen2               integer deciding length of the road r2
+     *@param forwardPeriod          sets period for trafficlight s1
+     *@param forwardGreen           sets green value for trafficlight s1
+     *@param turnPeriod             sets period for trafficlight s2
+     *@param turnGreen              sets green value for trafficlight s2
      *
      */
     public TrafficSystem(int roadlen1, int roadlen2, int forwardPeriod, int forwardGreen, int turnPeriod, int turnGreen) {
-	
+	/**Road to move cars on*/
 	r0 = new Lane(roadlen1);
+	/**Continuation of road r0 to move cars on*/
 	r1 = new Lane(roadlen2);
+	/**Sidelane road to move cars on*/
 	r2 = new Lane(roadlen2);
-		
+	
+	/**Traffic light belonging to r1*/
 	s1 = new Light(forwardPeriod, forwardGreen);
+	/**Traffic light belonging to r1*/
 	s2 = new Light(turnPeriod, turnGreen);
     	}
 
 
 
-	/** Description of readParameters()
+	/** readParameters()
 	 * 
 	 */
     public void readParameters() {
@@ -99,17 +120,15 @@ public class TrafficSystem {
     }
 
 
-    /** Description of addCarsToStatGarage(Lane road, Light s)
+    /**addCarsToStatGarage(Lane road, Light s)
      *
-     * Set Car object in road[0] to null
-     * and add Car object to statisticsGarage[carStatInt] and 
-     * increment carStatInt, if s.isGreen() == true.
-     * Else increment the waitingTime counter for the Car object in rood[0] by 1.
+     * Removes first car in road
+     * and adds that car to statisticsGarage  
+     * incrementing carStatInt only if traffics light s is green.
+     * Else increment the waitingTime counter for the first car in rood by 1.
      *
-     *
-     *
-     * @param road	        the Lane object to remove Car objects from
-     * @param s		        the Light object to check if Car removal is allowed
+     * @param road	        the road to remove car from
+     * @param s		        the trafficlight used to check if car removal is allowed
      */
     public void addCarsToStatGarage(Lane road, Light s){
 	if(carStatInt < carAmount){
@@ -126,11 +145,10 @@ public class TrafficSystem {
 
 
 
-    /** Description of initCars(int carAmount)
-     * Constructs Car array garage and Car array statisticsGarage of size carAmount;
-     * inserts Car(lifeTime, 1000 + i) for i=0 to carAmount-1 into garage array.
-     *
-     * @param carAmount			number of Car objects to be created and inserted in garage array and statisticsGarage array
+    /**initCars(int carAmount)
+     * Constructs array full of cars garage and an empty array of cars statisticsGarage of size carAmount;
+     * The third car inserted into the garage is a taxi
+     * @param carAmount		        number of cars to be created and inserted in garage array and statisticsGarage array
      */
     public void initCars(int carAmount){
 	this.carAmount = carAmount;
@@ -146,15 +164,14 @@ public class TrafficSystem {
 		garage[i].randomDestination(dest1, dest2);
 	    }
 	}
-	
 	r0.putLast(garage[carIndex++]);
     }
     
 
-   /**Description of checkLanesNull()
+   /**checkLanesNull()
    * 
-   * Checks if all Car objects in r0, r1, r2 are null.
-   *@see step()
+   * True if all roads are empty.
+   * @see step()
    * @return true if all Car objects in r0, r1, r2 are set to null. Else false.
    */
     public boolean checkLanesNull(){
@@ -167,10 +184,12 @@ public class TrafficSystem {
 
 
 
-   /**Description of toLastIfFree()
-   * 
+   /**toLastIfFree()
+   *  
+   *
    *@param road Road to put cars in
    *@param newCar Creates a new car on the road
+   *@throws OverflowException
    */
     public void toLastIfFree( Lane road , Car newCar){
 	try {
