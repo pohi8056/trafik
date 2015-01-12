@@ -1,0 +1,234 @@
+\hypertarget{class_traffic_system}{\section{Traffic\+System Class Reference}
+\label{class_traffic_system}\index{Traffic\+System@{Traffic\+System}}
+}
+
+
+Description of \hyperlink{class_traffic_system}{Traffic\+System}.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_traffic_system_a0959fd995dc1197b842399bd592f5f5f}{Traffic\+System} (int roadlen1, int roadlen2, int forward\+Period, int forward\+Green, int turn\+Period, int turn\+Green)
+\begin{DoxyCompactList}\small\item\em Description of \hyperlink{class_traffic_system_a0959fd995dc1197b842399bd592f5f5f}{Traffic\+System()} \end{DoxyCompactList}\item 
+void \hyperlink{class_traffic_system_a4b5f51ba061e8040b57e96b3f70b3990}{read\+Parameters} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_traffic_system_a4b5f51ba061e8040b57e96b3f70b3990}{read\+Parameters()} \end{DoxyCompactList}\item 
+void \hyperlink{class_traffic_system_a569b6ef2fb5a71a18d563760b9f5fa43}{add\+Cars\+To\+Stat\+Garage} (\hyperlink{class_lane}{Lane} road, \hyperlink{class_light}{Light} s)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_traffic_system_a569b6ef2fb5a71a18d563760b9f5fa43}{add\+Cars\+To\+Stat\+Garage(\+Lane road, Light s)} \end{DoxyCompactList}\item 
+void \hyperlink{class_traffic_system_af3f322278dadbd3e00e2c5200866ab62}{init\+Cars} (int car\+Amount)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_traffic_system_af3f322278dadbd3e00e2c5200866ab62}{init\+Cars(int car\+Amount)} Constructs array full of cars garage and an empty array of cars statistics\+Garage of size car\+Amount; The third car inserted into the garage is a taxi \end{DoxyCompactList}\item 
+boolean \hyperlink{class_traffic_system_a435ee335df994e7c45ae0ad6c73d0d91}{check\+Lanes\+Null} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_traffic_system_a435ee335df994e7c45ae0ad6c73d0d91}{check\+Lanes\+Null()} \end{DoxyCompactList}\item 
+void \hyperlink{class_traffic_system_af3d20b7295d2989db50e6febf36033ae}{to\+Last\+If\+Free} (\hyperlink{class_lane}{Lane} road, \hyperlink{class_car}{Car} new\+Car)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_traffic_system_af3d20b7295d2989db50e6febf36033ae}{to\+Last\+If\+Free()} \end{DoxyCompactList}\item 
+void \hyperlink{class_traffic_system_acf4b83b81140ed9254b024afb35e0e60}{switch\+Lanes} (\hyperlink{class_car}{Car} switcher\+Car, \hyperlink{class_lane}{Lane} l1, \hyperlink{class_lane}{Lane} l2, \hyperlink{class_car_position}{Car\+Position} d1, \hyperlink{class_car_position}{Car\+Position} d2)
+\begin{DoxyCompactList}\small\item\em Moves switcher\+Car to either the forward or the turning lane depending on its destination. \end{DoxyCompactList}\item 
+\hypertarget{class_traffic_system_ab6c1cf4dad2e420a9437dde8cb3af921}{void \hyperlink{class_traffic_system_ab6c1cf4dad2e420a9437dde8cb3af921}{step} ()}\label{class_traffic_system_ab6c1cf4dad2e420a9437dde8cb3af921}
+
+\begin{DoxyCompactList}\small\item\em Coordinates the whole simulation with the help of the other classes \hyperlink{class_traffic_system_ab6c1cf4dad2e420a9437dde8cb3af921}{step()} functions; moving cars forward in the lane, switching to new lanes and moving cars to the garage for statistics gathering. \end{DoxyCompactList}\item 
+\hypertarget{class_traffic_system_a1bac8350985fab6d29a6172ecb5100e1}{void \hyperlink{class_traffic_system_a1bac8350985fab6d29a6172ecb5100e1}{print\+Statistics} ()}\label{class_traffic_system_a1bac8350985fab6d29a6172ecb5100e1}
+
+\begin{DoxyCompactList}\small\item\em Prints the statistics of all cars after the simulation has finished, showing values such as waiting time and total time in the simulation. \end{DoxyCompactList}\item 
+\hypertarget{class_traffic_system_a71e59c328ac605b5bd499002dcde1ecf}{void \hyperlink{class_traffic_system_a71e59c328ac605b5bd499002dcde1ecf}{print\+Highest\+Waiting\+Times} ()}\label{class_traffic_system_a71e59c328ac605b5bd499002dcde1ecf}
+
+\begin{DoxyCompactList}\small\item\em Prints the statistics of the simulation, i.\+e the cars with the highest waiting times in the simulation and the average waiting time. \end{DoxyCompactList}\item 
+\hypertarget{class_traffic_system_ab747eb58cd5d7aeb3d3b4a0d73939ce2}{void \hyperlink{class_traffic_system_ab747eb58cd5d7aeb3d3b4a0d73939ce2}{print} ()}\label{class_traffic_system_ab747eb58cd5d7aeb3d3b4a0d73939ce2}
+
+\begin{DoxyCompactList}\small\item\em Uses the classes various print functions to portrait an overall representation of the traffic simulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_traffic_system_a35f1a6efe35d73a4e4d296ca557f12b4}{static final String \hyperlink{class_traffic_system_a35f1a6efe35d73a4e4d296ca557f12b4}{A\+N\+S\+I\+\_\+\+G\+R\+E\+E\+N} = \char`\"{}\textbackslash{}u001\+B\mbox{[}32m\char`\"{}}\label{class_traffic_system_a35f1a6efe35d73a4e4d296ca557f12b4}
+
+\begin{DoxyCompactList}\small\item\em Used for green terminal text. \end{DoxyCompactList}\item 
+\hypertarget{class_traffic_system_a4f8a678e9b5444b353f2932a38206e62}{static final String \hyperlink{class_traffic_system_a4f8a678e9b5444b353f2932a38206e62}{A\+N\+S\+I\+\_\+\+R\+E\+S\+E\+T} = \char`\"{}\textbackslash{}u001\+B\mbox{[}0m\char`\"{}}\label{class_traffic_system_a4f8a678e9b5444b353f2932a38206e62}
+
+\begin{DoxyCompactList}\small\item\em Used for resetting terminal text. \end{DoxyCompactList}\item 
+\hypertarget{class_traffic_system_a312857e0f0a7bf49c668d15d7c7d85fa}{static final String \hyperlink{class_traffic_system_a312857e0f0a7bf49c668d15d7c7d85fa}{A\+N\+S\+I\+\_\+\+R\+E\+D} = \char`\"{}\textbackslash{}u001\+B\mbox{[}31m\char`\"{}}\label{class_traffic_system_a312857e0f0a7bf49c668d15d7c7d85fa}
+
+\begin{DoxyCompactList}\small\item\em Used for red terminal text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Description of \hyperlink{class_traffic_system}{Traffic\+System}. 
+
+\begin{DoxyAuthor}{Author}
+Pontus Hilding 
+
+Lukas Hamberg 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+2014-\/10-\/31 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_traffic_system_a0959fd995dc1197b842399bd592f5f5f}{\index{Traffic\+System@{Traffic\+System}!Traffic\+System@{Traffic\+System}}
+\index{Traffic\+System@{Traffic\+System}!Traffic\+System@{Traffic\+System}}
+\subsubsection[{Traffic\+System}]{\setlength{\rightskip}{0pt plus 5cm}Traffic\+System.\+Traffic\+System (
+\begin{DoxyParamCaption}
+\item[{int}]{roadlen1, }
+\item[{int}]{roadlen2, }
+\item[{int}]{forward\+Period, }
+\item[{int}]{forward\+Green, }
+\item[{int}]{turn\+Period, }
+\item[{int}]{turn\+Green}
+\end{DoxyParamCaption}
+)}}\label{class_traffic_system_a0959fd995dc1197b842399bd592f5f5f}
+
+
+Description of \hyperlink{class_traffic_system_a0959fd995dc1197b842399bd592f5f5f}{Traffic\+System()} 
+
+Constructs a three roads r0,r2,r3, and two trafficlights s1 and s2.
+
+
+\begin{DoxyParams}{Parameters}
+{\em roadlen1} & integer deciding length of the roads r0 and r1 \\
+\hline
+{\em roadlen2} & integer deciding length of the road r2 \\
+\hline
+{\em forward\+Period} & sets period for trafficlight s1 \\
+\hline
+{\em forward\+Green} & sets green value for trafficlight s1 \\
+\hline
+{\em turn\+Period} & sets period for trafficlight s2 \\
+\hline
+{\em turn\+Green} & sets green value for trafficlight s2 \\
+\hline
+\end{DoxyParams}
+Road to move cars on
+
+Continuation of road r0 to move cars on
+
+Sidelane road to move cars on
+
+Traffic light belonging to r1
+
+Traffic light belonging to r1 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_traffic_system_a569b6ef2fb5a71a18d563760b9f5fa43}{\index{Traffic\+System@{Traffic\+System}!add\+Cars\+To\+Stat\+Garage@{add\+Cars\+To\+Stat\+Garage}}
+\index{add\+Cars\+To\+Stat\+Garage@{add\+Cars\+To\+Stat\+Garage}!Traffic\+System@{Traffic\+System}}
+\subsubsection[{add\+Cars\+To\+Stat\+Garage}]{\setlength{\rightskip}{0pt plus 5cm}void Traffic\+System.\+add\+Cars\+To\+Stat\+Garage (
+\begin{DoxyParamCaption}
+\item[{{\bf Lane}}]{road, }
+\item[{{\bf Light}}]{s}
+\end{DoxyParamCaption}
+)}}\label{class_traffic_system_a569b6ef2fb5a71a18d563760b9f5fa43}
+
+
+\hyperlink{class_traffic_system_a569b6ef2fb5a71a18d563760b9f5fa43}{add\+Cars\+To\+Stat\+Garage(\+Lane road, Light s)} 
+
+Removes first car in road and adds that car to statistics\+Garage incrementing car\+Stat\+Int only if traffics light s is green. Else increment the waiting\+Time counter for the first car in rood by 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em road} & the road to remove car from \\
+\hline
+{\em s} & the trafficlight used to check if car removal is allowed \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_traffic_system_a435ee335df994e7c45ae0ad6c73d0d91}{\index{Traffic\+System@{Traffic\+System}!check\+Lanes\+Null@{check\+Lanes\+Null}}
+\index{check\+Lanes\+Null@{check\+Lanes\+Null}!Traffic\+System@{Traffic\+System}}
+\subsubsection[{check\+Lanes\+Null}]{\setlength{\rightskip}{0pt plus 5cm}boolean Traffic\+System.\+check\+Lanes\+Null (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_traffic_system_a435ee335df994e7c45ae0ad6c73d0d91}
+
+
+\hyperlink{class_traffic_system_a435ee335df994e7c45ae0ad6c73d0d91}{check\+Lanes\+Null()} 
+
+True if all roads are empty. \begin{DoxySeeAlso}{See also}
+\hyperlink{class_traffic_system_ab6c1cf4dad2e420a9437dde8cb3af921}{step()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+true if all \hyperlink{class_car}{Car} objects in r0, r1, r2 are set to null. Else false. 
+\end{DoxyReturn}
+\hypertarget{class_traffic_system_af3f322278dadbd3e00e2c5200866ab62}{\index{Traffic\+System@{Traffic\+System}!init\+Cars@{init\+Cars}}
+\index{init\+Cars@{init\+Cars}!Traffic\+System@{Traffic\+System}}
+\subsubsection[{init\+Cars}]{\setlength{\rightskip}{0pt plus 5cm}void Traffic\+System.\+init\+Cars (
+\begin{DoxyParamCaption}
+\item[{int}]{car\+Amount}
+\end{DoxyParamCaption}
+)}}\label{class_traffic_system_af3f322278dadbd3e00e2c5200866ab62}
+
+
+\hyperlink{class_traffic_system_af3f322278dadbd3e00e2c5200866ab62}{init\+Cars(int car\+Amount)} Constructs array full of cars garage and an empty array of cars statistics\+Garage of size car\+Amount; The third car inserted into the garage is a taxi 
+
+
+\begin{DoxyParams}{Parameters}
+{\em car\+Amount} & number of cars to be created and inserted in garage array and statistics\+Garage array \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_traffic_system_a4b5f51ba061e8040b57e96b3f70b3990}{\index{Traffic\+System@{Traffic\+System}!read\+Parameters@{read\+Parameters}}
+\index{read\+Parameters@{read\+Parameters}!Traffic\+System@{Traffic\+System}}
+\subsubsection[{read\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void Traffic\+System.\+read\+Parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_traffic_system_a4b5f51ba061e8040b57e96b3f70b3990}
+
+
+\hyperlink{class_traffic_system_a4b5f51ba061e8040b57e96b3f70b3990}{read\+Parameters()} 
+
+\hypertarget{class_traffic_system_acf4b83b81140ed9254b024afb35e0e60}{\index{Traffic\+System@{Traffic\+System}!switch\+Lanes@{switch\+Lanes}}
+\index{switch\+Lanes@{switch\+Lanes}!Traffic\+System@{Traffic\+System}}
+\subsubsection[{switch\+Lanes}]{\setlength{\rightskip}{0pt plus 5cm}void Traffic\+System.\+switch\+Lanes (
+\begin{DoxyParamCaption}
+\item[{{\bf Car}}]{switcher\+Car, }
+\item[{{\bf Lane}}]{l1, }
+\item[{{\bf Lane}}]{l2, }
+\item[{{\bf Car\+Position}}]{d1, }
+\item[{{\bf Car\+Position}}]{d2}
+\end{DoxyParamCaption}
+)}}\label{class_traffic_system_acf4b83b81140ed9254b024afb35e0e60}
+
+
+Moves switcher\+Car to either the forward or the turning lane depending on its destination. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em switcher\+Car} & the car to be moved \\
+\hline
+{\em l1} & the forward lane \\
+\hline
+{\em l2} & the turning lane \\
+\hline
+{\em d1} & the forward destination \\
+\hline
+{\em d2} & the turning destination \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_traffic_system_af3d20b7295d2989db50e6febf36033ae}{\index{Traffic\+System@{Traffic\+System}!to\+Last\+If\+Free@{to\+Last\+If\+Free}}
+\index{to\+Last\+If\+Free@{to\+Last\+If\+Free}!Traffic\+System@{Traffic\+System}}
+\subsubsection[{to\+Last\+If\+Free}]{\setlength{\rightskip}{0pt plus 5cm}void Traffic\+System.\+to\+Last\+If\+Free (
+\begin{DoxyParamCaption}
+\item[{{\bf Lane}}]{road, }
+\item[{{\bf Car}}]{new\+Car}
+\end{DoxyParamCaption}
+)}}\label{class_traffic_system_af3d20b7295d2989db50e6febf36033ae}
+
+
+\hyperlink{class_traffic_system_af3d20b7295d2989db50e6febf36033ae}{to\+Last\+If\+Free()} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em road} & Road to put cars in \\
+\hline
+{\em new\+Car} & Creates a new car on the road \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_overflow_exception}{Overflow\+Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Traffic\+System.\+java\end{DoxyCompactItemize}

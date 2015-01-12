@@ -1,0 +1,251 @@
+\hypertarget{class_car_position}{\section{Car\+Position Class Reference}
+\label{class_car_position}\index{Car\+Position@{Car\+Position}}
+}
+
+
+The Class \hyperlink{class_car_position}{Car\+Position}.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_car_position_a05ba9c48ae0dc6bcc7bef617e370ae77}{Car\+Position} (final \hyperlink{class_lane}{Lane} owner)
+\begin{DoxyCompactList}\small\item\em Instantiates a new car position. \end{DoxyCompactList}\item 
+boolean \hyperlink{class_car_position_ac7b16dd1c871461b96e3a90ab96c9323}{is\+End} (\hyperlink{class_car_position}{Car\+Position} target)
+\begin{DoxyCompactList}\small\item\em Checks if the \hyperlink{class_car_position}{Car\+Position} is at the end of a \hyperlink{class_lane}{Lane}. \end{DoxyCompactList}\item 
+boolean \hyperlink{class_car_position_a060a8a0043d119878c1a35af6b42291a}{move\+Forward} ()
+\begin{DoxyCompactList}\small\item\em Moves the current car forward if the destination is to move forward and it's the end of the main lane. \end{DoxyCompactList}\item 
+boolean \hyperlink{class_car_position_a3a07aa3135efaf79cc05273de3d0eed9}{turn} ()
+\begin{DoxyCompactList}\small\item\em Moves the current car to the turning lane if the destination is to turn and it's the end of the main lane. \end{DoxyCompactList}\item 
+\hyperlink{class_car}{Car} \hyperlink{class_car_position_a7f67bb341d15a5d2dfdfb4958e09e96a}{get} ()
+\begin{DoxyCompactList}\small\item\em Gets the current car at the \hyperlink{class_car_position}{Car\+Position}. \end{DoxyCompactList}\item 
+void \hyperlink{class_car_position_abfa74c31e5ca43d0c2c06f637ee8533f}{set\+Turn} (\hyperlink{class_car_position}{Car\+Position} turn)
+\begin{DoxyCompactList}\small\item\em Updates \hyperlink{class_car_position}{Car\+Position} to turn. \end{DoxyCompactList}\item 
+\hyperlink{class_car_position}{Car\+Position} \hyperlink{class_car_position_a01b5b7e2cb4c51114e3f42e7fa150c74}{get\+Turn} ()
+\begin{DoxyCompactList}\small\item\em Gets the \hyperlink{class_car_position}{Car\+Position} turn. \end{DoxyCompactList}\item 
+\hyperlink{class_car_position}{Car\+Position} \hyperlink{class_car_position_a4238bc30010dbc3c079fe319809f9829}{get\+Forward} ()
+\begin{DoxyCompactList}\small\item\em Gets the \hyperlink{class_car_position}{Car\+Position} forward. \end{DoxyCompactList}\item 
+void \hyperlink{class_car_position_aed958712c7c0614d615e7e6693fea66d}{update\+Forward} (\hyperlink{class_car_position}{Car\+Position} new\+Forward)
+\begin{DoxyCompactList}\small\item\em Updates \hyperlink{class_car_position}{Car\+Position} to forward. \end{DoxyCompactList}\item 
+boolean \hyperlink{class_car_position_a74eb829a0810b734335cffa0eb7942f6}{is\+There\+A\+Car} ()
+\begin{DoxyCompactList}\small\item\em Checks if there's a car at the current \hyperlink{class_car_position}{Car\+Position}. \end{DoxyCompactList}\item 
+void \hyperlink{class_car_position_acd286a6c991daf457a5c4bf8e166d5bc}{set} (\hyperlink{class_car}{Car} c)
+\begin{DoxyCompactList}\small\item\em Sets the current car at the \hyperlink{class_car_position}{Car\+Position} to c. \end{DoxyCompactList}\item 
+\hypertarget{class_car_position_af6c2c343220e88c043b1ee80b29854a3}{void \hyperlink{class_car_position_af6c2c343220e88c043b1ee80b29854a3}{set\+Null} ()}\label{class_car_position_af6c2c343220e88c043b1ee80b29854a3}
+
+\begin{DoxyCompactList}\small\item\em Sets the current car at the \hyperlink{class_car_position}{Car\+Position} to null. \end{DoxyCompactList}\item 
+int \hyperlink{class_car_position_a7e3c9cde5c517a9698f01572c4e26281}{get\+Position} ()
+\begin{DoxyCompactList}\small\item\em Gets the Car\+Positions' position. \end{DoxyCompactList}\item 
+void \hyperlink{class_car_position_a23d9916eb4f84d47c30980de5d0cd0be}{set\+Position} (int pos)
+\begin{DoxyCompactList}\small\item\em Sets the Car\+Positions' position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Class \hyperlink{class_car_position}{Car\+Position}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_car_position_a05ba9c48ae0dc6bcc7bef617e370ae77}{\index{Car\+Position@{Car\+Position}!Car\+Position@{Car\+Position}}
+\index{Car\+Position@{Car\+Position}!Car\+Position@{Car\+Position}}
+\subsubsection[{Car\+Position}]{\setlength{\rightskip}{0pt plus 5cm}Car\+Position.\+Car\+Position (
+\begin{DoxyParamCaption}
+\item[{final {\bf Lane}}]{owner}
+\end{DoxyParamCaption}
+)}}\label{class_car_position_a05ba9c48ae0dc6bcc7bef617e370ae77}
+
+
+Instantiates a new car position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & the lane which the \hyperlink{class_car_position}{Car\+Position} belongs to. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_car_position_a7f67bb341d15a5d2dfdfb4958e09e96a}{\index{Car\+Position@{Car\+Position}!get@{get}}
+\index{get@{get}!Car\+Position@{Car\+Position}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Car} Car\+Position.\+get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_car_position_a7f67bb341d15a5d2dfdfb4958e09e96a}
+
+
+Gets the current car at the \hyperlink{class_car_position}{Car\+Position}. 
+
+\begin{DoxyReturn}{Returns}
+the current car 
+\end{DoxyReturn}
+\hypertarget{class_car_position_a4238bc30010dbc3c079fe319809f9829}{\index{Car\+Position@{Car\+Position}!get\+Forward@{get\+Forward}}
+\index{get\+Forward@{get\+Forward}!Car\+Position@{Car\+Position}}
+\subsubsection[{get\+Forward}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Car\+Position} Car\+Position.\+get\+Forward (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_car_position_a4238bc30010dbc3c079fe319809f9829}
+
+
+Gets the \hyperlink{class_car_position}{Car\+Position} forward. 
+
+\begin{DoxyReturn}{Returns}
+forward 
+\end{DoxyReturn}
+\hypertarget{class_car_position_a7e3c9cde5c517a9698f01572c4e26281}{\index{Car\+Position@{Car\+Position}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Car\+Position@{Car\+Position}}
+\subsubsection[{get\+Position}]{\setlength{\rightskip}{0pt plus 5cm}int Car\+Position.\+get\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_car_position_a7e3c9cde5c517a9698f01572c4e26281}
+
+
+Gets the Car\+Positions' position. 
+
+\begin{DoxyReturn}{Returns}
+the position 
+\end{DoxyReturn}
+\hypertarget{class_car_position_a01b5b7e2cb4c51114e3f42e7fa150c74}{\index{Car\+Position@{Car\+Position}!get\+Turn@{get\+Turn}}
+\index{get\+Turn@{get\+Turn}!Car\+Position@{Car\+Position}}
+\subsubsection[{get\+Turn}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Car\+Position} Car\+Position.\+get\+Turn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_car_position_a01b5b7e2cb4c51114e3f42e7fa150c74}
+
+
+Gets the \hyperlink{class_car_position}{Car\+Position} turn. 
+
+\begin{DoxyReturn}{Returns}
+turn 
+\end{DoxyReturn}
+\hypertarget{class_car_position_ac7b16dd1c871461b96e3a90ab96c9323}{\index{Car\+Position@{Car\+Position}!is\+End@{is\+End}}
+\index{is\+End@{is\+End}!Car\+Position@{Car\+Position}}
+\subsubsection[{is\+End}]{\setlength{\rightskip}{0pt plus 5cm}boolean Car\+Position.\+is\+End (
+\begin{DoxyParamCaption}
+\item[{{\bf Car\+Position}}]{target}
+\end{DoxyParamCaption}
+)}}\label{class_car_position_ac7b16dd1c871461b96e3a90ab96c9323}
+
+
+Checks if the \hyperlink{class_car_position}{Car\+Position} is at the end of a \hyperlink{class_lane}{Lane}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & the target \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if is end 
+\end{DoxyReturn}
+\hypertarget{class_car_position_a74eb829a0810b734335cffa0eb7942f6}{\index{Car\+Position@{Car\+Position}!is\+There\+A\+Car@{is\+There\+A\+Car}}
+\index{is\+There\+A\+Car@{is\+There\+A\+Car}!Car\+Position@{Car\+Position}}
+\subsubsection[{is\+There\+A\+Car}]{\setlength{\rightskip}{0pt plus 5cm}boolean Car\+Position.\+is\+There\+A\+Car (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_car_position_a74eb829a0810b734335cffa0eb7942f6}
+
+
+Checks if there's a car at the current \hyperlink{class_car_position}{Car\+Position}. 
+
+\begin{DoxyReturn}{Returns}
+true, if there's a car 
+\end{DoxyReturn}
+\hypertarget{class_car_position_a060a8a0043d119878c1a35af6b42291a}{\index{Car\+Position@{Car\+Position}!move\+Forward@{move\+Forward}}
+\index{move\+Forward@{move\+Forward}!Car\+Position@{Car\+Position}}
+\subsubsection[{move\+Forward}]{\setlength{\rightskip}{0pt plus 5cm}boolean Car\+Position.\+move\+Forward (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_car_position_a060a8a0043d119878c1a35af6b42291a}
+
+
+Moves the current car forward if the destination is to move forward and it's the end of the main lane. 
+
+\begin{DoxyReturn}{Returns}
+true, if the current car has the destination forward and is at the end of the main lane 
+\end{DoxyReturn}
+\hypertarget{class_car_position_acd286a6c991daf457a5c4bf8e166d5bc}{\index{Car\+Position@{Car\+Position}!set@{set}}
+\index{set@{set}!Car\+Position@{Car\+Position}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void Car\+Position.\+set (
+\begin{DoxyParamCaption}
+\item[{{\bf Car}}]{c}
+\end{DoxyParamCaption}
+)}}\label{class_car_position_acd286a6c991daf457a5c4bf8e166d5bc}
+
+
+Sets the current car at the \hyperlink{class_car_position}{Car\+Position} to c. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & the car \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_car_position_a23d9916eb4f84d47c30980de5d0cd0be}{\index{Car\+Position@{Car\+Position}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Car\+Position@{Car\+Position}}
+\subsubsection[{set\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Car\+Position.\+set\+Position (
+\begin{DoxyParamCaption}
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}}\label{class_car_position_a23d9916eb4f84d47c30980de5d0cd0be}
+
+
+Sets the Car\+Positions' position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & the new position \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_car_position_abfa74c31e5ca43d0c2c06f637ee8533f}{\index{Car\+Position@{Car\+Position}!set\+Turn@{set\+Turn}}
+\index{set\+Turn@{set\+Turn}!Car\+Position@{Car\+Position}}
+\subsubsection[{set\+Turn}]{\setlength{\rightskip}{0pt plus 5cm}void Car\+Position.\+set\+Turn (
+\begin{DoxyParamCaption}
+\item[{{\bf Car\+Position}}]{turn}
+\end{DoxyParamCaption}
+)}}\label{class_car_position_abfa74c31e5ca43d0c2c06f637ee8533f}
+
+
+Updates \hyperlink{class_car_position}{Car\+Position} to turn. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em turn} & the turn destination \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_car_position_a3a07aa3135efaf79cc05273de3d0eed9}{\index{Car\+Position@{Car\+Position}!turn@{turn}}
+\index{turn@{turn}!Car\+Position@{Car\+Position}}
+\subsubsection[{turn}]{\setlength{\rightskip}{0pt plus 5cm}boolean Car\+Position.\+turn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_car_position_a3a07aa3135efaf79cc05273de3d0eed9}
+
+
+Moves the current car to the turning lane if the destination is to turn and it's the end of the main lane. 
+
+\begin{DoxyReturn}{Returns}
+true, if the current car has the destination turn and is at the end of the main lane 
+\end{DoxyReturn}
+\hypertarget{class_car_position_aed958712c7c0614d615e7e6693fea66d}{\index{Car\+Position@{Car\+Position}!update\+Forward@{update\+Forward}}
+\index{update\+Forward@{update\+Forward}!Car\+Position@{Car\+Position}}
+\subsubsection[{update\+Forward}]{\setlength{\rightskip}{0pt plus 5cm}void Car\+Position.\+update\+Forward (
+\begin{DoxyParamCaption}
+\item[{{\bf Car\+Position}}]{new\+Forward}
+\end{DoxyParamCaption}
+)}}\label{class_car_position_aed958712c7c0614d615e7e6693fea66d}
+
+
+Updates \hyperlink{class_car_position}{Car\+Position} to forward. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Forward} & the new forward destination \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Car\+Position.\+java\end{DoxyCompactItemize}

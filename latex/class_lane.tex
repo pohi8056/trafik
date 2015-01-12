@@ -1,0 +1,210 @@
+\hypertarget{class_lane}{\section{Lane Class Reference}
+\label{class_lane}\index{Lane@{Lane}}
+}
+
+
+The Class \hyperlink{class_lane}{Lane}.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_lane_a636f1d6ef695cd3ac642096c051b3d6d}{Lane} (int n)
+\begin{DoxyCompactList}\small\item\em Instantiates a new lane. \end{DoxyCompactList}\item 
+boolean \hyperlink{class_lane_a7a6879f035bd1fa89328914f11028ff1}{is\+Empty} ()
+\begin{DoxyCompactList}\small\item\em Checks if the lane is empty. \end{DoxyCompactList}\item 
+boolean \hyperlink{class_lane_a461bba912631945e1b9abceb677729a5}{match\+End} (\hyperlink{class_car_position}{Car\+Position} target)
+\begin{DoxyCompactList}\small\item\em Checks whether the \hyperlink{class_car_position}{Car\+Position} target is at the end of the lane. \end{DoxyCompactList}\item 
+int \hyperlink{class_lane_afc04264fa269d5be97b570890907915a}{get\+Length} ()
+\begin{DoxyCompactList}\small\item\em Gets the length of the lane. \end{DoxyCompactList}\item 
+\hypertarget{class_lane_a97a49d217a4db63448439a4cb013e5ca}{void {\bfseries set\+Parallel} (\hyperlink{class_lane}{Lane} side\+Lane)}\label{class_lane_a97a49d217a4db63448439a4cb013e5ca}
+
+\item 
+void \hyperlink{class_lane_a85e5eb030e32bc0825be9f3e942e5ccc}{step} ()
+\begin{DoxyCompactList}\small\item\em Steps all cars in the lane one step forward if possible (except the one at position 0). \end{DoxyCompactList}\item 
+\hyperlink{class_car}{Car} \hyperlink{class_lane_aac5f6634752c76e0e46358fe8dd896ba}{get\+First} ()
+\begin{DoxyCompactList}\small\item\em Returns and removes the first car in the lane. \end{DoxyCompactList}\item 
+\hyperlink{class_car}{Car} \hyperlink{class_lane_a9ab36dbd97899be31b4f5c28d7969e85}{first\+Car} ()
+\begin{DoxyCompactList}\small\item\em Returns the first car in the lane without removing it. \end{DoxyCompactList}\item 
+boolean \hyperlink{class_lane_a30c3819ef177ddab0ba45e7145babd38}{last\+Free} ()
+\begin{DoxyCompactList}\small\item\em Checks whether or not the last \hyperlink{class_car_position}{Car\+Position} in the lane is free, i.\+e there's no car there. \end{DoxyCompactList}\item 
+void \hyperlink{class_lane_aea316343730ee43e3dc3ba660cd46469}{put\+Last} (\hyperlink{class_car}{Car} c)  throws Overflow\+Exception 
+\begin{DoxyCompactList}\small\item\em Puts the car c at the last \hyperlink{class_car_position}{Car\+Position} in the lane if it's free, otherwise throws an exception. \end{DoxyCompactList}\item 
+\hypertarget{class_lane_a62510f601eff0ac72dc5f95c876a8563}{void \hyperlink{class_lane_a62510f601eff0ac72dc5f95c876a8563}{to\+String\+Lane} ()}\label{class_lane_a62510f601eff0ac72dc5f95c876a8563}
+
+\begin{DoxyCompactList}\small\item\em Prints data about the lane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_car_position}{Car\+Position}\mbox{[}$\,$\mbox{]} \hyperlink{class_lane_a0e18fcb829e23827ecc2610e6e8caf0b}{the\+Lane}
+\begin{DoxyCompactList}\small\item\em The lane. \end{DoxyCompactList}\item 
+\hyperlink{class_car}{Car} \hyperlink{class_lane_abcd2ea6fa6aaa99b2b84e89a422c0377}{temporary\+Parking\+Spot}
+\begin{DoxyCompactList}\small\item\em Temporary parking spot for cars who have reached there destination, used for statistics. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Class \hyperlink{class_lane}{Lane}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_lane_a636f1d6ef695cd3ac642096c051b3d6d}{\index{Lane@{Lane}!Lane@{Lane}}
+\index{Lane@{Lane}!Lane@{Lane}}
+\subsubsection[{Lane}]{\setlength{\rightskip}{0pt plus 5cm}Lane.\+Lane (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{class_lane_a636f1d6ef695cd3ac642096c051b3d6d}
+
+
+Instantiates a new lane. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & the number of Car\+Positions fitting in the lane. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_lane_a9ab36dbd97899be31b4f5c28d7969e85}{\index{Lane@{Lane}!first\+Car@{first\+Car}}
+\index{first\+Car@{first\+Car}!Lane@{Lane}}
+\subsubsection[{first\+Car}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Car} Lane.\+first\+Car (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_lane_a9ab36dbd97899be31b4f5c28d7969e85}
+
+
+Returns the first car in the lane without removing it. 
+
+\begin{DoxyReturn}{Returns}
+the first car 
+\end{DoxyReturn}
+\hypertarget{class_lane_aac5f6634752c76e0e46358fe8dd896ba}{\index{Lane@{Lane}!get\+First@{get\+First}}
+\index{get\+First@{get\+First}!Lane@{Lane}}
+\subsubsection[{get\+First}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Car} Lane.\+get\+First (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_lane_aac5f6634752c76e0e46358fe8dd896ba}
+
+
+Returns and removes the first car in the lane. 
+
+\begin{DoxyReturn}{Returns}
+the first car. 
+\end{DoxyReturn}
+\hypertarget{class_lane_afc04264fa269d5be97b570890907915a}{\index{Lane@{Lane}!get\+Length@{get\+Length}}
+\index{get\+Length@{get\+Length}!Lane@{Lane}}
+\subsubsection[{get\+Length}]{\setlength{\rightskip}{0pt plus 5cm}int Lane.\+get\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_lane_afc04264fa269d5be97b570890907915a}
+
+
+Gets the length of the lane. 
+
+\begin{DoxyReturn}{Returns}
+the length 
+\end{DoxyReturn}
+\hypertarget{class_lane_a7a6879f035bd1fa89328914f11028ff1}{\index{Lane@{Lane}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Lane@{Lane}}
+\subsubsection[{is\+Empty}]{\setlength{\rightskip}{0pt plus 5cm}boolean Lane.\+is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_lane_a7a6879f035bd1fa89328914f11028ff1}
+
+
+Checks if the lane is empty. 
+
+\begin{DoxyReturn}{Returns}
+true, if the lane is empty 
+\end{DoxyReturn}
+\hypertarget{class_lane_a30c3819ef177ddab0ba45e7145babd38}{\index{Lane@{Lane}!last\+Free@{last\+Free}}
+\index{last\+Free@{last\+Free}!Lane@{Lane}}
+\subsubsection[{last\+Free}]{\setlength{\rightskip}{0pt plus 5cm}boolean Lane.\+last\+Free (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_lane_a30c3819ef177ddab0ba45e7145babd38}
+
+
+Checks whether or not the last \hyperlink{class_car_position}{Car\+Position} in the lane is free, i.\+e there's no car there. 
+
+\begin{DoxyReturn}{Returns}
+true, if the last \hyperlink{class_car_position}{Car\+Position} is free. 
+\end{DoxyReturn}
+\hypertarget{class_lane_a461bba912631945e1b9abceb677729a5}{\index{Lane@{Lane}!match\+End@{match\+End}}
+\index{match\+End@{match\+End}!Lane@{Lane}}
+\subsubsection[{match\+End}]{\setlength{\rightskip}{0pt plus 5cm}boolean Lane.\+match\+End (
+\begin{DoxyParamCaption}
+\item[{{\bf Car\+Position}}]{target}
+\end{DoxyParamCaption}
+)}}\label{class_lane_a461bba912631945e1b9abceb677729a5}
+
+
+Checks whether the \hyperlink{class_car_position}{Car\+Position} target is at the end of the lane. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & the target \hyperlink{class_car_position}{Car\+Position} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if target is at the end of the lane 
+\end{DoxyReturn}
+\hypertarget{class_lane_aea316343730ee43e3dc3ba660cd46469}{\index{Lane@{Lane}!put\+Last@{put\+Last}}
+\index{put\+Last@{put\+Last}!Lane@{Lane}}
+\subsubsection[{put\+Last}]{\setlength{\rightskip}{0pt plus 5cm}void Lane.\+put\+Last (
+\begin{DoxyParamCaption}
+\item[{{\bf Car}}]{c}
+\end{DoxyParamCaption}
+) throws {\bf Overflow\+Exception}}}\label{class_lane_aea316343730ee43e3dc3ba660cd46469}
+
+
+Puts the car c at the last \hyperlink{class_car_position}{Car\+Position} in the lane if it's free, otherwise throws an exception. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & the car \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_overflow_exception}{Overflow\+Exception}} & Overflow exception if the last \hyperlink{class_car_position}{Car\+Position} is occupied. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{class_lane_a85e5eb030e32bc0825be9f3e942e5ccc}{\index{Lane@{Lane}!step@{step}}
+\index{step@{step}!Lane@{Lane}}
+\subsubsection[{step}]{\setlength{\rightskip}{0pt plus 5cm}void Lane.\+step (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_lane_a85e5eb030e32bc0825be9f3e942e5ccc}
+
+
+Steps all cars in the lane one step forward if possible (except the one at position 0). 
+
+The car at position 0 gets added to the temporary\+Parting\+Spot to be used for statistics. 
+
+\subsection{Member Data Documentation}
+\hypertarget{class_lane_abcd2ea6fa6aaa99b2b84e89a422c0377}{\index{Lane@{Lane}!temporary\+Parking\+Spot@{temporary\+Parking\+Spot}}
+\index{temporary\+Parking\+Spot@{temporary\+Parking\+Spot}!Lane@{Lane}}
+\subsubsection[{temporary\+Parking\+Spot}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Car} Lane.\+temporary\+Parking\+Spot\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_lane_abcd2ea6fa6aaa99b2b84e89a422c0377}
+
+
+Temporary parking spot for cars who have reached there destination, used for statistics. 
+
+\hypertarget{class_lane_a0e18fcb829e23827ecc2610e6e8caf0b}{\index{Lane@{Lane}!the\+Lane@{the\+Lane}}
+\index{the\+Lane@{the\+Lane}!Lane@{Lane}}
+\subsubsection[{the\+Lane}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Car\+Position} \mbox{[}$\,$\mbox{]} Lane.\+the\+Lane\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_lane_a0e18fcb829e23827ecc2610e6e8caf0b}
+
+
+The lane. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Lane.\+java\end{DoxyCompactItemize}

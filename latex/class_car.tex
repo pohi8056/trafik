@@ -1,0 +1,353 @@
+\hypertarget{class_car}{\section{Car Class Reference}
+\label{class_car}\index{Car@{Car}}
+}
+
+
+The Class \hyperlink{class_car}{Car}.  
+
+
+Inheritance diagram for Car\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_car}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_car_abc94983f5c6da76940df4087acaa90c8}{void \hyperlink{class_car_abc94983f5c6da76940df4087acaa90c8}{step} ()}\label{class_car_abc94983f5c6da76940df4087acaa90c8}
+
+\begin{DoxyCompactList}\small\item\em Steps lifetime of car, i.\+e amount of time the car has been in the simulation. \end{DoxyCompactList}\item 
+\hypertarget{class_car_a3c0e698c2a1173191ee6fdb24f21e201}{void \hyperlink{class_car_a3c0e698c2a1173191ee6fdb24f21e201}{step\+Waiting\+Time} ()}\label{class_car_a3c0e698c2a1173191ee6fdb24f21e201}
+
+\begin{DoxyCompactList}\small\item\em Steps the waiting time, i.\+e the amount of time the car has been waiting for traffic lights or due to queues. \end{DoxyCompactList}\item 
+\hyperlink{class_car_a7dbb44fc230f48c8482f48187da025ca}{Car} (int \hyperlink{class_car_a6c77e5ff6ce04822eca2d7b246d3b516}{lifetime}, \hyperlink{class_car_position}{Car\+Position} \hyperlink{class_car_a8ec85c8488be9a19f14077fb861b7753}{destination}, int \hyperlink{class_car_afde6b5c1b796970c1c57c3039058b731}{car\+Nr})
+\begin{DoxyCompactList}\small\item\em Instantiates a new car. \end{DoxyCompactList}\item 
+\hyperlink{class_car_af2ee886c2de97f28065affbfe4fe88ef}{Car} (int \hyperlink{class_car_a6c77e5ff6ce04822eca2d7b246d3b516}{lifetime}, int \hyperlink{class_car_afde6b5c1b796970c1c57c3039058b731}{car\+Nr})
+\begin{DoxyCompactList}\small\item\em Instantiates a new car. \end{DoxyCompactList}\item 
+\hypertarget{class_car_ad3b361d4b20d3d13034f964eb023e213}{\hyperlink{class_car}{Car} {\bfseries clone} ()  throws Clone\+Not\+Supported\+Exception}\label{class_car_ad3b361d4b20d3d13034f964eb023e213}
+
+\item 
+\hypertarget{class_car_ab6c6c319f2d635748b34c0e24596feca}{void \hyperlink{class_car_ab6c6c319f2d635748b34c0e24596feca}{set\+Finished} ()}\label{class_car_ab6c6c319f2d635748b34c0e24596feca}
+
+\begin{DoxyCompactList}\small\item\em Sets a car to finished. \end{DoxyCompactList}\item 
+boolean \hyperlink{class_car_ac66efad04dca42f1dac6f9d4421f283f}{is\+Finished} ()
+\begin{DoxyCompactList}\small\item\em Checks if a car has been set to finished, i.\+e is finished with the simulation. \end{DoxyCompactList}\item 
+void \hyperlink{class_car_a966437af777f1187194ffcca3a4707fd}{random\+Destination} (\hyperlink{class_car_position}{Car\+Position} s1, \hyperlink{class_car_position}{Car\+Position} s2)
+\begin{DoxyCompactList}\small\item\em Generates a random destination for the car to reach. \end{DoxyCompactList}\item 
+void \hyperlink{class_car_a82739f8a2cd5feb3d41fbb386ed4539a}{set\+Position} (\hyperlink{class_car_position}{Car\+Position} \hyperlink{class_car_aa2011891bfead81fe201257172843a95}{current\+Position})
+\begin{DoxyCompactList}\small\item\em Sets the position of the car. \end{DoxyCompactList}\item 
+\hyperlink{class_car_position}{Car\+Position} \hyperlink{class_car_ab3350ba59a2a0f54866dc525a5f3d453}{get\+Position} ()
+\begin{DoxyCompactList}\small\item\em Gets the position of the car. \end{DoxyCompactList}\item 
+int \hyperlink{class_car_aa576cf15525523b1fff309555bb091de}{get\+Car\+Nr} ()
+\begin{DoxyCompactList}\small\item\em Gets the car number. \end{DoxyCompactList}\item 
+void \hyperlink{class_car_a749a0f1dd5d45ade9997f9d349376df2}{set\+Destination} (\hyperlink{class_car_position}{Car\+Position} \hyperlink{class_car_a8ec85c8488be9a19f14077fb861b7753}{destination})
+\begin{DoxyCompactList}\small\item\em Sets the destination of the car to be reached. \end{DoxyCompactList}\item 
+\hyperlink{class_car_position}{Car\+Position} \hyperlink{class_car_a24a7acc04b4ff363cd60c2dc8c0e5d26}{get\+Destination} ()
+\begin{DoxyCompactList}\small\item\em Gets the car destination. \end{DoxyCompactList}\item 
+void \hyperlink{class_car_ad654f48f8504b657ecaa866d90322513}{set\+Int\+Position} (int i)
+\begin{DoxyCompactList}\small\item\em Sets the integer position of the car. \end{DoxyCompactList}\item 
+int \hyperlink{class_car_ad6318c766e3d7235a3c75eaf71f3fd16}{get\+Int\+Position} ()
+\begin{DoxyCompactList}\small\item\em Gets the position of the car in integer format to be used for printing purposes. \end{DoxyCompactList}\item 
+int \hyperlink{class_car_a2b19b4d99199a18d4c331089164b2dc9}{get\+Waiting\+Time} ()
+\begin{DoxyCompactList}\small\item\em Gets the waiting time of the car. \end{DoxyCompactList}\item 
+String \hyperlink{class_car_a164ed12b81b460e2ef43f038f1aa6319}{to\+String\+Car} ()
+\begin{DoxyCompactList}\small\item\em Prints data about the car. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_car_afde6b5c1b796970c1c57c3039058b731}{car\+Nr}
+\begin{DoxyCompactList}\small\item\em The car number. \end{DoxyCompactList}\item 
+int \hyperlink{class_car_a6c77e5ff6ce04822eca2d7b246d3b516}{lifetime}
+\begin{DoxyCompactList}\small\item\em The lifetime of the car. \end{DoxyCompactList}\item 
+\hyperlink{class_car_position}{Car\+Position} \hyperlink{class_car_a8ec85c8488be9a19f14077fb861b7753}{destination}
+\begin{DoxyCompactList}\small\item\em The destination of the car (Forward or turn). \end{DoxyCompactList}\item 
+int \hyperlink{class_car_a37c19f61aed67e2b9ec340f5ef4f99bd}{int\+Position}
+\begin{DoxyCompactList}\small\item\em The integer position of the car, used for printing purposes. \end{DoxyCompactList}\item 
+\hyperlink{class_car_position}{Car\+Position} \hyperlink{class_car_aa2011891bfead81fe201257172843a95}{current\+Position}
+\begin{DoxyCompactList}\small\item\em The current position. \end{DoxyCompactList}\item 
+int \hyperlink{class_car_a523ff2c3f03e44be3ca40596f8e0ca43}{waiting\+Time} = 0
+\begin{DoxyCompactList}\small\item\em The amount of time the car has been waiting at traffic lights or due to queues. \end{DoxyCompactList}\item 
+boolean \hyperlink{class_car_aefe0e86fc27b1175e338447493c169a4}{route\+Finished} = false
+\begin{DoxyCompactList}\small\item\em Boolean to be set to true when the car has reached its destination. \end{DoxyCompactList}\item 
+String \hyperlink{class_car_a94ad7e01cd9c699c28bd77b773b883fe}{string\+Destination}
+\begin{DoxyCompactList}\small\item\em String destination, used for printing purposes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Class \hyperlink{class_car}{Car}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_car_a7dbb44fc230f48c8482f48187da025ca}{\index{Car@{Car}!Car@{Car}}
+\index{Car@{Car}!Car@{Car}}
+\subsubsection[{Car}]{\setlength{\rightskip}{0pt plus 5cm}Car.\+Car (
+\begin{DoxyParamCaption}
+\item[{int}]{lifetime, }
+\item[{{\bf Car\+Position}}]{destination, }
+\item[{int}]{car\+Nr}
+\end{DoxyParamCaption}
+)}}\label{class_car_a7dbb44fc230f48c8482f48187da025ca}
+
+
+Instantiates a new car. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lifetime} & the lifetime \\
+\hline
+{\em destination} & the destination \\
+\hline
+{\em car\+Nr} & the car nr \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_car_af2ee886c2de97f28065affbfe4fe88ef}{\index{Car@{Car}!Car@{Car}}
+\index{Car@{Car}!Car@{Car}}
+\subsubsection[{Car}]{\setlength{\rightskip}{0pt plus 5cm}Car.\+Car (
+\begin{DoxyParamCaption}
+\item[{int}]{lifetime, }
+\item[{int}]{car\+Nr}
+\end{DoxyParamCaption}
+)}}\label{class_car_af2ee886c2de97f28065affbfe4fe88ef}
+
+
+Instantiates a new car. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lifetime} & the lifetime \\
+\hline
+{\em car\+Nr} & the car number \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_car_aa576cf15525523b1fff309555bb091de}{\index{Car@{Car}!get\+Car\+Nr@{get\+Car\+Nr}}
+\index{get\+Car\+Nr@{get\+Car\+Nr}!Car@{Car}}
+\subsubsection[{get\+Car\+Nr}]{\setlength{\rightskip}{0pt plus 5cm}int Car.\+get\+Car\+Nr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_car_aa576cf15525523b1fff309555bb091de}
+
+
+Gets the car number. 
+
+\begin{DoxyReturn}{Returns}
+the car number 
+\end{DoxyReturn}
+\hypertarget{class_car_a24a7acc04b4ff363cd60c2dc8c0e5d26}{\index{Car@{Car}!get\+Destination@{get\+Destination}}
+\index{get\+Destination@{get\+Destination}!Car@{Car}}
+\subsubsection[{get\+Destination}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Car\+Position} Car.\+get\+Destination (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_car_a24a7acc04b4ff363cd60c2dc8c0e5d26}
+
+
+Gets the car destination. 
+
+\begin{DoxyReturn}{Returns}
+the destination 
+\end{DoxyReturn}
+\hypertarget{class_car_ad6318c766e3d7235a3c75eaf71f3fd16}{\index{Car@{Car}!get\+Int\+Position@{get\+Int\+Position}}
+\index{get\+Int\+Position@{get\+Int\+Position}!Car@{Car}}
+\subsubsection[{get\+Int\+Position}]{\setlength{\rightskip}{0pt plus 5cm}int Car.\+get\+Int\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_car_ad6318c766e3d7235a3c75eaf71f3fd16}
+
+
+Gets the position of the car in integer format to be used for printing purposes. 
+
+\begin{DoxyReturn}{Returns}
+the int position 
+\end{DoxyReturn}
+\hypertarget{class_car_ab3350ba59a2a0f54866dc525a5f3d453}{\index{Car@{Car}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Car@{Car}}
+\subsubsection[{get\+Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Car\+Position} Car.\+get\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_car_ab3350ba59a2a0f54866dc525a5f3d453}
+
+
+Gets the position of the car. 
+
+\begin{DoxyReturn}{Returns}
+The position 
+\end{DoxyReturn}
+\hypertarget{class_car_a2b19b4d99199a18d4c331089164b2dc9}{\index{Car@{Car}!get\+Waiting\+Time@{get\+Waiting\+Time}}
+\index{get\+Waiting\+Time@{get\+Waiting\+Time}!Car@{Car}}
+\subsubsection[{get\+Waiting\+Time}]{\setlength{\rightskip}{0pt plus 5cm}int Car.\+get\+Waiting\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_car_a2b19b4d99199a18d4c331089164b2dc9}
+
+
+Gets the waiting time of the car. 
+
+\begin{DoxyReturn}{Returns}
+the waiting time 
+\end{DoxyReturn}
+\hypertarget{class_car_ac66efad04dca42f1dac6f9d4421f283f}{\index{Car@{Car}!is\+Finished@{is\+Finished}}
+\index{is\+Finished@{is\+Finished}!Car@{Car}}
+\subsubsection[{is\+Finished}]{\setlength{\rightskip}{0pt plus 5cm}boolean Car.\+is\+Finished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_car_ac66efad04dca42f1dac6f9d4421f283f}
+
+
+Checks if a car has been set to finished, i.\+e is finished with the simulation. 
+
+\begin{DoxyReturn}{Returns}
+true, if finished 
+\end{DoxyReturn}
+\hypertarget{class_car_a966437af777f1187194ffcca3a4707fd}{\index{Car@{Car}!random\+Destination@{random\+Destination}}
+\index{random\+Destination@{random\+Destination}!Car@{Car}}
+\subsubsection[{random\+Destination}]{\setlength{\rightskip}{0pt plus 5cm}void Car.\+random\+Destination (
+\begin{DoxyParamCaption}
+\item[{{\bf Car\+Position}}]{s1, }
+\item[{{\bf Car\+Position}}]{s2}
+\end{DoxyParamCaption}
+)}}\label{class_car_a966437af777f1187194ffcca3a4707fd}
+
+
+Generates a random destination for the car to reach. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & forward \\
+\hline
+{\em s2} & turn \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_car_a749a0f1dd5d45ade9997f9d349376df2}{\index{Car@{Car}!set\+Destination@{set\+Destination}}
+\index{set\+Destination@{set\+Destination}!Car@{Car}}
+\subsubsection[{set\+Destination}]{\setlength{\rightskip}{0pt plus 5cm}void Car.\+set\+Destination (
+\begin{DoxyParamCaption}
+\item[{{\bf Car\+Position}}]{destination}
+\end{DoxyParamCaption}
+)}}\label{class_car_a749a0f1dd5d45ade9997f9d349376df2}
+
+
+Sets the destination of the car to be reached. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em destination} & the new destination \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_car_ad654f48f8504b657ecaa866d90322513}{\index{Car@{Car}!set\+Int\+Position@{set\+Int\+Position}}
+\index{set\+Int\+Position@{set\+Int\+Position}!Car@{Car}}
+\subsubsection[{set\+Int\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Car.\+set\+Int\+Position (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{class_car_ad654f48f8504b657ecaa866d90322513}
+
+
+Sets the integer position of the car. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & the new integer position \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_car_a82739f8a2cd5feb3d41fbb386ed4539a}{\index{Car@{Car}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Car@{Car}}
+\subsubsection[{set\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Car.\+set\+Position (
+\begin{DoxyParamCaption}
+\item[{{\bf Car\+Position}}]{current\+Position}
+\end{DoxyParamCaption}
+)}}\label{class_car_a82739f8a2cd5feb3d41fbb386ed4539a}
+
+
+Sets the position of the car. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Position} & The position \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_car_a164ed12b81b460e2ef43f038f1aa6319}{\index{Car@{Car}!to\+String\+Car@{to\+String\+Car}}
+\index{to\+String\+Car@{to\+String\+Car}!Car@{Car}}
+\subsubsection[{to\+String\+Car}]{\setlength{\rightskip}{0pt plus 5cm}String Car.\+to\+String\+Car (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_car_a164ed12b81b460e2ef43f038f1aa6319}
+
+
+Prints data about the car. 
+
+\begin{DoxyReturn}{Returns}
+the string 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_car_afde6b5c1b796970c1c57c3039058b731}{\index{Car@{Car}!car\+Nr@{car\+Nr}}
+\index{car\+Nr@{car\+Nr}!Car@{Car}}
+\subsubsection[{car\+Nr}]{\setlength{\rightskip}{0pt plus 5cm}int Car.\+car\+Nr\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_car_afde6b5c1b796970c1c57c3039058b731}
+
+
+The car number. 
+
+\hypertarget{class_car_aa2011891bfead81fe201257172843a95}{\index{Car@{Car}!current\+Position@{current\+Position}}
+\index{current\+Position@{current\+Position}!Car@{Car}}
+\subsubsection[{current\+Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Car\+Position} Car.\+current\+Position\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_car_aa2011891bfead81fe201257172843a95}
+
+
+The current position. 
+
+\hypertarget{class_car_a8ec85c8488be9a19f14077fb861b7753}{\index{Car@{Car}!destination@{destination}}
+\index{destination@{destination}!Car@{Car}}
+\subsubsection[{destination}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Car\+Position} Car.\+destination\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_car_a8ec85c8488be9a19f14077fb861b7753}
+
+
+The destination of the car (Forward or turn). 
+
+\hypertarget{class_car_a37c19f61aed67e2b9ec340f5ef4f99bd}{\index{Car@{Car}!int\+Position@{int\+Position}}
+\index{int\+Position@{int\+Position}!Car@{Car}}
+\subsubsection[{int\+Position}]{\setlength{\rightskip}{0pt plus 5cm}int Car.\+int\+Position\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_car_a37c19f61aed67e2b9ec340f5ef4f99bd}
+
+
+The integer position of the car, used for printing purposes. 
+
+\hypertarget{class_car_a6c77e5ff6ce04822eca2d7b246d3b516}{\index{Car@{Car}!lifetime@{lifetime}}
+\index{lifetime@{lifetime}!Car@{Car}}
+\subsubsection[{lifetime}]{\setlength{\rightskip}{0pt plus 5cm}int Car.\+lifetime\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_car_a6c77e5ff6ce04822eca2d7b246d3b516}
+
+
+The lifetime of the car. 
+
+\hypertarget{class_car_aefe0e86fc27b1175e338447493c169a4}{\index{Car@{Car}!route\+Finished@{route\+Finished}}
+\index{route\+Finished@{route\+Finished}!Car@{Car}}
+\subsubsection[{route\+Finished}]{\setlength{\rightskip}{0pt plus 5cm}boolean Car.\+route\+Finished = false\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_car_aefe0e86fc27b1175e338447493c169a4}
+
+
+Boolean to be set to true when the car has reached its destination. 
+
+\hypertarget{class_car_a94ad7e01cd9c699c28bd77b773b883fe}{\index{Car@{Car}!string\+Destination@{string\+Destination}}
+\index{string\+Destination@{string\+Destination}!Car@{Car}}
+\subsubsection[{string\+Destination}]{\setlength{\rightskip}{0pt plus 5cm}String Car.\+string\+Destination\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_car_a94ad7e01cd9c699c28bd77b773b883fe}
+
+
+String destination, used for printing purposes. 
+
+\hypertarget{class_car_a523ff2c3f03e44be3ca40596f8e0ca43}{\index{Car@{Car}!waiting\+Time@{waiting\+Time}}
+\index{waiting\+Time@{waiting\+Time}!Car@{Car}}
+\subsubsection[{waiting\+Time}]{\setlength{\rightskip}{0pt plus 5cm}int Car.\+waiting\+Time = 0\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_car_a523ff2c3f03e44be3ca40596f8e0ca43}
+
+
+The amount of time the car has been waiting at traffic lights or due to queues. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Car.\+java\end{DoxyCompactItemize}
