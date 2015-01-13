@@ -18,9 +18,6 @@ make:
 -all                        build needed files to run Traffic Simulation
 -clean                      clean away all generated .class files
 
--simulation                 build Simulation
--main                       build main executable
-
 -test                       build tests
 -run_test                   run tests.
 
